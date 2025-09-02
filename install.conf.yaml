@@ -1,0 +1,46 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+    shell:
+      stdout: true
+      stderr: true
+
+- clean: ['~']
+
+- link:
+    # Shell конфигурация
+    ~/.zshrc: zsh/zshrc
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.tool-versions: asdf/tool-versions
+    
+    # Терминал и tmux
+    ~/.config/ghostty/config: ghostty/config
+    ~/.config/tmux/tmux.conf: tmux/tmux.conf
+    ~/.config/tmuxinator: tmuxinator
+    ~/.config/htop/htoprc: htop/htoprc
+    
+    # Редакторы
+    ~/.config/nvim: nvim
+    ~/.ideavimrc: vim/ideavimrc
+    
+    # Fish shell
+    ~/.config/fish: fish
+    
+    # Утилиты
+    ~/.config/lazygit: lazygit
+    
+    # Package managers
+    ~/Brewfile: brew/Brewfile
+
+- create:
+    - ~/.config
+    - ~/.config/ghostty
+    - ~/.config/tmux
+    - ~/.config/htop
+    - ~/.local/bin
+
+- shell:
+    - [test -x "$(command -v brew)" && brew bundle --file=~/Brewfile || echo "Homebrew не установлен", "Установка Homebrew пакетов"]
+    - [test ! -d ~/.config/tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm || echo "TPM уже установлен", "Установка tmux plugin manager"]

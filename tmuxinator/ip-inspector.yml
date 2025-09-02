@@ -1,0 +1,14 @@
+name: ip-inspector
+root: ~/Programming/Go/feed-stack/inspector
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - logs: ~

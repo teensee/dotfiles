@@ -1,0 +1,11 @@
+# /Users/vladislav/.config/tmuxinator/easium.yml
+
+name: easium
+root: ~/Programming/Go/easium
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - air: air -c .air.toml

@@ -1,0 +1,10 @@
+# /Users/vladislav/.config/tmuxinator/dots.yml
+
+name: dots
+root: ~/.dotfiles
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim

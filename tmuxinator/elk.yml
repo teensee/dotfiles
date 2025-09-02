@@ -1,0 +1,20 @@
+# /Users/vladislav/.config/tmuxinator/elk.yml
+
+name: elk
+root: ~/PhpstormProjects/projects/etp/elk_hub/elk
+on_project_start: cd ./docker && make up
+
+windows:
+  - editor:
+      root: ~/PhpstormProjects/projects/etp/elk_hub/elk/app
+      layout: main-vertical
+      panes:
+        - nvim
+  - docker-fpm:
+      root: ~/PhpstormProjects/projects/etp/elk_hub/elk/docker
+      panes:
+        - dce fpm sh
+  - docker:
+      root: ~/PhpstormProjects/projects/etp/elk_hub/elk/docker
+      panes:
+        - lazydocker

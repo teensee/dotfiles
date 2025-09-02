@@ -1,0 +1,8 @@
+# ~/.config/lazygit/config.yml
+gui:
+  theme:
+    # Только фон выделенной строки
+    selectedLineBgColor:
+      - '#2a2a2a' # серый фон для выделенной строки
+    selectedRangeBgColor:  
+      - '#2a2a2a' # серый фон для выделенного диапазона

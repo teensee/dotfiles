@@ -1,0 +1,105 @@
+" -------------------
+" Основные настройки
+" -------------------
+let mapleader = " "
+
+" Показывать 10 строк вокруг курсора при прокрутке
+set scrolloff=10
+
+" Инкрементальный поиск + умная регистрозависимость
+set incsearch
+set smartcase=1
+
+" IdeaVimExtension переключает на английский язык при переходе в normal-mode
+set keep-english-in-normal
+
+" Улучшенные отображения в Vim-режиме
+set relativenumber
+set showmode
+set showcmd
+set visualbell
+
+" Использовать системный буфер обмена
+set clipboard+=unnamed
+
+" Отключить Ex mode (чтобы случайно не активировать)
+map Q gq
+
+" -------------------
+" Плагины
+" -------------------
+" Подсветка текста при копировании
+Plug 'machakann/vim-highlightedyank'
+" Комментирование строк (gc + motion)
+Plug 'tpope/vim-commentary'
+" Удобная работа со скобками и кавычками
+Plug 'tpope/vim-surround'
+" Включение нерд-три плагина
+Plug 'preservim/nerdtree'
+
+" -------------------
+" Улучшенная навигация
+" -------------------
+" Переключение между методами
+nnoremap [[ <Action>(MethodUp)
+nnoremap ]] <Action>(MethodDown)
+
+" Быстрое переключение между вкладками
+map <leader>1 <Action>(ActivateProjectToolWindow)
+map <leader>2 <Action>(ActivateEditor)
+map <leader>3 <Action>(ActivateStructureToolWindow)
+map <leader>4 <Action>(ActivateVersionControlToolWindow)
+map <leader>5 <Action>(ActivateRunToolWindow)
+
+" Переключение между файлами
+map <leader>e <Action>(RecentFiles)
+map <leader>t <Action>(FileStructurePopup)
+map <leader>b <Action>(Switcher)
+
+" -------------------
+" Работа с окнами
+" -------------------
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" -------------------
+" Работа с кодом
+" -------------------
+" Форматирование кода
+map <leader>fm <Action>(ReformatCode)
+" Вызов терминала
+map <leader>v <Action>(ActivateTerminalToolWindow)
+" Быстрые действия (Alt + Enter)
+map gra <Action>(ShowIntentionActions)
+" Переименование элемента
+map grn <Action>(RenameElement)
+
+" -------------------
+" Переходы в коде
+" -------------------
+map <leader>gd <Action>(GotoDeclaration)
+map <leader>gy <Action>(GotoTypeDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gt <Action>(GotoTest) " Открыть тесты (Go / PHP)
+
+" -------------------
+" Генерация кода
+" -------------------
+map <leader>gc <Action>(Generate)
+map <leader>gg <Action>(PhpGenerateGettersAndSetters)
+
+" -------------------
+" Отладка и запуск
+" -------------------
+map <leader>r <Action>(Run)
+map <leader>d <Action>(Debug)
+map \b <Action>(ToggleLineBreakpoint)
+
+" -------------------
+" Git-интеграция
+" -------------------
+map <leader>gs <Action>(Vcs.ShowLocalChanges)
+map <leader>gc <Action>(Vcs.Commit)
+map <leader>gp <Action>(Vcs.Push)

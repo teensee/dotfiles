@@ -1,0 +1,11 @@
+# /Users/vladislav/.config/tmuxinator/algo.yml
+
+name: algo
+root: ~/Programming/Go/algos
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - cli:

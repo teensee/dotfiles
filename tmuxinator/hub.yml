@@ -1,0 +1,17 @@
+# /Users/vladislav/.config/tmuxinator/hub.yml
+
+name: hub
+root: ~/PhpstormProjects/projects/etp/elk_hub/hub
+on_project_start: dcup -d
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - docker-fpm:
+      panes:
+        - dce hub-api-php sh
+  - docker:
+      panes:
+        - lazydocker

@@ -1,0 +1,13 @@
+# Шрифт
+font-family = "SF Mono"
+font-size = 14
+
+# Тема
+theme = "dracula"
+
+# Отступы
+window-padding-x = 8
+window-padding-y = 8
+
+# Копирование при выделении
+copy-on-select = true
