@@ -6,7 +6,7 @@
       stdout: true
       stderr: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     # Shell конфигурация
@@ -14,23 +14,23 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
     ~/.tool-versions: asdf/tool-versions
-    
+
     # Терминал и tmux
     ~/.config/ghostty/config: ghostty/config
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/tmuxinator: tmuxinator
     ~/.config/htop/htoprc: htop/htoprc
-    
+
     # Редакторы
     ~/.config/nvim: nvim
     ~/.ideavimrc: vim/ideavimrc
-    
+
     # Fish shell
     ~/.config/fish: fish
-    
+
     # Утилиты
     ~/.config/lazygit: lazygit
-    
+
     # Package managers
     ~/Brewfile: brew/Brewfile
 
@@ -42,5 +42,16 @@
     - ~/.local/bin
 
 - shell:
-    - [test -x "$(command -v brew)" && brew bundle --file=~/Brewfile || echo "Homebrew не установлен", "Установка Homebrew пакетов"]
-    - [test ! -d ~/.config/tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm || echo "TPM уже установлен", "Установка tmux plugin manager"]
+    - [
+        test -x "$(command -v brew)" && brew bundle --file=~/Brewfile || echo "Homebrew не установлен",
+        "Установка Homebrew пакетов",
+      ]
+    - [
+        test ! -d ~/.config/tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm || echo "TPM уже установлен",
+        "Установка tmux plugin manager",
+      ]
+    # Auto-install tmux plugins using Ctrl+B I
+    # - [
+    #     command -v tmux >/dev/null 2>&1 && tmux new-session -d -s tpm_install \; send-keys 'C-b I' \; kill-session -t tmp_install || echo "Tmux plugins will install on first use",
+    #     "Installing tmux plugins",
+    #   ]

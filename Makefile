@@ -47,15 +47,6 @@ update: backup
 	./install
 	@echo "[+] Update completed!"
 
-# Check configuration status
-check:
-	@echo "[*] Checking configuration status..."
-	@echo "Neovim: $(test -d ~/.config/nvim && echo "OK" || echo "MISSING")"
-	@echo "Tmux: $(test -f ~/.config/tmux/tmux.conf && echo "OK" || echo "MISSING")"
-	@echo "Zsh: $(test -f ~/.zshrc && echo "OK" || echo "MISSING")"
-	@echo "Git: $(test -f ~/.gitconfig && echo "OK" || echo "MISSING")"
-	@echo "Fish: $(test -d ~/.config/fish && echo "OK" || echo "MISSING")"
-
 # Restore from latest backup
 restore:
 	@echo "[*] Looking for latest backup..."

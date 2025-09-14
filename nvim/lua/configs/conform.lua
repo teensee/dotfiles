@@ -3,7 +3,7 @@ return {
         lua = { "stylua" },
 
         -- golang
-        templ = {},
+        templ = { "templ" },
 
         go = { "gofmt", "goimports", "golines" },
         gomod = { "gofumpt", "goimports" },
@@ -36,6 +36,11 @@ return {
         },
         golines = {
             prepend_args = { "--max-len=120" },
+        },
+        templ = {
+            command = "templ",
+            args = { "fix" },
+            stdin = true,
         },
         -- sql_formatter = {
         --     command = "sql-formatter",

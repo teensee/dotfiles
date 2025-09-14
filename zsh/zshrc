@@ -61,7 +61,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Open ObsidianNotes with NeoVim
 alias nvnotes='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/ObsidianNotes; nvim'
-
 alias mux=tmuxinator
 
 ### < alias section ###
@@ -81,4 +80,5 @@ ___my_vmoptions_shell_file="${home}/.jetbrains.vmoptions.sh"; if [ -f "${___my_v
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-
+# Set up fuck
+eval $(thefuck --alias)
