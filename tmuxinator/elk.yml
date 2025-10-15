@@ -18,3 +18,6 @@ windows:
       root: ~/PhpstormProjects/projects/etp/elk_hub/elk/docker
       panes:
         - lazydocker
+  - cli:
+      panes:
+        - cli
