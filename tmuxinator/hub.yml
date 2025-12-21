@@ -2,7 +2,7 @@
 
 name: hub
 root: ~/PhpstormProjects/projects/etp/elk_hub/hub
-on_project_start: dcup -d
+on_project_start: docker compose up -d
 
 windows:
   - editor:
@@ -11,7 +11,7 @@ windows:
         - nvim
   - docker-fpm:
       panes:
-        - dce hub-api-php sh
+        - docker compose exec hub-api-php sh
   - docker:
       panes:
         - lazydocker
