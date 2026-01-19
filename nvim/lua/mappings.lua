@@ -11,6 +11,9 @@ map("n", "<leader>ch", ":NvCheatsheet<CR>")
 map("n", "<leader>od", ":ObsidianDailies<CR>", { desc = "Ежедневные заметки" })
 map("n", "<leader>ck", ":ObsidianToggleCheckbox<CR>", { desc = "Toggle checkbox" })
 
+-- NvimTree
+map("n", "<leader>tf", ":NvimTreeFindFile<CR>", { desc = "Find file in tree" })
+
 -- LazyGit
 map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "Toggle LazyGit" })
 
