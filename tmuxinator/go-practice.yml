@@ -1,0 +1,8 @@
+name: go-practice
+root: ~/Programming/Go/go-practice
+
+windows:
+  - csv-parser:
+      layout: main-vertical
+      panes:
+        - cd csv-parser
