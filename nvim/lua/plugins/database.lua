@@ -28,19 +28,6 @@ return {
             -- Автодополнение
             vim.g.db_ui_disable_mappings = 0
         end,
-        config = function()
-            -- Автодополнение для SQL файлов
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = { "sql", "mysql", "plsql" },
-                callback = function()
-                    require("cmp").setup.buffer {
-                        sources = {
-                            { name = "vim-dadbod-completion" },
-                            { name = "buffer" },
-                        },
-                    }
-                end,
-            })
-        end,
+        -- dadbod-completion интегрирован через blink.cmp (см. blink-cmp.lua)
     },
 }

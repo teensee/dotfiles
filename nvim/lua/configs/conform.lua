@@ -21,8 +21,8 @@ return {
         yaml = { "prettier" },
 
         -- sql
-        sql = { "sqlls" },
-        mysql = { "sqlls" },
+        sql = { "sql_formatter" },
+        mysql = { "sql_formatter" },
     },
 
     formatters = {
@@ -42,11 +42,11 @@ return {
             args = { "fix" },
             stdin = true,
         },
-        -- sql_formatter = {
-        --     command = "sql-formatter",
-        --     args = { "--language", "sql" },
-        --     stdin = true,
-        -- },
+        sql_formatter = {
+            command = "sql-formatter",
+            args = { "--language", "sql" },
+            stdin = true,
+        },
     },
 
     format_on_save = function(bufnr)

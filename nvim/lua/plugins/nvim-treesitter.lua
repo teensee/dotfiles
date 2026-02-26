@@ -9,6 +9,7 @@ return {
             -- Web
             "html",
             "css",
+            "twig",
 
             -- Main languages
             "php",
@@ -20,6 +21,8 @@ return {
             "gowork",
 
             "python",
+
+            "sql",
 
             -- Config languages
             "yaml",

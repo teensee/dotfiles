@@ -19,7 +19,10 @@ return {
             hover = { enabled = true },
             message = { enabled = true },
             documentation = { enabled = true },
-            signature = { enabled = false }, -- if "true" jumping cursor bugs here...
+            signature = {
+                enabled = true,
+                auto_open = { enabled = true, trigger = true },
+            },
         },
     },
     dependencies = {

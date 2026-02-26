@@ -6,14 +6,28 @@ return {
         event = { "LspAttach", "InsertEnter" },
         opts = {
             sources = {
-                -- sut copitol suggestion on top
-                default = { "copilot", "lsp", "path", "snippets", "buffer" },
+                default = {
+                    -- "copilot",
+                    "lsp",
+                    "path",
+                    "snippets",
+                    "buffer",
+                },
+                per_filetype = {
+                    sql = { "dadbod", "snippets", "buffer" },
+                    mysql = { "dadbod", "snippets", "buffer" },
+                    plsql = { "dadbod", "snippets", "buffer" },
+                },
                 providers = {
-                    copilot = {
-                        name = "copilot",
-                        module = "blink-cmp-copilot",
-                        score_offset = 100,
-                        async = true,
+                    -- copilot = {
+                    --     name = "copilot",
+                    --     module = "blink-cmp-copilot",
+                    --     score_offset = 100,
+                    --     async = true,
+                    -- },
+                    dadbod = {
+                        name = "Dadbod",
+                        module = "vim_dadbod_completion.blink",
                     },
                 },
             },
@@ -25,8 +39,8 @@ return {
         },
     },
     -- copilot inside blink cmp completions
-    {
-        "giuxtaposition/blink-cmp-copilot",
-        after = { "copilot.lua" },
-    },
+    -- {
+    --     "giuxtaposition/blink-cmp-copilot",
+    --     after = { "copilot.lua" },
+    -- },
 }
