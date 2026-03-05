@@ -113,15 +113,12 @@ return {
             "nvim-lua/plenary.nvim",
             "antoinemadec/FixCursorHold.nvim",
             "nvim-treesitter/nvim-treesitter",
-            -- адаптеры для языков
             "fredrikaverpil/neotest-golang",
-            "olimorris/neotest-phpunit",
         },
         config = function()
             require("neotest").setup {
                 adapters = {
                     require "neotest-golang",
-                    require "neotest-phpunit",
                 },
             }
         end,

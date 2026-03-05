@@ -19,6 +19,18 @@ return {
         css = { "prettier" },
         html = { "prettier" },
         yaml = { "prettier" },
+        json = { "prettier" },
+
+        -- python
+        python = { "ruff_format" },
+
+        -- shell
+        sh = { "shfmt" },
+        bash = { "shfmt" },
+        zsh = { "shfmt" },
+
+        -- toml
+        toml = { "taplo" },
 
         -- sql
         sql = { "sql_formatter" },
