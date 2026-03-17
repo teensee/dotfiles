@@ -5,6 +5,13 @@ return {
         enabled = true,
         event = { "LspAttach", "InsertEnter" },
         opts = {
+            snippets = { preset = "luasnip" },
+            keymap = {
+                preset = "default",
+                -- Раскоментить если будет неудобно с Tab/Shift-Tab
+                -- ["<C-l>"] = { "snippet_forward", "fallback" },
+                -- ["<C-j>"] = { "snippet_backward", "fallback" },
+            },
             sources = {
                 default = {
                     -- "copilot",
@@ -33,7 +40,7 @@ return {
             },
             completion = {
                 documentation = {
-                    auto_show = false, -- отключить автоматическое отображение документации
+                    auto_show = true,
                 },
             },
         },

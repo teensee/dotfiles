@@ -4,13 +4,14 @@ return {
     event = "VeryLazy",
     opts = {
         cmdline = { enabled = true },
-        messages = { enabled = true },
-        popupmenu = { enabled = true },
-        notify = { enabled = true },
+        -- Тестово выключил часть ЮИ-изменений для сохранения ""аутентичности"
+        messages = { enabled = false },
+        popupmenu = { enabled = false },
+        notify = { enabled = false },
 
         lsp = {
             progress = {
-                enabled = true, -- прогресс LSP можно оставить
+                enabled = true,
                 format = "lsp_progress",
                 format_done = "lsp_progress_done",
                 throttle = 1000 / 30,

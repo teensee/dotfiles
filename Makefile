@@ -2,7 +2,7 @@ SHELL := /bin/bash
 DOTFILES_DIR := $(shell pwd)
 BACKUP_DIR := $(HOME)/.dotfiles-backup-$(shell date +%Y%m%d-%H%M%S)
 
-.PHONY: help install update backup restore check clean
+.PHONY: help install update backup restore clean
 
 # Show help for available commands
 help:
@@ -16,7 +16,6 @@ help:
 	@echo "  update     - Update dotfiles from repository"
 	@echo ""
 	@echo "Utilities:"
-	@echo "  check      - Check configuration status"
 	@echo "  restore    - Restore from latest backup"
 	@echo "  clean      - Clean temporary files"
 
@@ -42,7 +41,7 @@ backup:
 # Update dotfiles
 update: backup
 	@echo "[*] Updating dotfiles..."
-	git pull origin main
+	git pull origin master
 	git submodule update --init --recursive
 	./install
 	@echo "[+] Update completed!"
