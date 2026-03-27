@@ -8,8 +8,7 @@ map("n", "<leader>ch", ":NvCheatsheet<CR>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Obsidian
-map("n", "<leader>od", ":ObsidianDailies<CR>", { desc = "Ежедневные заметки" })
-map("n", "<leader>ck", ":ObsidianToggleCheckbox<CR>", { desc = "Toggle checkbox" })
+map("n", "<leader>od", ":Obsidian dailies<CR>", { desc = "Ежедневные заметки" })
 
 -- NvimTree
 map("n", "<leader>tf", ":NvimTreeFindFile<CR>", { desc = "Find file in tree" })

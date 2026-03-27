@@ -5,7 +5,7 @@ return {
         -- golang
         templ = { "templ" },
 
-        go = { "gofmt", "goimports", "golines" },
+        go = { "goimports", "golines" },
         gomod = { "gofumpt", "goimports" },
         gowork = { "gofumpt", "goimports" },
         gotmpl = { "gofumpt", "goimports" },
@@ -66,6 +66,6 @@ return {
         if filetype == "templ" then
             return false -- не форматировать templ файлы
         end
-        return { timeout_ms = 500, lsp_fallback = true }
+        return { timeout_ms = 3000, lsp_fallback = true }
     end,
 }
