@@ -5,7 +5,7 @@ return {
         -- golang
         templ = { "templ" },
 
-        go = { "gofmt", "goimports", "golines" },
+        go = { "goimports", "golines" },
         gomod = { "gofumpt", "goimports" },
         gowork = { "gofumpt", "goimports" },
         gotmpl = { "gofumpt", "goimports" },
@@ -19,10 +19,22 @@ return {
         css = { "prettier" },
         html = { "prettier" },
         yaml = { "prettier" },
+        json = { "prettier" },
+
+        -- python
+        python = { "ruff_format" },
+
+        -- shell
+        sh = { "shfmt" },
+        bash = { "shfmt" },
+        zsh = { "shfmt" },
+
+        -- toml
+        toml = { "taplo" },
 
         -- sql
-        sql = { "sqlls" },
-        mysql = { "sqlls" },
+        sql = { "sql_formatter" },
+        mysql = { "sql_formatter" },
     },
 
     formatters = {
@@ -42,11 +54,11 @@ return {
             args = { "fix" },
             stdin = true,
         },
-        -- sql_formatter = {
-        --     command = "sql-formatter",
-        --     args = { "--language", "sql" },
-        --     stdin = true,
-        -- },
+        sql_formatter = {
+            command = "sql-formatter",
+            args = { "--language", "sql" },
+            stdin = true,
+        },
     },
 
     format_on_save = function(bufnr)
@@ -54,6 +66,6 @@ return {
         if filetype == "templ" then
             return false -- не форматировать templ файлы
         end
-        return { timeout_ms = 500, lsp_fallback = true }
+        return { timeout_ms = 3000, lsp_fallback = true }
     end,
 }

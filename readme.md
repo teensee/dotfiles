@@ -1,11 +1,11 @@
 # My Dotfiles
 
-Personal macOS configuration focused on Go/PHP development.
+Personal macOS configuration for Go/PHP development.
 
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/dotfiles.git ~/.dotfiles
+git clone git@github.com:teensee/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 make install
 ```
@@ -17,25 +17,27 @@ cd ~/.dotfiles
 make update
 ```
 
-## Customization
+## Post-install steps
 
-Copy example configs and edit with your data:
+Copy example git configs and fill in credentials:
 
 ```bash
 cp git/gitconfig-local.example git/gitconfig-local
 cp git/gitconfig-work.example git/gitconfig-work
-# Edit files with your personal/work information
 ```
+
+Restart terminal to apply shell changes.
 
 ## What's included
 
-- **Neovim** with NvChad configuration
-- **Zsh/Fish** shells with completions
-- **Tmux** with Dracula theme
-- **Git** configurations for different projects
-- **Development tools** (Docker, Kubernetes, etc.)
+- **Neovim** — NvChad v2.5, LSP (Go, PHP, Python), DAP, neotest, blink.cmp
+- **Zsh** — Oh-My-Zsh + bureau theme, fzf, thefuck, asdf shims
+- **Tmux** — Dracula theme, vim navigation, TPM
+- **Git** — global config, conditional includes for work/personal projects
+- **Ghostty** — terminal emulator config
+- **Homebrew** — full toolchain: go, php, node, python, lazygit, lazydocker, k6, etc.
 
-See [documentation](documentation.md) for detailed information.
+See [documentation.md](documentation.md) for detailed reference.
 
 ## License
 

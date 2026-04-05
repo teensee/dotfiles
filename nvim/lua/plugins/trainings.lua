@@ -8,7 +8,7 @@ return {
     },
     {
         "ThePrimeagen/vim-be-good",
-        event = "VeryLazy",
+        cmd = { "VimBeGood" },
     },
     {
         "m4xshen/hardtime.nvim",

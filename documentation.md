@@ -29,16 +29,18 @@ dotfiles/
 ### Editors & IDEs
 
 #### Neovim
+
 - **Base**: NvChad framework
 - **Languages**: Go, PHP, Python, JavaScript, TypeScript
-- **Features**: 
-  - LSP integration (gopls, phpactor, pyright)
+- **Features**:
+  - LSP integration (gopls, intelephense, pyright)
   - GitHub Copilot
   - Database UI
   - File tree navigation
   - Integrated terminal
 
 #### IdeaVim
+
 - Vim emulation for JetBrains IDEs
 - Custom key mappings for productivity
 - Integration with IDE features
@@ -46,20 +48,23 @@ dotfiles/
 ### Shell & Terminal
 
 #### Zsh
+
 - **Framework**: Oh-My-Zsh
 - **Theme**: Bureau
-- **Plugins**: 
+- **Plugins**:
   - git, docker, docker-compose
   - kubectl, composer
   - zsh-autosuggestions
 - **Features**: Smart history, auto-completion
 
 #### Fish Shell
+
 - Alternative shell with built-in autosuggestions
 - Custom completions for Docker, Kubernetes
 - Clean syntax highlighting
 
 #### Tmux
+
 - **Theme**: Dracula
 - **Features**:
   - Session persistence
@@ -68,23 +73,27 @@ dotfiles/
   - Plugin manager (TPM)
 
 #### Ghostty Terminal
+
 - Modern GPU-accelerated terminal
 - Custom font and theme configuration
 
 ### Development Tools
 
 #### Git
+
 - Global configuration with aliases
 - Conditional configs for different projects
 - Integration with work/personal environments
 - Custom ignore patterns
 
 #### Docker & Kubernetes
+
 - Shell completions
 - Aliases for common operations
 - Integration with development workflow
 
 #### Database Tools
+
 - Database UI in Neovim
 - Connection management
 - Query execution and results viewing
@@ -92,16 +101,19 @@ dotfiles/
 ### Productivity Tools
 
 #### Tmuxinator
+
 - Project-specific tmux session templates
 - Automated environment setup
 - Quick project switching
 
 #### LazyGit
+
 - Terminal UI for Git operations
 - Custom theme configuration
 - Keyboard shortcuts
 
 #### htop
+
 - System resource monitoring
 - Custom display configuration
 - Color scheme optimization
@@ -111,6 +123,7 @@ dotfiles/
 ### Neovim Plugins
 
 Core plugins include:
+
 - **NvChad**: Base configuration framework
 - **Mason**: LSP server management
 - **Telescope**: Fuzzy finder
@@ -119,19 +132,22 @@ Core plugins include:
 - **Which-key**: Keybinding help
 
 Development plugins:
+
 - **go.nvim**: Go development tools
 - **phpactor**: PHP language server
-- **copilot.lua**: AI code completion
+- **copilot.lua**: AI code completion (disabled)
 - **blink.cmp**: Completion engine
 
 ### Shell Configurations
 
-#### Zsh aliases and functions:
+#### Zsh aliases and functions
+
 - `mux` - tmuxinator shortcut
 - `nvnotes` - Open Obsidian notes in Neovim
 - Docker and Git shortcuts
 
-#### Fish completions:
+#### Fish completions
+
 - Docker containers and images
 - Kubernetes resources
 - Custom command completions
@@ -139,6 +155,7 @@ Development plugins:
 ### Git Workflow
 
 The configuration supports multiple Git identities:
+
 - Personal projects: `~/.gitconfig-local`
 - Work projects: `~/.gitconfig-work`
 - Conditional inclusion based on directory
@@ -146,6 +163,7 @@ The configuration supports multiple Git identities:
 ### Tmux Sessions
 
 Predefined project templates:
+
 - Development environments
 - Docker container management
 - Database administration
@@ -163,20 +181,24 @@ Predefined project templates:
 ### Modifying Keybindings
 
 #### Neovim
+
 Edit `nvim/lua/mappings.lua` for global bindings
 Language-specific bindings in respective plugin configs
 
 #### Tmux
+
 Modify `tmux/tmux.conf` for session management
 Plugin settings in the same file
 
 #### Shell
+
 Add aliases to `zsh/zshrc` or `fish/config.fish`
 
 ### Theme Customization
 
 Most tools use consistent themes:
-- **Neovim**: Catppuccin/OneDark
+
+- **Neovim**: doomchad
 - **Tmux**: Dracula
 - **Terminal**: Dracula-compatible
 
@@ -185,6 +207,7 @@ Most tools use consistent themes:
 ### Common Issues
 
 #### Neovim plugins not loading
+
 ```bash
 # Reinstall plugins
 nvim --headless "+Lazy! sync" +qa
@@ -195,6 +218,7 @@ rm -rf ~/.local/share/nvim
 ```
 
 #### Tmux plugins not working
+
 ```bash
 # Reinstall TPM
 rm -rf ~/.config/tmux/plugins/tpm
@@ -204,6 +228,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
 #### Shell completions missing
+
 ```bash
 # Zsh
 rm ~/.zcompdump*
@@ -214,6 +239,7 @@ fish -c "fish_update_completions"
 ```
 
 #### Git configuration issues
+
 ```bash
 # Check current config
 git config --list --show-origin
@@ -226,11 +252,13 @@ git config --get user.email
 ### Performance Issues
 
 #### Slow shell startup
+
 - Check plugin loading in shell config
 - Profile startup with `time zsh -i -c exit`
 - Disable unnecessary plugins
 
 #### Neovim lag
+
 - Update plugins: `:Lazy sync`
 - Check LSP status: `:LspInfo`
 - Disable unused language servers
@@ -238,15 +266,17 @@ git config --get user.email
 ### Recovery
 
 #### Restore from backup
+
 ```bash
 # Find latest backup
-ls ~/.dotfiles-backups/
+ls ~/.dotfiles-backup-*
 
-# Use restore script
-~/.dotfiles-backups/backup-YYYYMMDD-HHMMSS/restore.sh
+# Copy back manually
+cp -r ~/.dotfiles-backup-YYYYMMDD-HHMMSS/. ~/
 ```
 
 #### Reset to defaults
+
 ```bash
 # Remove all configs
 rm -rf ~/.config/nvim ~/.tmux.conf ~/.zshrc
@@ -261,6 +291,7 @@ make install
 ### Custom Project Templates
 
 Create new tmuxinator templates:
+
 ```bash
 # Generate template
 tmuxinator new project_name
@@ -275,6 +306,7 @@ tmuxinator start project_name
 ### Database Connections
 
 Configure database connections in Neovim:
+
 1. Open database UI: `<leader>db`
 2. Add connection details
 3. Save queries in project directory
@@ -282,6 +314,7 @@ Configure database connections in Neovim:
 ### Docker Integration
 
 Common workflows:
+
 - Container management via lazydocker
 - Shell completions for container names
 - Project-specific compose configurations

@@ -1,99 +1,125 @@
 -- Load NvChad defaults
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
 local servers = {
     html = {},
+    pyright = {},
 
-    -- cssls = { cmd = { "cssls" } },
     gopls = {
         cmd = { "gopls" },
-        root_pattern = lspconfig.util.root_pattern("go.mod", ".git"),
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_dir = function(bufnr, on_dir)
+            on_dir(vim.fs.root(bufnr, { "go.mod", "go.work", ".git" }))
+        end,
         settings = {
             gopls = {
-                analyses = {
-                    shadow = true, -- check shadowing
-                },
-                staticcheck = true, -- Enable staticcheck
-                gofumpt = true, -- включаю автоформатирвоание
+                analyses = { shadow = true },
+                staticcheck = true,
+                gofumpt = true,
                 completeUnimported = true,
                 usePlaceholders = true,
             },
         },
     },
+
     templ = {
-        default_config = {
-            cmd = { "templ", "lsp" },
-            filetypes = { "templ" },
-            root_dir = function(fname)
-                return lspconfig.util.root_pattern("go.work", "go.mod", ".git")(fname)
-            end,
-        },
-        docs = {
-            description = [[
-https://templ.guide
-
-The official language server for the templ HTML templating language.
-]],
-        },
+        cmd = { "templ", "lsp" },
+        filetypes = { "templ" },
+        root_dir = function(bufnr, on_dir)
+            on_dir(vim.fs.root(bufnr, { "go.work", "go.mod", ".git" }))
+        end,
     },
-    pyright = {},
 
-    sqlls = {
-        cmd = { "sql-language-server", "up", "--method", "stdio" },
-        filetypes = { "sql", "mysql" },
-        root_dir = function(fname)
-            return lspconfig.util.root_pattern(".git", ".")(fname)
+    intelephense = {
+        cmd = { "intelephense", "--stdio" },
+        filetypes = { "php" },
+        root_dir = function(bufnr, on_dir)
+            on_dir(vim.fs.root(bufnr, { "composer.json", ".git" }))
         end,
         settings = {
-            sqlLanguageServer = {
-                lint = {
-                    rules = {
-                        "align-column-to-the-first",
-                        "column-new-line",
-                        "linebreak-after-clause-keyword",
-                        "reserved-word-case",
-                        "space-surrounding-operators",
-                        "where-clause-new-line",
-                        "align-where-clause-to-the-first",
-                    },
+            intelephense = {
+                files = { maxSize = 5000000 },
+                stubs = {
+                    "apache",
+                    "bcmath",
+                    "bz2",
+                    "calendar",
+                    "com_dotnet",
+                    "Core",
+                    "ctype",
+                    "curl",
+                    "date",
+                    "dba",
+                    "dom",
+                    "enchant",
+                    "exif",
+                    "FFI",
+                    "fileinfo",
+                    "filter",
+                    "fpm",
+                    "ftp",
+                    "gd",
+                    "gettext",
+                    "gmp",
+                    "hash",
+                    "iconv",
+                    "imap",
+                    "intl",
+                    "json",
+                    "ldap",
+                    "libxml",
+                    "mbstring",
+                    "meta",
+                    "mysqli",
+                    "oci8",
+                    "odbc",
+                    "openssl",
+                    "pcntl",
+                    "pcre",
+                    "PDO",
+                    "pdo_ibm",
+                    "pdo_mysql",
+                    "pdo_pgsql",
+                    "pdo_sqlite",
+                    "pgsql",
+                    "Phar",
+                    "posix",
+                    "pspell",
+                    "random",
+                    "readline",
+                    "Reflection",
+                    "regex",
+                    "session",
+                    "shmop",
+                    "SimpleXML",
+                    "snmp",
+                    "soap",
+                    "sockets",
+                    "sodium",
+                    "SPL",
+                    "sqlite3",
+                    "standard",
+                    "superglobals",
+                    "sysvmsg",
+                    "sysvsem",
+                    "sysvshm",
+                    "tidy",
+                    "tokenizer",
+                    "xml",
+                    "xmlreader",
+                    "xmlrpc",
+                    "xmlwriter",
+                    "xsl",
+                    "Zend OPcache",
+                    "zip",
+                    "zlib",
                 },
             },
         },
     },
-
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/phpactor.lua#L7
-    phpactor = {
-        cmd = { "phpactor", "language-server" },
-        filetypes = { "php" },
-        root_dir = function(bufnr, on_dir)
-            local fname = vim.api.nvim_buf_get_name(bufnr)
-            local cwd = assert(vim.uv.cwd())
-            local root = vim.fs.root(fname, { "composer.json", ".git", ".phpactor.json", ".phpactor.yml" })
-
-            -- prefer cwd if root is a descendant
-            on_dir(root and vim.fs.relpath(cwd, root) and cwd)
-        end,
-    },
-
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/intelephense.lua#L28
-    -- intelephense = {
-    --     cmd = { "intelephense", "--stdio" },
-    --     filetypes = { "php" },
-    --     root_dir = function(bufnr, on_dir)
-    --         local fname = vim.api.nvim_buf_get_name(bufnr)
-    --         local cwd = assert(vim.uv.cwd())
-    --         local root = vim.fs.root(fname, { "composer.json", ".git" })
-    --
-    --         -- prefer cwd if root is a descendant
-    --         on_dir(root and vim.fs.relpath(cwd, root) and cwd)
-    --     end,
-    -- },
 }
 
 for name, opts in pairs(servers) do
-    vim.lsp.enable(name)
     vim.lsp.config(name, opts)
+    vim.lsp.enable(name)
 end

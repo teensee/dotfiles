@@ -1,4 +1,3 @@
-# tmuxinator
 export EDITOR=nvim
 
 #move configpath for lazygit/lazydocker to .config
@@ -13,8 +12,13 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 fpath=(~/.oh-my-zsh/completions $fpath)
 
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+# initialise completions with ZSH's compinit (cached, rebuilds once per day)
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null) ]; then
+    compinit
+else
+    compinit -C
+fi
 
 ### EXPORT INSTALLED PROGRAMS
 export PATH="/opt/homebrew/bin:$PATH"
@@ -39,18 +43,18 @@ ENABLE_CORRECTION="false"
 
 # Which plugins would you like to load?
 plugins=(
-  git
-  docker
-  docker-compose
-  macos
-  composer
-  kubectl
-  history
-  zsh-autosuggestions
-  dotenv
-  gpg-agent
-  keychain
- # zsh-vi-mode
+    git
+    docker
+    docker-compose
+    macos
+    composer
+    kubectl
+    history
+    zsh-autosuggestions
+    dotenv
+    gpg-agent
+    keychain
+    # zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -62,23 +66,29 @@ source $ZSH/oh-my-zsh.sh
 # Open ObsidianNotes with NeoVim
 alias nvnotes='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/ObsidianNotes; nvim'
 alias mux=tmuxinator
+alias cat=bat
 
 ### < alias section ###
 
 # Added by Docker Desktop
-source /Users/vladislav/.docker/init-zsh.sh || true
-
+source "$HOME/.docker/init-zsh.sh" || true
 
 # Enable ngrok completion if installed
 if command -v ngrok &>/dev/null; then
-  eval "$(ngrok completion)"
+    eval "$(ngrok completion)"
 fi
 
 # Added with JetBrains crack-script
-___my_vmoptions_shell_file="${home}/.jetbrains.vmoptions.sh"; if [ -f "${___my_vmoptions_shell_file}" ]; then . "${___my_vmoptions_shell_file}"; fi
-
+___my_vmoptions_shell_file="${HOME}/.jetbrains.vmoptions.sh"
+if [ -f "${___my_vmoptions_shell_file}" ]; then . "${___my_vmoptions_shell_file}"; fi
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-# Set up fuck
-eval $(thefuck --alias)
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+# Set up fuck (lazy-loaded to avoid startup delay)
+fuck() { eval $(thefuck $(fc -ln -1)); }
+
+# Syntax highlighting — must be last
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
