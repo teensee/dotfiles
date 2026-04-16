@@ -47,7 +47,7 @@ return {
             stdin = false,
         },
         golines = {
-            prepend_args = { "--max-len=120" },
+            prepend_args = { "--max-len=120", "--no-reformat-tags" },
         },
         templ = {
             command = "templ",

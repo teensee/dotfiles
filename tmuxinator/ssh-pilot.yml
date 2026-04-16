@@ -9,3 +9,4 @@ windows:
       panes:
         - nvim
   - claude: claude
+  - cmd: ~
