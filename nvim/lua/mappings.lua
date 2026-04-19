@@ -2,9 +2,9 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
-map("n", "<leader>ch", ":NvCheatsheet<CR>")
+-- Комментирую для тестов
+-- map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("i", "jk", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Obsidian
@@ -15,6 +15,7 @@ map("n", "<leader>tf", ":NvimTreeFindFile<CR>", { desc = "Find file in tree" })
 
 -- Telescope File Browser
 map("n", "<leader>fd", "<cmd>Telescope file_browser<CR>", { desc = "File browser" })
+
 -- маппинг под вопросиком
 map(
     "n",
@@ -39,8 +40,8 @@ if wk_ok then
     wk.add {
         { "<leader>d", group = "Debug/Database" },
         { "<leader>g", group = "Git" },
-        { "<leader>x", group = "Diagnostics" },
-        { "<leader>t", group = "Test/Tree" },
+        { "<leader>q", group = "Diagnostics" },
+        { "<leader>t", group = "Test/Tree/Theme" },
         { "<leader>o", group = "Obsidian" },
     }
 end
@@ -51,7 +52,6 @@ map("n", "<leader>dq", ":DB<CR>", { desc = "Execute DB query" })
 map("v", "<leader>dq", ":'<,'>DB<CR>", { desc = "Execute selected query" })
 
 -- LSP
-map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code action" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
@@ -59,10 +59,10 @@ map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 map("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type definition" })
 
 -- Diagnostics (Trouble)
-map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Diagnostics (Trouble)" })
-map("n", "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer diagnostics (Trouble)" })
-map("n", "<leader>xl", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list (Trouble)" })
-map("n", "<leader>xq", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix list (Trouble)" })
+map("n", "<leader>qx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Diagnostics (Trouble)" })
+map("n", "<leader>qd", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer diagnostics (Trouble)" })
+map("n", "<leader>ql", "<cmd>Trouble loclist toggle<CR>", { desc = "Location list (Trouble)" })
+map("n", "<leader>qq", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix list (Trouble)" })
 
 -- Debug (DAP)
 map("n", "<leader>dc", function()
