@@ -1,0 +1,10 @@
+name: obsidian
+root: "~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/ObsidianNotes"
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim
+  - claude:
+      panes: claude
