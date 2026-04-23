@@ -1,3 +1,5 @@
+typeset -U path PATH
+
 export EDITOR=nvim
 
 #move configpath for lazygit/lazydocker to .config
