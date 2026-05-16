@@ -8,3 +8,7 @@ windows:
       layout: main-vertical
       panes:
         - nvim
+  - claude:
+      layout: main-vertical
+      panes:
+        - claude
