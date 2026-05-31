@@ -1,0 +1,5 @@
+; Copy to git/gitconfig-work and fill in.
+; Loaded only for repos under ~/Programming/work/ (см. gitconfig).
+[user]
+    name = YOUR NAME
+    email = your@work.email

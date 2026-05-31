@@ -1,5 +1,5 @@
--- Ignore Globally .DS_Store
+# macOS metadata
 .DS_Store
 
--- Ignore Globally .claude
+# Claude Code per-project state
 .claude

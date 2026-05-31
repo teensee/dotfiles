@@ -14,3 +14,8 @@
 
 [includeIf "gitdir:~/Programming/Go/elk_hub/"]
     path = ~/.gitconfig-etp
+
+; Optional per-host overrides; copy from *.example and `make install` to symlink.
+[include]
+    path = ~/.gitconfig-local
+    path = ~/.gitconfig-work

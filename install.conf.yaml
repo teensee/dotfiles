@@ -6,12 +6,18 @@
       stdout: true
       stderr: true
 
-- clean: ["~"]
+- clean:
+    ~:
+      force: true
+    ~/.config:
+      force: true
+      recursive: true
 
 - link:
     # Shell конфигурация
     ~/.zshrc: zsh/zshrc
     ~/.gitconfig: git/gitconfig
+    ~/.gitconfig-etp: git/gitconfig-etp
     ~/.gitignore_global: git/gitignore_global
     ~/.tool-versions: asdf/tool-versions
 

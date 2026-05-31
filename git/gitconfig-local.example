@@ -1,0 +1,5 @@
+; Copy to git/gitconfig-local and fill in.
+; Loaded only for repos under ~/Programming/personal/ (см. gitconfig).
+[user]
+    name = YOUR NAME
+    email = your@personal.email

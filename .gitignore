@@ -1,2 +1,6 @@
 .claude
-CLAUDE.md
+.DS_Store
+
+# Per-host git identity overrides (copy from *.example)
+git/gitconfig-local
+git/gitconfig-work
