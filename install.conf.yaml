@@ -36,6 +36,7 @@
 
     # Утилиты
     ~/.config/lazygit: lazygit
+    ~/.config/opencode: opencode
 
     # Package managers
     ~/Brewfile: brew/Brewfile
