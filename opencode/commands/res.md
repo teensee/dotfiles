@@ -1,6 +1,6 @@
 ---
 description: Ресёрч задачи — читает task.md, анализирует код, создаёт task-research.md
-agent: build
+agent: research
 subtask: true
 model: opencode-go/deepseek-v4-pro
 ---

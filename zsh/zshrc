@@ -67,6 +67,10 @@ alias nvnotes='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Obsid
 alias mux=tmuxinator
 alias cat=bat
 
+# Brew helpers
+brewadd() { brew bundle add --install --file=~/Brewfile "$@"; }
+brewup() { brew update && brew upgrade && brew bundle dump --file=~/Brewfile --force && brew autoremove; }
+
 ### < alias section ###
 
 # Added by Docker Desktop
