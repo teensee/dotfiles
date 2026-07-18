@@ -8,7 +8,7 @@ windows:
       layout: main-vertical
       panes:
         - nvim
-  - claude:
+  - AI-agent[opencode]:
       layout: main-vertical
       panes:
-        - claude
+        - opencode

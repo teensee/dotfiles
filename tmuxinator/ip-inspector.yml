@@ -12,3 +12,6 @@ windows:
       panes:
         - nvim
   - logs: ~
+  - AI-agent[opencode]:
+      panes:
+        - opencode

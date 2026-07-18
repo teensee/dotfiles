@@ -21,3 +21,6 @@ windows:
   - cli:
       panes:
         - cli
+  - AI-agent[opencode]:
+      panes:
+        - opencode

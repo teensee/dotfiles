@@ -9,3 +9,6 @@ windows:
       panes:
         - nvim
   - air: air -c .air.toml
+  - AI-agent[opencode]:
+      panes:
+        - opencode

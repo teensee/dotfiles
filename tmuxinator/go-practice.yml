@@ -6,3 +6,6 @@ windows:
       layout: main-vertical
       panes:
         - cd csv-parser
+  - AI-agent[opencode]:
+      panes:
+        - opencode

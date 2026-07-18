@@ -69,7 +69,7 @@ alias cat=bat
 
 # Brew helpers
 brewadd() { brew bundle add --install --file=~/Brewfile "$@"; }
-brewup() { brew update && brew upgrade && brew bundle dump --file=~/Brewfile --force && brew autoremove; }
+brewup() { brew update && brew upgrade -y && brew bundle dump --file=~/Brewfile --force && brew autoremove; }
 
 ### < alias section ###
 

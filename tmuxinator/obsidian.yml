@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - nvim
-  - claude:
-      panes: claude
+  - AI-agent[opencode]:
+      panes: opencode
