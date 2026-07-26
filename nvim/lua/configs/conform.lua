@@ -20,6 +20,7 @@ return {
         html = { "prettier" },
         yaml = { "prettier" },
         json = { "prettier" },
+        jsonc = { "prettier" },
 
         -- python
         python = { "ruff_format" },

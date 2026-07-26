@@ -1,4 +1,6 @@
 .claude
+
+# macOS
 .DS_Store
 
 # Per-host git identity overrides (copy from *.example)

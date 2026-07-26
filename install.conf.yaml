@@ -19,7 +19,6 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitconfig-etp: git/gitconfig-etp
     ~/.gitignore_global: git/gitignore_global
-    ~/.tool-versions: asdf/tool-versions
 
     # Терминал и tmux
     ~/.config/ghostty/config: ghostty/config

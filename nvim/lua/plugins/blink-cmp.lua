@@ -14,7 +14,7 @@ return {
             },
             sources = {
                 default = {
-                    "copilot",
+                    -- "copilot",
                     "lsp",
                     "path",
                     "snippets",
@@ -26,12 +26,12 @@ return {
                     plsql = { "dadbod", "snippets", "buffer" },
                 },
                 providers = {
-                    copilot = {
-                        name = "copilot",
-                        module = "blink-cmp-copilot",
-                        score_offset = 100,
-                        async = true,
-                    },
+                    -- copilot = {
+                    --     name = "copilot",
+                    --     module = "blink-cmp-copilot",
+                    --     score_offset = 100,
+                    --     async = true,
+                    -- },
                     dadbod = {
                         name = "Dadbod",
                         module = "vim_dadbod_completion.blink",
@@ -48,6 +48,7 @@ return {
     -- copilot inside blink cmp completions
     {
         "giuxtaposition/blink-cmp-copilot",
+        enabled = false,
         after = { "copilot.lua" },
     },
 }

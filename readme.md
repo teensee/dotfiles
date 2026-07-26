@@ -37,7 +37,7 @@ Restart terminal to apply shell changes.
 - **Ghostty** — terminal emulator config
 - **Homebrew** — full toolchain: go, php, node, python, lazygit, lazydocker, k6, etc.
 
-See [documentation.md](documentation.md) for detailed reference.
+See [AGENTS.md](AGENTS.md) for detailed reference (maintained for AI coding agents).
 
 ## License
 

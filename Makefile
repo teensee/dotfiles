@@ -2,9 +2,9 @@ SHELL := /bin/bash
 DOTFILES_DIR := $(shell pwd)
 BACKUP_DIR := $(HOME)/.dotfiles-backup-$(shell date +%Y%m%d-%H%M%S)
 
-BACKUP_TARGETS := .zshrc .gitconfig .gitignore_global .tool-versions .ideavimrc Brewfile \
+BACKUP_TARGETS := .zshrc .gitconfig .gitconfig-etp .gitignore_global .ideavimrc Brewfile \
                   .config/nvim .config/fish .config/ghostty .config/tmux .config/htop \
-                  .config/lazygit .config/tmuxinator
+                  .config/lazygit .config/tmuxinator .config/opencode
 
 .PHONY: help install update backup restore clean check
 
