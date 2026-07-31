@@ -29,6 +29,7 @@
     # Редакторы
     ~/.config/nvim: nvim
     ~/.ideavimrc: vim/ideavimrc
+    ~/.config/zed: zed
 
     # Fish shell
     ~/.config/fish: fish
@@ -36,6 +37,7 @@
     # Утилиты
     ~/.config/lazygit: lazygit
     ~/.config/opencode: opencode
+    ~/.config/btop/btop.conf: btop/btop.conf
 
     # Package managers
     ~/Brewfile: brew/Brewfile
@@ -45,6 +47,8 @@
     - ~/.config/ghostty
     - ~/.config/tmux
     - ~/.config/htop
+    - ~/.config/zed
+    - ~/.config/btop
     - ~/.local/bin
 
 - shell:

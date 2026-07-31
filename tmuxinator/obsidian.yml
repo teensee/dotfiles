@@ -7,4 +7,5 @@ windows:
       panes:
         - nvim
   - AI-agent[opencode]:
-      panes: opencode
+      panes:
+        - opencode

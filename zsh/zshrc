@@ -22,6 +22,9 @@ export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 # Add Go to PATH
 export PATH="/opt/homebrew/opt/go/bin:$PATH"
 
+# Add codegraph
+export PATH="$HOME/.local/bin:$PATH"
+
 #asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # append completions to fpath

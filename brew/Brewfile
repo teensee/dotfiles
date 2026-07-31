@@ -140,3 +140,5 @@ go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/swaggo/swag/cmd/swag"
 go "github.com/a-h/templ/cmd/templ"
 npm "intelephense"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"

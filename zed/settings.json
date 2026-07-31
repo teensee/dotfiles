@@ -1,0 +1,90 @@
+{
+  "proxy": "",
+  "diff_view_style": "split",
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "mode": "plan",
+        "effort": "max"
+      },
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "enable_feedback": false,
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "sort_by": "path",
+    "group_by": "status",
+    "tree_view": false,
+    "dock": "left"
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "which_key": {
+    "delay_ms": 50,
+    "enabled": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+    "provider": "zed"
+  },
+  "icon_theme": "JetBrains Icons Dark",
+  "vim_mode": true,
+  "base_keymap": "JetBrains",
+  "ui_font_size": 16,
+  "buffer_font_size": 13.0,
+  "relative_line_numbers": "enabled",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "JetBrains Dark"
+  },
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 13
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "languages": {
+    "PHP": {
+      "language_servers": ["intelephense", "!phpactor"],
+      "formatter": {
+        "external": {
+          "command": "php-cs-fixer",
+          "arguments": ["fix", "--using-cache=no", "{buffer_path}"]
+        }
+      }
+    },
+    "Go": {
+      "format_on_save": "on",
+      "tab_size": 4,
+      "hard_tabs": true
+    }
+  }
+}

@@ -8,5 +8,7 @@ windows:
       layout: main-vertical
       panes:
         - nvim
-  - AI-agent[opencode]: opencode
+  - AI-agent[opencode]:
+      panes:
+        - opencode
   - cmd: ~
