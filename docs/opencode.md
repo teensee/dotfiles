@@ -6,7 +6,7 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 
 | File             | Purpose                                                                                                                                                                                   |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `opencode.jsonc` | Model (`opencode-go/deepseek-v4-pro`), LSP enabled, [superpowers](https://github.com/obra/superpowers) plugin, MCP `codegraph` server, git permission rules (destructive commands denied) |
+| `opencode.jsonc` | Model (`opencode-go/deepseek-v4-pro`), custom `vesna` provider (`@ai-sdk/openai-compatible`, VesnaCode, key via `VESNA_API_KEY` env), LSP enabled, [superpowers](https://github.com/obra/superpowers) plugin, MCP `codegraph` server, git permission rules (destructive commands denied) |
 | `tui.jsonc`      | Mouse disabled, vim-like Ctrl+U/D scroll                                                                                                                                                  |
 
 ## Subagents (`agent/`)

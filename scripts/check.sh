@@ -3,7 +3,7 @@ set -euo pipefail
 
 source "$(dirname "$0")/_lib.sh"
 
-echo "[*] Checking managed symlinks..."
+log_info "Checking managed symlinks..."
 
 for config in "${TARGETS[@]}"; do
 	path="$HOME/$config"

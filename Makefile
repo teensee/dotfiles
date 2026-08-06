@@ -14,6 +14,7 @@ install:
 	@$(SCRIPTS)/backup.sh
 	@echo "[*] Installing dotfiles..."
 	./install
+	@$(SCRIPTS)/brew.sh
 	@echo "[+] Installation completed!"
 	@echo "[!] Restart terminal to apply changes"
 
@@ -24,6 +25,7 @@ update:
 	git pull origin master
 	git submodule update --init --recursive
 	./install
+	@$(SCRIPTS)/brew.sh
 	@echo "[+] Update completed!"
 
 backup:

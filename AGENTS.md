@@ -7,17 +7,17 @@ Personal macOS dotfiles for Go/PHP development, managed by [Dotbot](https://gith
 ## Commands
 
 ```
-make install      # backup + dotbot install
-make update       # git pull + submodule update + re-run dotbot
+make install      # backup + dotbot install + brew check
+make update       # backup + git pull + submodule update + dotbot install + brew check
 make backup       # snapshot configs to ~/.dotfiles-backup-TIMESTAMP
 make check        # check symlink status
 make clean        # nvim cache + zcompdump
 make clean-tmux   # wipe tmux-resurrect snapshots
-make restore      # restore from latest backup
+make restore      # restore from latest backup (interactive confirmation)
 make help         # show all available commands
 ```
 
-`./install` is the raw dotbot runner; `make install` wraps it with a backup step.
+`./install` is the raw dotbot runner; `make install` wraps it with a backup step and brew check.
 
 ## Adding new configs
 
@@ -39,7 +39,8 @@ cp git/gitconfig-work.example git/gitconfig-work
 
 - `install.conf.yaml` — single source of truth for symlinks; `relink: true` means re-running is safe
 - Dotbot is a git submodule (`.gitmodules` → `dotbot/`)
-- `brew/Brewfile` — Homebrew packages, auto-installed on `make install`
+- `scripts/` — shell scripts called by Makefile; shared helpers in `_lib.sh`
+- `brew/Brewfile` — Homebrew packages, verified on `make install`/`make update`
 - TPM plugin path is `~/.config/tmux/plugins/`
 - `zed/conversations/` and `zed/prompts/` are runtime data (gitignored)
 

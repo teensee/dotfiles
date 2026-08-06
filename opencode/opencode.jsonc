@@ -1,12 +1,34 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "opencode-go/deepseek-v4-pro",
+  "provider": {
+    "vesna": {
+      "name": "vesna",
+      "npm": "@ai-sdk/openai-compatible",
+      "models": {
+        "VesnaCode": {
+          "name": "VesnaCode"
+        }
+      },
+      "options": {
+        "baseURL": "https://ai-api.vesna-tech.ru",
+        "apiKey": "{env:VESNA_API_KEY}",
+        "queryParams": {
+          "tool_call_parser": "qwen3_coder"
+        }
+      }
+    }
+  },
   "lsp": true,
   "formatter": true,
   "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
   "permission": {
     "bash": {
-      "*": "allow",
+      "*": "ask",
+      "ls*": "allow",
+      "pwd": "allow",
+      "which*": "allow",
+      "rg*": "allow",
       "git *": "deny",
       "git log*": "allow",
       "git status*": "allow",

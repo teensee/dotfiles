@@ -9,19 +9,19 @@ mkdir -p "$BACKUP_DIR"
 count=0
 
 for config in "${TARGETS[@]}"; do
-    src="$HOME/$config"
-    if [ -e "$src" ] || [ -L "$src" ]; then
-        dest_dir="$BACKUP_DIR/$(dirname "$config")"
-        mkdir -p "$dest_dir"
-        cp -RP "$src" "$dest_dir/"
-        count=$((count + 1))
-        echo "    Backing up $config"
-    fi
+	src="$HOME/$config"
+	if [ -e "$src" ] || [ -L "$src" ]; then
+		dest_dir="$BACKUP_DIR/$(dirname "$config")"
+		mkdir -p "$dest_dir"
+		cp -RP "$src" "$dest_dir/"
+		count=$((count + 1))
+		log_item "Backing up $config"
+	fi
 done
 
 if [ "$count" -eq 0 ]; then
-    rmdir "$BACKUP_DIR" 2>/dev/null || true
-    echo "[*] Nothing to back up"
+	rmdir "$BACKUP_DIR" 2>/dev/null || true
+	log_info "Nothing to back up"
 else
-    echo "[+] Backup created in $BACKUP_DIR ($count items)"
+	log_ok "Backup created in $BACKUP_DIR ($count items)"
 fi
