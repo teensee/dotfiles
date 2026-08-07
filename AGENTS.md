@@ -44,6 +44,16 @@ cp git/gitconfig-work.example git/gitconfig-work
 - TPM plugin path is `~/.config/tmux/plugins/`
 - `zed/conversations/` and `zed/prompts/` are runtime data (gitignored)
 
+### OpenCode workflow
+
+`/res → /plan → /go → /review → /clean` — human-in-the-loop pipeline for task implementation:
+
+1. **`/res`** (research-agent) — reads `task.md`, analyzes codebase, creates `task-research.md`
+2. **`/plan`** (architect-agent) — reads research, studies patterns, creates `task-plan.md` (signatures, SQL, config — no implementation)
+3. **`/go`** (build-agent) — dispatches plan steps to specialized subagents (go-dev, symfony-dev, etc.), creates `task-log.md`
+4. **`/review`** (code-reviewer agent) — reviews `git diff` against plan, outputs findings
+5. **`/clean`** (build-agent) — removes `task-*.md` files
+
 ### Per-tool reference
 
 - [docs/nvim.md](docs/nvim.md)

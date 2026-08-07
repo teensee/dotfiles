@@ -26,6 +26,6 @@ task-log.md
 ```
 # коммитим
 .opencode/commands/
-.opencode/agents/
+.opencode/agent/
 AGENTS.md
 ```

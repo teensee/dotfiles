@@ -9,6 +9,10 @@ brew "asdf"
 brew "bat"
 # Parser generator
 brew "bison"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # General-purpose scripting language
@@ -140,5 +144,3 @@ go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/swaggo/swag/cmd/swag"
 go "github.com/a-h/templ/cmd/templ"
 npm "intelephense"
-# Resource monitor. C++ version and continuation of bashtop and bpytop
-brew "btop"

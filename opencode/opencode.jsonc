@@ -7,17 +7,17 @@
       "npm": "@ai-sdk/openai-compatible",
       "models": {
         "VesnaCode": {
-          "name": "VesnaCode"
-        }
+          "name": "VesnaCode",
+        },
       },
       "options": {
         "baseURL": "https://ai-api.vesna-tech.ru",
         "apiKey": "{env:VESNA_API_KEY}",
         "queryParams": {
-          "tool_call_parser": "qwen3_coder"
-        }
-      }
-    }
+          "tool_call_parser": "qwen3_coder",
+        },
+      },
+    },
   },
   "lsp": true,
   "formatter": true,
@@ -28,6 +28,8 @@
       "ls*": "allow",
       "pwd": "allow",
       "which*": "allow",
+      "head*": "allow",
+      "tail*": "allow",
       "rg*": "allow",
       "git *": "deny",
       "git log*": "allow",

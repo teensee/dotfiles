@@ -14,6 +14,9 @@ model: opencode-go/deepseek-v4-pro
 Делегируй реализацию специализированным агентам через Task tool по типу работы:
 - PHP/Symfony-код, Doctrine, Messenger → symfony-dev
 - Go-код, RabbitMQ, HTTP → go-dev
+- Python-код, FastAPI, Django → python-pro
+- Rust-код → rust-engineer
+- Zig-код → zig-dev
 - SQL, миграции, индексы → dba
 - Docker, CI/CD, bash-скрипты → devops
 - Написание тестов → test-writer
@@ -55,4 +58,4 @@ model: opencode-go/deepseek-v4-pro
 (Если отступил от плана — почему)
 ```
 
-После завершения скажи: "Реализация завершена → task-log.md. Проверь изменения через git diff."
+После завершения скажи: «Реализация завершена → task-log.md. Проверь изменения через git diff и запускай /review».
