@@ -7,6 +7,8 @@
 git/gitconfig-local
 git/gitconfig-work
 
-# Zed runtime data (conversations, prompts cache)
+# Zed runtime data
 zed/conversations/
 zed/prompts/
+zed/themes/*
+!zed/themes/.gitkeep

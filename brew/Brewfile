@@ -1,7 +1,6 @@
 tap "anomalyco/tap"
 tap "shivammathur/php"
 tap "symfony-cli/tap"
-tap "tabbyml/tabby"
 tap "teamookla/speedtest"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
@@ -35,8 +34,6 @@ brew "go"
 brew "goaccess"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
-# Improved top (interactive process viewer)
-brew "htop"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@77"
 # Lightweight and flexible command-line JSON processor
@@ -77,10 +74,6 @@ brew "ruff"
 brew "shfmt"
 # TOML toolkit written in Rust
 brew "taplo"
-# User interface to the TELNET protocol
-brew "telnet"
-# Programmatically correct mistyped console commands
-brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Manage complex tmux sessions easily
@@ -118,7 +111,6 @@ go "github.com/davidrjenni/reftools/cmd/fillswitch"
 go "github.com/onsi/ginkgo/v2/ginkgo"
 go "github.com/abice/go-enum"
 go "github.com/ramya-rao-a/go-outline"
-go "github.com/mdempsky/gocode"
 go "github.com/kisielk/godepgraph"
 go "mvdan.cc/gofumpt"
 go "golang.org/x/tools/cmd/goimports"
@@ -128,7 +120,6 @@ go "github.com/segmentio/golines"
 go "github.com/fatih/gomodifytags"
 go "github.com/abenz1267/gomvp"
 go "golang.org/x/tools/cmd/gonew"
-go "github.com/uudashr/gopkgs/v2/cmd/gopkgs"
 go "github.com/haya14busa/goplay/cmd/goplay"
 go "golang.org/x/tools/gopls"
 go "github.com/cweill/gotests/gotests"
@@ -139,7 +130,6 @@ go "github.com/josharian/impl"
 go "github.com/tmc/json-to-struct"
 go "github.com/golang-migrate/migrate/v4/cmd/migrate"
 go "go.uber.org/mock/mockgen"
-go "github.com/kyoh86/richgo"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/swaggo/swag/cmd/swag"
 go "github.com/a-h/templ/cmd/templ"

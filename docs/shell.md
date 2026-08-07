@@ -30,7 +30,6 @@ homebrew (`/opt/homebrew/bin` + `sbin`), bison, go, `~/.local/bin` (codegraph), 
 ### Integrations
 
 - **fzf** — key bindings + fuzzy completion; default command via `rg --files --hidden --glob "!.git"`
-- **thefuck** — lazy-loaded: function wraps `thefuck $(fc -ln -1)` to avoid startup delay
 - **zsh-syntax-highlighting** — sourced last (via homebrew path)
 
 ### External sources

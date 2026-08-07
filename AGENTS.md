@@ -42,7 +42,7 @@ cp git/gitconfig-work.example git/gitconfig-work
 - `scripts/` — shell scripts called by Makefile; shared helpers in `_lib.sh`
 - `brew/Brewfile` — Homebrew packages, verified on `make install`/`make update`
 - TPM plugin path is `~/.config/tmux/plugins/`
-- `zed/conversations/` and `zed/prompts/` are runtime data (gitignored)
+- `zed/conversations/`, `zed/prompts/`, and `zed/themes/*` are runtime data (gitignored; `.gitkeep` preserves the dir)
 
 ### OpenCode workflow
 

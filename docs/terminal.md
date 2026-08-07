@@ -18,10 +18,6 @@ Git TUI config.
 
 Resource monitor. `save_config_on_exit = true` — changes made in UI persist to the config file (and to the repo via symlink).
 
-## htop (`htop/htoprc`)
-
-Process monitor config (legacy, kept alongside btop).
-
 ## IdeaVim (`vim/ideavimrc`)
 
 Vim emulation for JetBrains IDEs.

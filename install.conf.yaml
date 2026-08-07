@@ -24,7 +24,6 @@
     ~/.config/ghostty/config: ghostty/config
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/tmuxinator: tmuxinator
-    ~/.config/htop/htoprc: htop/htoprc
 
     # Редакторы
     ~/.config/nvim: nvim
@@ -46,7 +45,6 @@
     - ~/.config
     - ~/.config/ghostty
     - ~/.config/tmux
-    - ~/.config/htop
     - ~/.config/zed
     - ~/.config/btop
     - ~/.local/bin

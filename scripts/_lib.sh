@@ -19,7 +19,6 @@ TARGETS=(
 	.config/btop/btop.conf
 	.config/fish
 	.config/ghostty/config
-	.config/htop/htoprc
 	.config/lazygit
 	.config/nvim
 	.config/opencode

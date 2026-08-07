@@ -94,9 +94,6 @@ source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-# Set up fuck (lazy-loaded to avoid startup delay)
-fuck() { eval $(thefuck $(fc -ln -1)); }
-
 # Syntax highlighting — must be last
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

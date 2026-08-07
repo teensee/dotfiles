@@ -1,57 +1,89 @@
 {
+  "prettier": {
+    "allowed": false
+  },
+  "restore_on_startup": "launchpad",
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "show_edit_predictions": false,
+  "show_wrap_guides": true,
+  "soft_wrap": "none",
+  "gutter": {
+    "folds": true,
+    "bookmarks": false
+  },
   "proxy": "",
   "diff_view_style": "split",
   "agent_servers": {
     "opencode": {
-      "default_config_options": {
-        "mode": "plan",
-        "effort": "max"
+      "favorite_config_option_values": {
+        "effort": [
+          "max"
+        ],
+        "model": [
+          "opencode-go/deepseek-v4-flash",
+          "opencode-go/deepseek-v4-pro"
+        ]
       },
-      "type": "registry"
+      "default_config_options": {
+        "model": "opencode-go/deepseek-v4-flash",
+        "mode": "build",
+        "effort": "max",
+      },
+      "type": "registry",
     },
     "github-copilot-cli": {
-      "type": "registry"
+      "type": "registry",
     },
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "project_panel": {
-    "dock": "left"
+    "hide_root": false,
+    "bold_folder_labels": false,
+    "folder_icons": true,
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "folder_icons": true,
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "agent": {
     "enable_feedback": false,
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
+    "folder_icons": true,
     "sort_by": "path",
     "group_by": "status",
     "tree_view": false,
-    "dock": "left"
+    "dock": "left",
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "which_key": {
     "delay_ms": 50,
-    "enabled": true
+    "enabled": true,
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "edit_predictions": {
+    "allow_data_collection": "no",
     "mode": "subtle",
-    "provider": "zed"
+    "provider": "zed",
   },
-  "icon_theme": "JetBrains Icons Dark",
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "vim_mode": true,
   "base_keymap": "JetBrains",
   "ui_font_size": 16,
@@ -60,31 +92,35 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "JetBrains Dark"
+    "dark": "One Dark Pro",
   },
   "terminal": {
+    "dock": "right",
     "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 13
+    "font_size": 13,
   },
   "git": {
     "inline_blame": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "languages": {
+    "Markdown": {
+      "soft_wrap": "prefer_line"
+    },
     "PHP": {
       "language_servers": ["intelephense", "!phpactor"],
       "formatter": {
         "external": {
           "command": "php-cs-fixer",
-          "arguments": ["fix", "--using-cache=no", "{buffer_path}"]
-        }
-      }
+          "arguments": ["fix", "--using-cache=no", "{buffer_path}"],
+        },
+      },
     },
     "Go": {
       "format_on_save": "on",
       "tab_size": 4,
-      "hard_tabs": true
-    }
-  }
+      "hard_tabs": true,
+    },
+  },
 }
