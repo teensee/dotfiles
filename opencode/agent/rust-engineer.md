@@ -3,7 +3,7 @@ description: Rust разработчик.
 TRIGGER: файлы *.rs, Cargo.toml; системы, CLI, WebAssembly, FFI, высокопроизводительный код.
 SKIP: Go, PHP, Python, SQL без Rust-контекста.
 mode: subagent
-model: opencode-go/deepseek-v4-pro
+model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

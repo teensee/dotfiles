@@ -16,11 +16,15 @@ homebrew (`/opt/homebrew/bin` + `sbin`), bison, go, `~/.local/bin` (codegraph), 
 
 ### Aliases
 
-| Alias | Target |
-|---|---|
-| `mux` | `tmuxinator` |
+| Alias     | Target                                 |
+| --------- | -------------------------------------- |
+| `mux`     | `tmuxinator`                           |
 | `nvnotes` | `cd ~/Library/.../ObsidianNotes; nvim` |
-| `cat` | `bat` |
+| `cat`     | `bat`                                  |
+| `ls`      | `eza` (icons, colors, git status)      |
+| `ll`      | `eza -alF` (detailed list)             |
+| `la`      | `eza -a` (incl. hidden)                |
+| `lt`      | `eza --tree` (tree view)               |
 
 ### Brew helpers
 
@@ -29,7 +33,8 @@ homebrew (`/opt/homebrew/bin` + `sbin`), bison, go, `~/.local/bin` (codegraph), 
 
 ### Integrations
 
-- **fzf** — key bindings + fuzzy completion; default command via `rg --files --hidden --glob "!.git"`
+- **fzf** — key bindings + fuzzy completion; default command via `fd --type f --hidden --follow --exclude .git`
+- **zoxide** — smart `cd` (`z` command); init via `eval "$(zoxide init zsh)"`
 - **zsh-syntax-highlighting** — sourced last (via homebrew path)
 
 ### External sources

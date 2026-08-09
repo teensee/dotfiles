@@ -21,47 +21,6 @@
   },
   "lsp": true,
   "formatter": true,
-  "agent": {
-    "architect": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "code-reviewer": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "dba": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "debugger": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "devops": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "go-dev": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "python-pro": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "research": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "rust-engineer": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "security-auditor": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "symfony-dev": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "test-writer": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-    "zig-dev": {
-      "model": "opencode-go/deepseek-v4-flash"
-    },
-  },
   "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
   "permission": {
     "bash": {

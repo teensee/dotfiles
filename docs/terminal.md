@@ -18,6 +18,20 @@ Git TUI config.
 
 Resource monitor. `save_config_on_exit = true` — changes made in UI persist to the config file (and to the repo via symlink).
 
+## Modern CLI Tools
+
+Drop-in replacements for standard Unix tools. All support `--help`.
+
+| Instead of | Use                        | Notes                                           |
+| ---------- | -------------------------- | ----------------------------------------------- |
+| `ls`       | `eza` / `ll` / `la` / `lt` | Drop-in. Extras: `--tree`, `--git`, icons       |
+| `find`     | `fd`                       | `fd PATTERN` (regex), `fd -e go` (by extension) |
+| `cd`       | `z DIR` (zoxide)           | Frecency-based; regular `cd` still works        |
+| `git diff` | `delta`                    | Auto via gitconfig                              |
+| `du`       | `dust`                     | `dust` (sorted tree), `dust -d 1` (one level)   |
+| `df`       | `duf`                      | Pretty table, no args needed                    |
+| `man`      | `tldr`                     | `tldr COMMAND` for usage examples               |
+
 ## IdeaVim (`vim/ideavimrc`)
 
 Vim emulation for JetBrains IDEs.

@@ -3,7 +3,7 @@ description: Debugger — системная отладка, поиск root cau
 TRIGGER: баги, падения, нестабильное поведение, race conditions, утечки памяти.
 SKIP: реализация фич, написание нового кода.
 mode: subagent
-model: opencode-go/deepseek-v4-pro
+model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow
@@ -29,6 +29,7 @@ You are a senior debugger. Find root cause and propose a fix.
 - **Binary search:** comment out/disable half the code, localize
 - **Differential debugging:** compare working vs non-working scenario
 - **Minimal reproduction:** strip everything, keep only the failing path
+- **System investigation:** prefer `fd` for file search, `dust` for disk usage, `tldr` for command help. `--help` on any tool.
 
 ## Problem types
 

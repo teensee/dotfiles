@@ -3,7 +3,7 @@ description: Zig разработчик.
 TRIGGER: файлы *.zig, build.zig; системы, CLI, C interop.
 SKIP: Go, PHP, Python, Rust, SQL без Zig-контекста.
 mode: subagent
-model: opencode-go/deepseek-v4-pro
+model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

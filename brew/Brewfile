@@ -18,14 +18,24 @@ brew "curl"
 brew "php"
 # Dependency Manager for PHP
 brew "composer"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
+# More intuitive version of du in rust
+brew "dust"
 # Utilities for the ext2, ext3, and ext4 file systems
 brew "e2fsprogs"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
@@ -74,6 +84,8 @@ brew "ruff"
 brew "shfmt"
 # TOML toolkit written in Rust
 brew "taplo"
+# Very fast implementation of tldr in Rust
+brew "tealdeer"
 # Terminal multiplexer
 brew "tmux"
 # Manage complex tmux sessions easily
@@ -86,6 +98,8 @@ brew "tree-sitter-cli"
 brew "wget"
 # Command-line XML and HTML beautifier and content extractor
 brew "xq"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
@@ -130,6 +144,7 @@ go "github.com/josharian/impl"
 go "github.com/tmc/json-to-struct"
 go "github.com/golang-migrate/migrate/v4/cmd/migrate"
 go "go.uber.org/mock/mockgen"
+go "github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/swaggo/swag/cmd/swag"
 go "github.com/a-h/templ/cmd/templ"

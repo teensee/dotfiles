@@ -5,6 +5,7 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/vladislav/.gitignore_global
+	pager = delta
 
 [alias]
     stats = "!f() { git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s\\nremoved lines: %s\\ntotal lines: %s\\n\", add, subs, loc }' -; }; f"
@@ -19,3 +20,16 @@
 [include]
     path = ~/.gitconfig-local
     path = ~/.gitconfig-work
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false

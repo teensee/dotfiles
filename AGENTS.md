@@ -44,6 +44,20 @@ cp git/gitconfig-work.example git/gitconfig-work
 - TPM plugin path is `~/.config/tmux/plugins/`
 - `zed/conversations/`, `zed/prompts/`, and `zed/themes/*` are runtime data (gitignored; `.gitkeep` preserves the dir)
 
+## CLI Tools
+
+Modern replacements for standard Unix tools. All support `--help` for usage.
+
+| Instead of | Use                        | Notes                                                             |
+| ---------- | -------------------------- | ----------------------------------------------------------------- |
+| `ls`       | `eza` / `ll` / `la` / `lt` | Drop-in compatible. Extras: `--tree`, `--git`, icons              |
+| `find`     | `fd`                       | Different syntax: `fd PATTERN` (regex), `fd -e go` (by extension) |
+| `cd`       | `z DIR` (zoxide)           | Frecency-based jumping; regular `cd` still works                  |
+| `git diff` | `delta`                    | Transparent — auto via gitconfig                                  |
+| `du`       | `dust`                     | `dust` (sorted tree), `dust -d 1` (one level)                     |
+| `df`       | `duf`                      | Pretty table, no args needed                                      |
+| `man`      | `tldr`                     | `tldr COMMAND` — usage examples, not full docs                    |
+
 ### OpenCode workflow
 
 `/res → /plan → /go → /review → /clean` — human-in-the-loop pipeline for task implementation:

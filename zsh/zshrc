@@ -71,6 +71,12 @@ alias nvnotes='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Obsid
 alias mux=tmuxinator
 alias cat=bat
 
+# eza — modern ls replacement
+alias ls='eza'
+alias ll='eza -alF'
+alias la='eza -a'
+alias lt='eza --tree'
+
 # Brew helpers
 brewadd() { brew bundle add --install --file=~/Brewfile "$@"; }
 brewup() { brew update && brew upgrade -y && brew bundle dump --file=~/Brewfile --force && brew autoremove; }
@@ -91,9 +97,13 @@ if [ -f "${___my_vmoptions_shell_file}" ]; then . "${___my_vmoptions_shell_file}
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# zoxide — smart cd
+eval "$(zoxide init zsh)"
+
 # Syntax highlighting — must be last
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

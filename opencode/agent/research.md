@@ -1,7 +1,7 @@
 ---
 description: Research task subagent — read-only except writing task-research.md
 mode: subagent
-model: opencode-go/deepseek-v4-pro
+model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   glob: allow
@@ -18,6 +18,7 @@ do NOT propose solutions.
 ## Methodology
 
 1. **Find** — identify all files affected by the task:
+   - **File discovery:** use `fd PATTERN` (not `find`). Content: `rg`. All tools accept `--help`.
    - Code (controllers, services, entities, repositories, handlers)
    - Configuration (routes, DI, services)
    - Migrations and DB schemas
