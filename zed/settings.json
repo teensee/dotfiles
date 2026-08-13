@@ -1,4 +1,28 @@
 {
+  "zoomed_padding": true,
+  "tab_bar": {
+    "show_tab_bar_buttons": true
+  },
+  "mouse_wheel_zoom": false,
+  "file_finder": {
+    "include_ignored": "smart"
+  },
+  "search": {
+    "include_ignored": false
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_status_icon": true
+  },
+  "status_bar": {
+    "line_endings_button": true
+  },
+  "use_system_window_tabs": true,
+  "tabs": {
+    "show_diagnostics": "off",
+    "file_icons": true,
+    "git_status": false
+  },
   "prettier": {
     "allowed": false
   },
@@ -30,19 +54,14 @@
       },
       "default_config_options": {
         "model": "opencode-go/deepseek-v4-flash",
-        "mode": "build",
+        "mode": "plan",
         "effort": "max",
       },
       "type": "registry",
     },
-    "github-copilot-cli": {
-      "type": "registry",
-    },
-    "claude-acp": {
-      "type": "registry",
-    },
   },
   "project_panel": {
+    "auto_fold_dirs": false,
     "hide_root": false,
     "bold_folder_labels": false,
     "folder_icons": true,
@@ -56,6 +75,8 @@
     "dock": "left",
   },
   "agent": {
+    "show_turn_stats": true,
+    "sidebar_side": "right",
     "enable_feedback": false,
     "dock": "right",
     "favorite_models": [],
@@ -83,7 +104,7 @@
     "mode": "subtle",
     "provider": "zed",
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": "JetBrains New UI Icons (Dark)",
   "vim_mode": true,
   "base_keymap": "JetBrains",
   "ui_font_size": 16,
@@ -92,15 +113,18 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark Pro",
+    "dark": "Catppuccin Macchiato",
   },
   "terminal": {
     "dock": "right",
     "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 13,
+    "font_size": 13.0,
   },
   "git": {
     "inline_blame": {
+      "delay_ms": 500,
+      "show_commit_summary": true,
+      "location": "status_bar",
       "enabled": true,
     },
   },
