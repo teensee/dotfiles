@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode-go/deepseek-v4-pro",
+  "model": "opencode-go/deepseek-v4-flash",
   "provider": {
     "vesna": {
       "name": "vesna",
@@ -21,7 +21,6 @@
   },
   "lsp": true,
   "formatter": true,
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
   "permission": {
     "bash": {
       "*": "ask",
@@ -30,7 +29,10 @@
       "which*": "allow",
       "head*": "allow",
       "tail*": "allow",
+      "echo*": "allow",
+      "cat*": "allow",
       "rg*": "allow",
+      "grep*": "allow",
       "git *": "deny",
       "git log*": "allow",
       "git status*": "allow",
