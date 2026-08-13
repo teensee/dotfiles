@@ -91,6 +91,13 @@ if command -v ngrok &>/dev/null; then
     eval "$(ngrok completion)"
 fi
 
+# custom alias for opencode-fork in vesna
+vesnacode() {
+    local project="${1:-$PWD}"
+    [[ "$project" != /* ]] && project="$PWD/$project"
+    bun run --cwd $HOME/Programming/fork-oc dev "$project"
+}
+
 # Added with JetBrains crack-script
 ___my_vmoptions_shell_file="${HOME}/.jetbrains.vmoptions.sh"
 if [ -f "${___my_vmoptions_shell_file}" ]; then . "${___my_vmoptions_shell_file}"; fi
