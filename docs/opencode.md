@@ -41,7 +41,7 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 
 ## Structure
 
-- `skills/` — vendored [superpowers](https://github.com/obra/superpowers) skills (markdown + scripts), no plugin dependency; snapshot, updates manual
+- `skills/` — vendored [superpowers](https://github.com/obra/superpowers) skills (markdown + scripts), no plugin dependency; snapshot, updates manual. MIT © 2025 Jesse Vincent — `skills/LICENSE`
 - `plugin/` — reserved for local plugins
 - Dependencies: `package.json` + `node_modules` (ignored, not tracked)
 - `rework-agents.md` — план доработки агентов (чеклист)

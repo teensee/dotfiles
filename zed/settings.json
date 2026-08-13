@@ -54,7 +54,7 @@
       },
       "default_config_options": {
         "model": "opencode-go/deepseek-v4-flash",
-        "mode": "plan",
+        "mode": "build",
         "effort": "max",
       },
       "type": "registry",

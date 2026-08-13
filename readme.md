@@ -41,4 +41,6 @@ See [AGENTS.md](AGENTS.md) for detailed reference (maintained for AI coding agen
 
 ## License
 
-Unlicense
+[MIT](LICENSE) — own files.
+
+Vendored [superpowers](https://github.com/obra/superpowers) skills in `opencode/skills/` — MIT © 2025 Jesse Vincent (see `opencode/skills/LICENSE`).
