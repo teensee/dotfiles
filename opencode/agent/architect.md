@@ -1,7 +1,7 @@
 ---
 description: Architect — reads task-research.md, produces detailed implementation plan in task-plan.md
 mode: subagent
-model: opencode-go/deepseek-v4-flash
+model: opencode-go/deepseek-v4-pro
 permission:
   read: allow
   glob: allow

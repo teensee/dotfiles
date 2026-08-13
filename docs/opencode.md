@@ -6,7 +6,7 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 
 | File             | Purpose                                                                                                                                                                                                                                                                                                                             |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `opencode.jsonc` | Model `opencode-go/deepseek-v4-pro`, custom `vesna` provider (`@ai-sdk/openai-compatible`, VesnaCode, key via `VESNA_API_KEY` env), LSP enabled, [superpowers](https://github.com/obra/superpowers) plugin, MCP `codegraph` server, git permission rules (destructive commands denied) — model per subagent задаётся в `agent/*.md` |
+| `opencode.jsonc` | Model `opencode-go/deepseek-v4-flash`, custom `vesna` provider (`@ai-sdk/openai-compatible`, VesnaCode, key via `VESNA_API_KEY` env), LSP enabled, MCP `codegraph` server, git permission rules (destructive commands denied) — model per subagent задаётся в `agent/*.md` |
 | `tui.jsonc`      | Mouse disabled, vim-like Ctrl+U/D scroll                                                                                                                                                                                                                                                                                            |
 
 ## Subagents (`agent/`)
@@ -27,6 +27,8 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 | `test-writer`      | Тесты: Codeception, PHPUnit, Go table-driven           |
 | `zig-dev`          | Zig: systems, C interop, comptime                      |
 
+Модели: reasoning-агенты (`research`, `architect`, `code-reviewer`, `debugger`, `security-auditor`) — `deepseek-v4-pro`; `dba` — `glm-5`; имплементеры и `test-writer` — `deepseek-v4-flash`.
+
 ## Slash commands (`commands/`)
 
 | Command   | Agent         | Purpose                                      |
@@ -39,6 +41,7 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 
 ## Structure
 
+- `skills/` — vendored [superpowers](https://github.com/obra/superpowers) skills (markdown + scripts), no plugin dependency; snapshot, updates manual
 - `plugin/` — reserved for local plugins
 - Dependencies: `package.json` + `node_modules` (ignored, not tracked)
 - `rework-agents.md` — план доработки агентов (чеклист)
