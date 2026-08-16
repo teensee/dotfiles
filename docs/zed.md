@@ -17,7 +17,7 @@ Zed editor config — symlinked as `~/.config/zed`.
 - **Wrap guides**: enabled
 - **Gutter**: folds on, bookmarks off
 - **Restore on startup**: launchpad
-- **Prettier**: disabled
+- **Prettier**: enabled (built-in), markdown hard-wrap 120 chars via `.prettierrc.json` in repo root
 - **Telemetry**: diagnostics on, metrics off, anthropic retention off
 
 ### Agent servers
