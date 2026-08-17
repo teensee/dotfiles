@@ -43,7 +43,6 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 | `/plan`    | architect     | План: task-research.md → task-plan.md       |
 | `/go`      | build         | Реализация: план → делегирование спецагентам, task-log.md |
 | `/review`  | code-reviewer | Ревью: git diff + план → отчёт              |
-| `/commit`  | build         | Черновик сообщения коммита (не коммитит)    |
 | `/clean`   | build         | Удаление `.opencode/work/<branch>/`         |
 | `/pg-ro`   | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
 

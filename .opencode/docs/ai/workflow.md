@@ -1,6 +1,6 @@
 # OpenCode workflow
 
-Таск-флоу по бранчам: `/task → /res → /plan → /go → /review → /commit → /clean`.
+Таск-флоу по бранчам: `/task → /res → /plan → /go → /review → /clean`.
 
 Рабочие файлы задачи лежат в заигноренной директории `.opencode/work/<branch>/` (бранч текущий):
 
@@ -11,7 +11,6 @@
 | `/plan` | architect | читает research, изучает паттерны, создаёт `task-plan.md` (скелеты, без кода) |
 | `/go` | build | делегирует шаги плана специалистам (go-dev, symfony-dev, ...), создаёт `task-log.md` |
 | `/review` | code-reviewer | ревью `git diff` против плана, отчёт по критичности |
-| `/commit` | build | черновик сообщения коммита (Conventional Commits), сам не коммитит |
 | `/clean` | build | удаляет `.opencode/work/<branch>/` |
 | `/pg-ro` | build | напоминалка: рецепт read-only пользователя Postgres для MCP |
 

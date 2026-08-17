@@ -52,5 +52,5 @@ by the user.
 
 Task files live in the gitignored `.opencode/work/<current-branch>/` directory of the current repo
 (not in the working tree). Use the pipeline:
-`/task → /res → /plan → /go → /review → /commit → /clean`. See
+`/task → /res → /plan → /go → /review → /clean`. See
 [`.opencode/docs/ai/workflow.md`](.opencode/docs/ai/workflow.md) for details.

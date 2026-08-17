@@ -23,7 +23,7 @@
 - `task-plan.md` — план реализации (команда `/plan`)
 - `task-log.md` — лог реализации (команда `/go`)
 
-Пайплайн: `/task → /res → /plan → /go → /review → /commit → /clean`.
+Пайплайн: `/task → /res → /plan → /go → /review → /clean`.
 
 Текущий бранч определяй через `git branch --show-current` (если пусто —
 `git rev-parse --abbrev-ref HEAD`). Рабочую директорию не коммить — `.opencode/` в проектах
