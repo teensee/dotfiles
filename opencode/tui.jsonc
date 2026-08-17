@@ -5,6 +5,6 @@
     "messages_half_page_up": "ctrl+u",
     "messages_half_page_down": "ctrl+d",
     "dialog.select.page_up": "ctrl+u",
-    "dialog.select.page_down": "ctrl+d"
-  }
+    "dialog.select.page_down": "ctrl+d",
+  },
 }

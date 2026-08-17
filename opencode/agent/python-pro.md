@@ -1,6 +1,8 @@
 ---
 description: Python разработчик.
-TRIGGER: файлы *.py, pyproject.toml, requirements.txt; FastAPI, Django, Flask, Pydantic, SQLAlchemy, Celery.
+TRIGGER:
+  файлы *.py, pyproject.toml, requirements.txt; FastAPI, Django, Flask, Pydantic, SQLAlchemy,
+  Celery.
 SKIP: Go, PHP, SQL без Python-контекста.
 mode: subagent
 model: opencode-go/deepseek-v4-flash

@@ -1,6 +1,8 @@
 ---
 description: Symfony/PHP backend разработчик.
-TRIGGER: файлы *.php, composer.json; Symfony, Doctrine ORM, Messenger, API Platform, сериализация, миграции, DI, события.
+TRIGGER:
+  файлы *.php, composer.json; Symfony, Doctrine ORM, Messenger, API Platform, сериализация,
+  миграции, DI, события.
 SKIP: Go-код, чистый SQL без PHP-контекста, тесты (→ test-writer).
 mode: subagent
 model: opencode-go/deepseek-v4-flash

@@ -1,17 +1,17 @@
 ---
-description: Ревью реализации — читает task-*.md, git diff, проводит ревью кода
+description: Ревью реализации — читает task-*.md текущего бранча, git diff, проводит ревью кода
 agent: code-reviewer
 subtask: true
 model: opencode-go/deepseek-v4-pro
 ---
 
-Прочитай task-plan.md и task-log.md (если есть) в корне проекта.
+Определи текущий бранч: `git branch --show-current`; если пусто — `git rev-parse --abbrev-ref HEAD`.
 
-Твоя задача — провести ревью реализованных изменений.
+Рабочая директория задачи: `.opencode/work/<branch>/`.
 
 ## Шаги
 
-1. Прочитай task-plan.md — пойми что планировалось
+1. Прочитай task-plan.md из рабочей директории — пойми что планировалось
 2. Прочитай task-log.md — что было сделано
 3. Выполни `git diff` — посмотри фактические изменения
 4. Проведи ревью по своей методологии (security → correctness → performance → quality → tests)

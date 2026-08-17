@@ -1,31 +1,15 @@
 ---
-description: Очистка рабочих файлов задачи — удаляет task-*.md и обновляет .gitignore
+description: Очистка рабочих файлов задачи — удаляет .opencode/work/<branch>/
 agent: build
 subtask: true
 model: opencode-go/deepseek-v4-pro
 ---
 
-Удали файлы текущей задачи:
+Определи текущий бранч: `git branch --show-current`; если пусто — `git rev-parse --abbrev-ref HEAD`.
 
-- task-research.md
-- task-plan.md
-- task-log.md
+Удали рабочую директорию задачи `.opencode/work/<branch>/` (команда `rm -rf` — будет запрошено
+подтверждение).
 
-Очисти:
-- task.md
+НЕ трогай `.gitignore` — рабочие файлы и так игнорируются (`.opencode/work/`).
 
-Добавь в `.gitignore` чтобы рабочие файлы не попадали в коммиты:
-```
-task.md
-task-research.md
-task-plan.md
-task-log.md
-```
-
-А вот команды и агентов opencode — наоборот, коммить:
-```
-# коммитим
-.opencode/commands/
-.opencode/agent/
-AGENTS.md
-```
+После удаления скажи: «Рабочие файлы задачи удалены».

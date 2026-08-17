@@ -24,7 +24,7 @@
     "git_status": false
   },
   "prettier": {
-    "allowed": false
+    "allowed": true
   },
   "restore_on_startup": "launchpad",
   "telemetry": {
@@ -40,7 +40,7 @@
     "bookmarks": false
   },
   "proxy": "",
-  "diff_view_style": "split",
+  "diff_view_style": "unified",
   "agent_servers": {
     "opencode": {
       "favorite_config_option_values": {

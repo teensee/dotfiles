@@ -1,6 +1,8 @@
 ---
 description: Go разработчик.
-TRIGGER: файлы *.go, go.mod; микросервисы, CLI, RabbitMQ consumers, HTTP-серверы, XML/JSON парсинг, sqlx, goroutines.
+TRIGGER:
+  файлы *.go, go.mod; микросервисы, CLI, RabbitMQ consumers, HTTP-серверы, XML/JSON парсинг, sqlx,
+  goroutines.
 SKIP: PHP, SQL без Go-контекста, DevOps.
 mode: subagent
 model: opencode-go/deepseek-v4-flash

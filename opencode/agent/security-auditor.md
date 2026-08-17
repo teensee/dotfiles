@@ -32,6 +32,7 @@ Read-only on project code — you find and describe, you never fix.
 ## What to check
 
 ### Code
+
 - Input validation on all external inputs (HTTP params, headers, body, files)
 - Escape/parameterize all DB queries
 - XSS: output escaping, CSP headers
@@ -42,11 +43,13 @@ Read-only on project code — you find and describe, you never fix.
 - Weak crypto: MD5, SHA1, ECB mode, small keys
 
 ### Dependencies
+
 - `composer audit`, `cargo audit`, `pip-audit`, `npm audit`
 - Known CVEs in lock files
 - Transitive dependencies with vulnerabilities
 
 ### Infrastructure
+
 - Secrets in Docker images, env files, CI/CD logs
 - Open ports, unnecessary services
 - TLS: versions, cipher suites, HSTS
@@ -58,12 +61,11 @@ Read-only on project code — you find and describe, you never fix.
 
 Group by severity:
 
-**CRITICAL** — remotely exploitable, gains data/access
-**HIGH** — significant risk
-**MEDIUM** — best practice violation
-**LOW** — recommendations
+**CRITICAL** — remotely exploitable, gains data/access **HIGH** — significant risk **MEDIUM** — best
+practice violation **LOW** — recommendations
 
 Each item:
+
 - **File:line** — what was found
 - **Risk** — what could happen
 - **Fix** — how to fix (specific)

@@ -21,6 +21,7 @@
   },
   "lsp": true,
   "formatter": true,
+  "instructions": ["{env:HOME}/.config/opencode/instructions.md"],
   "permission": {
     "bash": {
       "*": "ask",
@@ -54,6 +55,20 @@
       "git stash show*": "allow",
       "git tag -l*": "allow",
       "git --*": "allow",
+      "git add*": "deny",
+      "git commit*": "deny",
+      "git push*": "deny",
+      "git pull*": "deny",
+      "git fetch*": "deny",
+      "git checkout*": "deny",
+      "git switch*": "deny",
+      "git merge*": "deny",
+      "git rebase*": "deny",
+      "git reset*": "deny",
+      "git restore*": "deny",
+      "git stash pop*": "deny",
+      "git clean*": "deny",
+      "git rm*": "deny",
     },
   },
   "mcp": {
@@ -61,6 +76,14 @@
       "type": "local",
       "command": ["codegraph", "serve", "--mcp"],
       "enabled": true,
+    },
+    "postgres": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-postgres"],
+      "environment": {
+        "DATABASE_URI": "{env:DATABASE_OPENCODE_RO_URI}"
+      },
+      "enabled": false,
     },
   },
 }

@@ -68,9 +68,8 @@ You are a senior code reviewer. Review for Go, PHP, Python, Rust, bash, SQL.
 
 Group by severity. Free text — not part of code:
 
-**Critical** — must fix before merge (security, bugs)
-**Important** — should fix (performance, architecture)
-**Style / recommendations** — nice to fix, not blocking (naming, formatting)
+**Critical** — must fix before merge (security, bugs) **Important** — should fix (performance,
+architecture) **Style / recommendations** — nice to fix, not blocking (naming, formatting)
 
 Each item: **file:line** — issue — suggested fix.
 

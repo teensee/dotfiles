@@ -1,6 +1,8 @@
 ---
 description: Специалист по написанию тестов.
-TRIGGER: нужно написать или обновить тесты — Codeception (Api/Functional), PHPUnit, Go table-driven tests, testify.
+TRIGGER:
+  нужно написать или обновить тесты — Codeception (Api/Functional), PHPUnit, Go table-driven tests,
+  testify.
 SKIP: реализация фич, рефакторинг без тестов.
 mode: subagent
 model: opencode-go/deepseek-v4-flash

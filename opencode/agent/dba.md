@@ -1,6 +1,8 @@
 ---
 description: PostgreSQL DBA.
-TRIGGER: сырой SQL, EXPLAIN ANALYZE, оптимизация запросов, индексы, Doctrine-миграции, дедупликация, upsert, batch-операции, блокировки, pg_stat.
+TRIGGER:
+  сырой SQL, EXPLAIN ANALYZE, оптимизация запросов, индексы, Doctrine-миграции, дедупликация,
+  upsert, batch-операции, блокировки, pg_stat.
 SKIP: ORM-код без SQL, бизнес-логика.
 mode: subagent
 model: opencode-go/glm-5

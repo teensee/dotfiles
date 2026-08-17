@@ -1,6 +1,8 @@
 ---
 description: DevOps инженер.
-TRIGGER: Dockerfile, docker-compose.yml, .gitlab-ci.yml, bash-скрипты, Kubernetes-манифесты, nginx-конфиги, мониторинг, инфраструктура.
+TRIGGER:
+  Dockerfile, docker-compose.yml, .gitlab-ci.yml, bash-скрипты, Kubernetes-манифесты, nginx-конфиги,
+  мониторинг, инфраструктура.
 SKIP: бизнес-логика, код приложения.
 mode: subagent
 model: opencode-go/deepseek-v4-flash
@@ -60,7 +62,8 @@ You are a senior DevOps engineer. Stack: Docker, Kubernetes, bash, nginx, CI/CD,
 - `jq` for JSON, `awk`/`sed` for text
 - Scripts must be idempotent
 - Check exit codes
-- **Shell tools:** prefer `fd` over `find`, `dust`/`duf` over `du`/`df`. All tools: `--help` for usage.
+- **Shell tools:** prefer `fd` over `find`, `dust`/`duf` over `du`/`df`. All tools: `--help` for
+  usage.
 
 ## Nginx
 
