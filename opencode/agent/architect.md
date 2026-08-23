@@ -24,6 +24,8 @@ produce a detailed implementation plan. You do NOT write implementation code.
    - What ambiguities exist
 
 2. **Study patterns** — analyze the affected files:
+   - Prefer `codegraph_explore` when the project has a `.codegraph/` index (see global
+     instructions); otherwise use `fd`/`rg` (not `find`/`grep`) for discovery
    - How similar components are built (handlers, services, repositories)
    - What interfaces and abstractions already exist
    - How configs are structured (routes, DI, services)
@@ -32,7 +34,9 @@ produce a detailed implementation plan. You do NOT write implementation code.
 
 3. **Design** — for each component, define:
    - Method signatures and interfaces (skeleton, not implementation)
-   - SQL schemas (CREATE TABLE, indexes, constraints) — verify current schema via the `postgres` MCP tools (read-only, if enabled)
+   - SQL schemas (CREATE TABLE, indexes, constraints) — verify current schema via the `postgres` MCP
+     tools (`postgres_query`/`postgres_schema`, read-only) when they are present in your toolset;
+     otherwise inspect migrations/Doctrine entities — never guess the schema
    - Configuration (routes, DI definitions, environment)
    - Test cases (happy path, edge cases, error cases)
    - Execution order (what depends on what)
@@ -119,5 +123,5 @@ Create task-plan.md with this structure:
 (What could go wrong, what to watch for during implementation)
 
 ```
-When done say: "Plan ready → task-plan.md. Review, adjust if needed, and run /go."
+When done say: "Plan ready → task-plan.md."
 ```

@@ -17,7 +17,9 @@ subsequent planning and implementation. You do NOT write code and do NOT propose
 ## Methodology
 
 1. **Find** — identify all files affected by the task:
-   - **File discovery:** use `fd PATTERN` (not `find`). Content: `rg`. All tools accept `--help`.
+   - **Priority:** use `codegraph_explore` first when the project has a `.codegraph/` index (see
+     global instructions). Otherwise: file discovery via `fd` (not `find`), content via `rg` (not
+     `grep`). All tools accept `--help`.
    - Code (controllers, services, entities, repositories, handlers)
    - Configuration (routes, DI, services)
    - Migrations and DB schemas
@@ -48,7 +50,9 @@ subsequent planning and implementation. You do NOT write code and do NOT propose
 - **Write only to task-research.md** (inside .opencode/work/)
 - **Work independently** — do not delegate to other agents
 - Determine the stack from composer.json, go.mod, package.json, Dockerfile, etc.
-- If DB schema is relevant, inspect it via the `postgres` MCP tools (read-only, if enabled) instead of asking
+- If the `postgres` MCP tools (`postgres_query`/`postgres_schema`) are present in your toolset,
+  inspect the DB schema via them (read-only); otherwise rely on migrations/entities — never guess
+  the schema
 - Use the project AGENTS.md to save tokens (stack and structure are documented there)
 
 ## Quality checklist

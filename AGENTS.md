@@ -40,6 +40,12 @@ make help         # show all available commands
 - [`.opencode/docs/ai/git.md`](.opencode/docs/ai/git.md) — read this when setting up or modifying
   per-host git configs
 
+## OpenCode tool priority
+
+All opencode agents (including subagents) follow the tool-priority ladder defined in
+`opencode/instructions.md`: codegraph → `rg`/`fd` → `grep`/`find`. The Postgres MCP server is used
+only when enabled in the project.
+
 ## Git — read-only
 
 The agent works with git **exclusively read-only**
@@ -51,6 +57,5 @@ by the user.
 ## Task workflow
 
 Task files live in the gitignored `.opencode/work/<current-branch>/` directory of the current repo
-(not in the working tree). Use the pipeline:
-`/task → /res → /plan → /go → /review → /clean`. See
+(not in the working tree). Use the pipeline: `/task → /res → /plan → /go → /review → /clean`. See
 [`.opencode/docs/ai/workflow.md`](.opencode/docs/ai/workflow.md) for details.
