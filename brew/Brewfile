@@ -80,6 +80,8 @@ brew "re2c"
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
+# Rust toolchain installer
+brew "rustup"
 # Autoformat shell script source code
 brew "shfmt"
 # TOML toolkit written in Rust

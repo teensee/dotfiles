@@ -25,6 +25,8 @@ export PATH="/opt/homebrew/opt/go/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 # Add go binaries
 export PATH="$HOME/go/bin:$PATH"
+#rust
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
 #asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
