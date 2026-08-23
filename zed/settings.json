@@ -1,61 +1,63 @@
 {
+  "preview_tabs": {
+    "enable_preview_from_file_finder": false
+  },
+  "code_lens": "on",
   "zoomed_padding": true,
   "tab_bar": {
-    "show_tab_bar_buttons": true
+    "show_tab_bar_buttons": true,
   },
   "mouse_wheel_zoom": false,
   "file_finder": {
-    "include_ignored": "smart"
+    "include_ignored": "smart",
   },
   "search": {
-    "include_ignored": false
+    "include_ignored": false,
   },
   "title_bar": {
     "show_menus": false,
-    "show_branch_status_icon": true
+    "show_branch_status_icon": true,
   },
   "status_bar": {
-    "line_endings_button": true
+    "line_endings_button": true,
   },
   "use_system_window_tabs": true,
   "tabs": {
     "show_diagnostics": "off",
     "file_icons": true,
-    "git_status": false
+    "git_status": false,
   },
   "prettier": {
-    "allowed": true
+    "allowed": true,
   },
   "restore_on_startup": "launchpad",
   "telemetry": {
     "diagnostics": true,
     "metrics": false,
-    "anthropic_retention": false
+    "anthropic_retention": false,
   },
   "show_edit_predictions": false,
   "show_wrap_guides": true,
   "soft_wrap": "none",
   "gutter": {
     "folds": true,
-    "bookmarks": false
+    "bookmarks": false,
   },
   "proxy": "",
-  "diff_view_style": "unified",
+  "diff_view_style": "split",
   "agent_servers": {
     "opencode": {
       "favorite_config_option_values": {
-        "effort": [
-          "max"
-        ],
+        "effort": ["max"],
         "model": [
           "opencode-go/deepseek-v4-flash",
-          "opencode-go/deepseek-v4-pro"
-        ]
+          "opencode-go/deepseek-v4-pro",
+        ],
       },
       "default_config_options": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "mode": "build",
-        "effort": "max",
+        "model": "opencode-go/ox-alpha-free",
+        "mode": "plan",
+        "effort": "high",
       },
       "type": "registry",
     },
@@ -116,7 +118,7 @@
     "dark": "Catppuccin Macchiato",
   },
   "terminal": {
-    "dock": "right",
+    "dock": "bottom",
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13.0,
   },
@@ -130,16 +132,11 @@
   },
   "languages": {
     "Markdown": {
-      "soft_wrap": "prefer_line"
+      "soft_wrap": "prefer_line",
     },
     "PHP": {
       "language_servers": ["intelephense", "!phpactor"],
-      "formatter": {
-        "external": {
-          "command": "php-cs-fixer",
-          "arguments": ["fix", "--using-cache=no", "{buffer_path}"],
-        },
-      },
+      "format_on_save": "off",
     },
     "Go": {
       "format_on_save": "on",
