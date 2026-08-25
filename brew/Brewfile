@@ -44,6 +44,8 @@ brew "go"
 brew "goaccess"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Run and Test HTTP Requests with plain text and curl
+brew "hurl"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@77"
 # Lightweight and flexible command-line JSON processor

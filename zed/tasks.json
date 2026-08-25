@@ -1,0 +1,86 @@
+[
+  {
+    "label": "Scratch: PHP",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh php php.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: Go",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh go go.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: SQL",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh sql sql.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: JSON",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh json json.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: YAML",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh yaml yaml.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: Markdown",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh md markdown.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: Shell",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh sh shell.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: Python",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh py python.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: TypeScript",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh ts typescript.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: HTTP",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh http http.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: Hurl",
+    "command": "$HOME/.config/zed/scratch-task/scratch.sh hurl hurl.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
+    "label": "Scratch: открыть папку scratches",
+    "command": "$HOME/.config/zed/scratch-task/scratch-dir.sh",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  }
+]

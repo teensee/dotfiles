@@ -55,8 +55,8 @@
         ],
       },
       "default_config_options": {
-        "model": "opencode-go/ox-alpha-free",
-        "mode": "plan",
+        "model": "opencode-go/deepseek-v4-flash",
+        "mode": "build",
         "effort": "high",
       },
       "type": "registry",
@@ -118,7 +118,7 @@
     "dark": "Catppuccin Macchiato",
   },
   "terminal": {
-    "dock": "bottom",
+    "dock": "right",
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13.0,
   },
