@@ -59,3 +59,25 @@ by the user.
 Task files live in the gitignored `.opencode/work/<current-branch>/` directory of the current repo
 (not in the working tree). Use the pipeline: `/task → /res → /plan → /go → /review → /clean`. See
 [`.opencode/docs/ai/workflow.md`](.opencode/docs/ai/workflow.md) for details.
+
+## Claude Code
+
+`claude/` mirrors the opencode config for the Claude Code CLI, symlinked via `install.conf.yaml`
+into `~/.claude/`:
+
+- `claude/CLAUDE.md` → `~/.claude/CLAUDE.md` — global instructions (translated from
+  `opencode/instructions.md`: read-only git policy, tool-priority ladder, task workflow, style, MCP)
+- `claude/settings.json` → `~/.claude/settings.json` — model/statusline/plugin config plus
+  `permissions.allow/deny` mirroring `opencode.jsonc`'s git bash permission table
+- `claude/agents/` → `~/.claude/agents/` — subagents ported 1:1 from `opencode/agent/` (dba, devops,
+  go-dev, symfony-dev, test-writer, architect, code-reviewer, debugger, explore, python-pro,
+  research, rust-engineer, security-auditor, zig-dev)
+- `claude/commands/` → `~/.claude/commands/` — slash commands ported from `opencode/commands/`
+  (task, res, plan, go, review, clean, pg-ro, beautify-agents), using root-level `task.md` /
+  `task-research.md` / `task-plan.md` / `task-log.md` (not branch-scoped like opencode's
+  `.opencode/work/<branch>/`)
+- `claude/skills/` → `~/.claude/skills/` — the "superpowers" skill pack copied verbatim from
+  `opencode/skills/` (SKILL.md format is compatible between the two tools)
+
+MCP servers (codegraph, postgres) are registered directly via `claude mcp add`, not through a
+tracked config file — see `/pg-ro` for the postgres recipe.

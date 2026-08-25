@@ -38,6 +38,14 @@
     ~/.config/opencode: opencode
     ~/.config/btop/btop.conf: btop/btop.conf
 
+    # Claude Code
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.claude/settings.json: claude/settings.json
+    ~/.claude/statusline-command.sh: claude/statusline-command.sh
+    ~/.claude/agents: claude/agents
+    ~/.claude/commands: claude/commands
+    ~/.claude/skills: claude/skills
+
     # Package managers
     ~/Brewfile: brew/Brewfile
 
