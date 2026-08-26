@@ -1,18 +1,9 @@
 # Global OpenCode instructions
 
-Правила для всех сессий opencode во всех проектах.
-
-## Git — только чтение
-
-Агент работает с git **ИСКЛЮЧИТЕЛЬНО read-only**. Никогда не выполняй операции записи.
-
-Разрешено: `git status`, `git diff`, `git log`, `git show`, `git branch -l/-a/-r`, `git remote`,
-`git rev-parse`, `git rev-list`, `git blame`, `git grep`, `git stash list/show`, `git tag -l`,
-`git config`.
-
-Запрещено (выполняет только пользователь): `git add`, `git commit`, `git push`, `git pull`,
-`git fetch`, `git checkout`, `git switch`, `git merge`, `git rebase`, `git reset`, `git restore`,
-`git stash pop`, `git clean`, `git rm`.
+Правила для всех сессий opencode во всех проектах. Общая часть (git-policy, приоритет инструментов,
+Postgres MCP, стиль) вынесена в `shared/instructions-core.md` — она же подключена к
+`opencode.jsonc` (`instructions`) и к Claude Code (`CLAUDE.md`). Здесь остаётся только то, что
+специфично для opencode.
 
 ## Task workflow
 
@@ -29,30 +20,13 @@
 `git rev-parse --abbrev-ref HEAD`). Рабочую директорию не коммить — `.opencode/` в проектах
 игнорируется.
 
-## Приоритет инструментов
+<!-- CODEGRAPH_START -->
+## CodeGraph
 
-Трёхступенчатая лестница приоритетов для поиска и исследования кода. Применяется ко всем агентам,
-включая субагентов.
+In repositories indexed by CodeGraph (a `.codegraph/` directory exists at the repo root), reach for it BEFORE grep/find or reading files when you need to understand or locate code:
 
-1. **Codegraph** (высший приоритет) — если у проекта есть `.codegraph/` (проверь
-   `codegraph_codegraph_explore` с `projectPath`, вернул ли он данные): работай через
-   `codegraph_codegraph_explore` / `codegraph_node` — символы, call paths и исходники одним вызовом.
-2. **`rg` / `fd`** — если codegraph недоступен (нет индекса; репо-«солянки» конфигов, например
-   `~/.dotfiles`; непроиндексированные проекты): это нормально и ожидаемо. Ищи по содержимому через
-   **`rg`**, файлы через **`fd`** — вместо `grep`/`find`: это современные и быстрее инструменты
-   хост-машины (Grep/Glob-инструменты opencode и так работают на ripgrep). `find` и `grep` не
-   используй, если доступны `fd`/`rg`.
-3. **`grep` / `find`** — только если `rg`/`fd` отсутствуют в системе.
+- **MCP tool** (when available): `codegraph_explore` answers most code questions in one call — the relevant symbols' verbatim source plus the call paths between them, including dynamic-dispatch hops grep can't follow. Name a file or symbol in the query to read its current line-numbered source. If it's listed but deferred, load it by name via tool search.
+- **Shell** (always works): `codegraph explore "<symbol names or question>"` prints the same output.
 
-**Postgres MCP** — используется **только если включён/доступен в текущем проекте** (сервер настроен
-не во всех проектах). Проверь наличие инструментов `postgres_query` / `postgres_schema` в своём
-toolset:
-
-- Доступны → ОБЯЗАТЕЛЬНО используй их для схемы БД, `EXPLAIN ANALYZE`, `pg_stat_*` (read-only).
-- Недоступны → не выдумывай схему: опирайся на `migrations/`, Doctrine-сущности, `.sql`-файлы.
-
-## Стиль
-
-- Отвечай на русском, если пользователь пишет по-русски
-- Не добавляй комментарии в код без запроса
-- После изменения конфигурации проверь, что AGENTS.md и docs/ репозитория остались актуальными
+If there is no `.codegraph/` directory, skip CodeGraph entirely — indexing is the user's decision.
+<!-- CODEGRAPH_END -->

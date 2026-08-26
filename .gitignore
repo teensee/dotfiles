@@ -12,3 +12,6 @@ zed/conversations/
 zed/prompts/
 zed/themes/*
 !zed/themes/.gitkeep
+
+# OpenCode task files
+.opencode/work/

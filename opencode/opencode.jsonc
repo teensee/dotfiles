@@ -21,7 +21,10 @@
   },
   "lsp": true,
   "formatter": true,
-  "instructions": ["{env:HOME}/.config/opencode/instructions.md"],
+  "instructions": [
+    "{env:HOME}/.dotfiles/shared/instructions-core.md",
+    "{env:HOME}/.config/opencode/instructions.md",
+  ],
   "permission": {
     "bash": {
       "*": "ask",

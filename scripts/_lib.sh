@@ -25,4 +25,10 @@ TARGETS=(
 	.config/tmux/tmux.conf
 	.config/tmuxinator
 	.config/zed
+	.claude/CLAUDE.md
+	.claude/settings.json
+	.claude/statusline-command.sh
+	.claude/agents
+	.claude/commands
+	.claude/skills
 )

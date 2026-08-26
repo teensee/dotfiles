@@ -1,32 +1,18 @@
 # Глобальные инструкции Claude Code
 
-Правила для всех сессий Claude Code во всех проектах. Портировано из `opencode/instructions.md`
-(глобальные инструкции opencode) — держи оба файла синхронизированными по смыслу при правке одного
-из них.
+Правила для всех сессий Claude Code во всех проектах. Общая часть (git-policy, приоритет
+инструментов, Postgres MCP, стиль) вынесена в `shared/instructions-core.md` и подключена ниже —
+тот же файл используется в opencode (`opencode/instructions.md`). Правь общую часть только там,
+здесь — только то, что специфично для Claude Code.
 
-## Git — строго read-only
-
-Агент работает с git **исключительно read-only**, без исключений и без права манипулировать
-деревом — ни commit, ни push, ни reset, ни checkout, никогда, вне зависимости от того, попросил
-пользователь или нет. Это не «спроси, потом делай» — это жёсткий запрет на уровне тулинга: даже
-явная просьба пользователя закоммитить/запушить не может быть выполнена агентом. Роль агента здесь
-чисто рекомендательная: предложить сообщение коммита, показать что нужно сделать — но выполняет
-это всегда сам пользователь, вручную или через `!git ...` в терминале.
-
-Разрешено без вопросов (read-only, ничего не меняет): `git status`, `git diff`, `git log`,
-`git show`, `git branch -l/-a/-r`, `git remote`, `git rev-parse`, `git rev-list`, `git blame`,
-`git grep`, `git stash list/show`, `git tag -l`, `git config`.
-
-Запрещено на уровне `~/.claude/settings.json` (`permissions.deny`) — hard deny, без возможности
-подтверждения: `git add`, `git commit`, `git push`, `git pull`, `git fetch`, `git checkout`,
-`git switch`, `git merge`, `git rebase`, `git reset`, `git restore`, `git stash pop`, `git clean`,
-`git rm`.
+@/Users/vladislav/.dotfiles/shared/instructions-core.md
 
 ## Task workflow
 
 Пайплайн задач (одинаковый в opencode и здесь): `/task → /res → /plan → /go → /review → /clean`.
 
-Рабочие файлы задачи лежат в корне текущего проекта:
+Рабочие файлы задачи лежат в корне текущего проекта (в отличие от opencode, без branch-scoped
+директории):
 
 - `task.md` — описание задачи (`/task`)
 - `task-research.md` — ресёрч (`/res`, агент `research`)
@@ -36,32 +22,18 @@
 Добавь эти файлы в `.gitignore` проекта, если их там ещё нет — рабочие файлы задачи не коммитятся.
 Команды и агентов (`.claude/commands/`, `.claude/agents/`, `CLAUDE.md`) — наоборот, коммить.
 
-## Приоритет инструментов
+## Claude Code specifics
 
-Трёхступенчатая лестница для поиска и исследования кода — применяется ко всем агентам, включая
-субагентов:
+- Права (`permissions.allow`/`permissions.deny` для git) заданы в `~/.claude/settings.json`
+- Список агентов — `~/.claude/agents/`, команд — `~/.claude/commands/`, скиллов — `~/.claude/skills/`
 
-1. **Codegraph** (высший приоритет) — если у проекта есть `.codegraph/`, используй MCP-инструменты
-   `codegraph_explore` / `codegraph_node` (передавай `projectPath`) — символы, call paths и исходники
-   одним вызовом.
-2. **Grep/Glob-инструменты Claude Code** — они и так работают поверх ripgrep, используй их вместо
-   сырого `grep`/`find` через Bash в первую очередь.
-3. **`rg` / `fd` через Bash** — если нужен более гибкий вызов, чем дают Grep/Glob-инструменты, или
-   codegraph недоступен (нет индекса; репо-«солянки» конфигов вроде `~/.dotfiles`;
-   непроиндексированные проекты) — это нормально и ожидаемо.
-4. **`grep` / `find`** — только если `rg`/`fd` отсутствуют в системе.
+<!-- CODEGRAPH_START -->
+## CodeGraph
 
-**Postgres MCP** — используй только если сервер включён/доступен в текущем проекте (настроен не
-везде). Проверь наличие инструментов `postgres_query` / `postgres_schema` в своём тулсете:
+In repositories indexed by CodeGraph (a `.codegraph/` directory exists at the repo root), reach for it BEFORE grep/find or reading files when you need to understand or locate code:
 
-- Доступны → используй их для схемы БД, `EXPLAIN ANALYZE`, `pg_stat_*` (read-only).
-- Недоступны → не выдумывай схему: опирайся на `migrations/`, Doctrine-сущности, `.sql`-файлы.
+- **MCP tool** (when available): `codegraph_explore` answers most code questions in one call — the relevant symbols' verbatim source plus the call paths between them, including dynamic-dispatch hops grep can't follow. Name a file or symbol in the query to read its current line-numbered source. If it's listed but deferred, load it by name via tool search.
+- **Shell** (always works): `codegraph explore "<symbol names or question>"` prints the same output.
 
-Рецепт read-only Postgres-роли для MCP — команда `/pg-ro`.
-
-## Стиль
-
-- Отвечай на русском, если пользователь пишет по-русски
-- Не добавляй комментарии в код без запроса
-- После изменения конфигурации Claude Code (агенты, команды, CLAUDE.md, settings.json) проверь, что
-  этот файл и `docs/` репозитория остались актуальными
+If there is no `.codegraph/` directory, skip CodeGraph entirely — indexing is the user's decision.
+<!-- CODEGRAPH_END -->

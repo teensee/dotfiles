@@ -1,5 +1,9 @@
 # OpenCode workflow
 
+Это флоу **opencode** — файлы задач branch-scoped (`.opencode/work/<branch>/`). Claude Code в этом
+репо ведёт те же файлы в корне проекта (root-level `task.md` и т.д.) — см.
+[claude-code.md](claude-code.md).
+
 Таск-флоу по бранчам: `/task → /res → /plan → /go → /review → /clean`.
 
 Рабочие файлы задачи лежат в заигноренной директории `.opencode/work/<branch>/` (бранч текущий):
@@ -27,8 +31,8 @@
   подключение берётся из env `DATABASE_OPENCODE_RO_URI` (read-only роль БД, `GRANT SELECT` +
   `default_transaction_read_only`); инструменты `postgres_query`/`postgres_schema` используются
   агентами ТОЛЬКО если сервер включён в текущем проекте
-- Приоритет инструментов (codegraph → `rg`/`fd` → `grep`/`find`) задан в `opencode/instructions.md`
-  и действует на всех агентов, включая субагентов
+- Приоритет инструментов — 4 ступени (codegraph → встроенные Grep/Glob → `rg`/`fd` → `grep`/`find`);
+  определён в `shared/instructions-core.md`, действует на всех агентов, включая субагентов
 
 ## Per-tool reference
 
