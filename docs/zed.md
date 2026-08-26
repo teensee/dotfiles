@@ -39,9 +39,9 @@ Zed editor config — symlinked as `~/.config/zed`.
 
 - `settings.json` — editor config
 - `tasks.json` — global tasks: Scratch presets (PHP/Go/SQL/JSON/YAML/Markdown/Shell/Python/TypeScript/HTTP/Hurl) that create the next free `~/Programming/scratches/scratch_N.<ext>` and open it in Zed
-- `scratch-task/scratch.sh` — helper script: `scratch.sh <ext> [template]` — numbering, copies template (or empty file), opens in Zed. For `go` creates an isolated module `go/scratch_N/{go.mod, main.go}` instead of a flat file
-- `scratch-task/scratch-dir.sh` — opens `~/Programming/scratches`
-- `scratch-task/_templates/*.tpl` — file templates for scratch presets
+- `tasks/scratch/scratch.sh` — helper script: `scratch.sh <ext> [template]` — numbering, copies template (or empty file), opens in Zed. For `go` creates an isolated module `go/scratch_N/{go.mod, main.go}` instead of a flat file
+- `tasks/scratch/scratch-dir.sh` — opens `~/Programming/scratches`
+- `tasks/scratch/_templates/*.tpl` — file templates for scratch presets
 - `themes/` — custom Zed themes (JSON, gitignored except `.gitkeep`)
 - `conversations/` — chat history (gitignored, runtime data)
 - `prompts/` — prompts cache (gitignored, runtime data)
