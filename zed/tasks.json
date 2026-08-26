@@ -82,5 +82,32 @@
     "reveal": "never",
     "hide": "always",
     "allow_concurrent_runs": true
+  },
+  {
+    "label": "Create: PHP class",
+    "command": "php",
+    "args": ["$HOME/.config/zed/tasks/create/php/class.php", "$ZED_FILE"],
+    "reveal": "never",
+    "hide": "on_success",
+    "allow_concurrent_runs": true,
+    "save": "none"
+  },
+  {
+    "label": "Create: PHP enum",
+    "command": "php",
+    "args": ["$HOME/.config/zed/tasks/create/php/enum.php", "$ZED_FILE"],
+    "reveal": "never",
+    "hide": "on_success",
+    "allow_concurrent_runs": true,
+    "save": "none"
+  },
+  {
+    "label": "Create: PHP interface",
+    "command": "php",
+    "args": ["$HOME/.config/zed/tasks/create/php/interface.php", "$ZED_FILE"],
+    "reveal": "never",
+    "hide": "on_success",
+    "allow_concurrent_runs": true,
+    "save": "none"
   }
 ]
