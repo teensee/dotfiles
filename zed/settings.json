@@ -130,6 +130,14 @@
       "enabled": true,
     },
   },
+  "lsp": {
+    "intelephense": {
+      "settings": {
+        "format": { "enable": false },
+        "completion": { "propertyCase": "camel" }
+      }
+    }
+  },
   "languages": {
     "Markdown": {
       "soft_wrap": "prefer_line",
@@ -137,6 +145,8 @@
     "PHP": {
       "language_servers": ["intelephense", "!phpactor"],
       "format_on_save": "off",
+      "use_on_type_format": false,
+      "prettier": { "allowed": false }
     },
     "Go": {
       "format_on_save": "on",
