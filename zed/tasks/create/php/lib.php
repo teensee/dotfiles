@@ -17,7 +17,7 @@ final class Generator
         }
     }
 
-    public static function run(string $kind, array $argv): void
+    public static function run(string $kind, array $argv): ?string
     {
         $file = $argv[1] ?? null;
 
@@ -25,14 +25,18 @@ final class Generator
             self::fail("использование: php $kind.php <файл>");
         }
 
-        (new self($kind, (string) $file))->generate();
+        return (new self($kind, (string) $file))->generate();
     }
 
-    public function generate(): void
+    public function generate(): ?string
     {
         $name = $this->guardFile();
         $ns = $this->resolveNamespace();
-        $this->write($name, $ns);
+
+        $out = $this->content($name, $ns);
+        file_put_contents($this->file, $out);
+
+        return $this->caretPosition($out);
     }
 
     private function guardFile(): string
@@ -144,11 +148,26 @@ final class Generator
         return substr($target, strlen($base) + 1);
     }
 
-    private function write(string $name, string $ns): void
+    private function content(string $name, string $ns): string
     {
         $nameSpace = $ns !== '' ? "namespace $ns;\n\n" : '';
 
-        $out = <<<PHP
+        if ($this->kind === 'class') {
+            return <<<PHP
+<?php
+
+declare(strict_types=1);
+
+{$nameSpace}final readonly class $name
+{
+    public function __construct(
+    ) {
+    }
+}
+PHP;
+        }
+
+        return <<<PHP
 <?php
 
 declare(strict_types=1);
@@ -159,7 +178,21 @@ declare(strict_types=1);
 }
 
 PHP;
-        file_put_contents($this->file, $out);
+    }
+
+    private function caretPosition(string $out): ?string
+    {
+        if ($this->kind !== 'class') {
+            return null;
+        }
+
+        foreach (explode("\n", $out) as $i => $line) {
+            if (str_contains($line, '__construct(')) {
+                return ($i + 1) . ':' . (strlen($line) + 1);
+            }
+        }
+
+        return null;
     }
 
     private static function fail(string $msg): never
