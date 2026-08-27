@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-alt-c": ["task::Spawn", { "task_name": "Copy: PHP FQCN" }]
+    }
+  }
+]

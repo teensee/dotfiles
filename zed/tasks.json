@@ -109,5 +109,14 @@
     "hide": "on_success",
     "allow_concurrent_runs": true,
     "save": "none"
+  },
+  {
+    "label": "Copy: PHP FQCN",
+    "command": "php",
+    "args": ["$HOME/.config/zed/tasks/copy-reference/php.php", "$ZED_FILE", "$ZED_SYMBOL"],
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true,
+    "save": "none"
   }
 ]
