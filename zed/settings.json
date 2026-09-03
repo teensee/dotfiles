@@ -1,6 +1,35 @@
 {
+  "ssh_connections": [
+    {
+      "host": "keenetic",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/opt/root"],
+        },
+      ],
+    },
+    {
+      "host": "delta-host",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/vlad"],
+        },
+      ],
+    },
+    {
+      "host": "ru.delta-node",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/vlad"],
+        },
+      ],
+    },
+  ],
   "preview_tabs": {
-    "enable_preview_from_file_finder": false
+    "enable_preview_from_file_finder": false,
   },
   "code_lens": "on",
   "zoomed_padding": true,
