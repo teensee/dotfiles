@@ -268,7 +268,7 @@
       "language_servers": ["intelephense", "!phpactor"],
       "format_on_save": "off",
       "use_on_type_format": false,
-      "prettier": { "allowed": false }
+      "prettier": { "allowed": false },
     },
     "Go": {
       "format_on_save": "on",
