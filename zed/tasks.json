@@ -70,6 +70,13 @@
     "allow_concurrent_runs": true
   },
   {
+    "label": "Scratch: Plain text",
+    "command": "$HOME/.config/zed/tasks/scratch/scratch.sh txt txt.tpl",
+    "reveal": "never",
+    "hide": "always",
+    "allow_concurrent_runs": true
+  },
+  {
     "label": "Scratch: Hurl",
     "command": "$HOME/.config/zed/tasks/scratch/scratch.sh hurl hurl.tpl",
     "reveal": "never",
