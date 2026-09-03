@@ -13,6 +13,7 @@ Zed editor config — symlinked as `~/.config/zed`.
 - **Inline edit predictions**: disabled (`show_edit_predictions: false`)
 - **Git**: inline blame enabled, panel grouped by status sorted by path, tree_view off
 - **Panel layout**: project/outline/collaboration/git on left, agent/terminal on right
+- **Venv detection**: `terminal.detect_venv` on, search order `.venv`, `venv`, `.env`, `env`
 - **Soft wrap**: none (global), `prefer_line` for Markdown
 - **Wrap guides**: enabled
 - **Gutter**: folds on, bookmarks off

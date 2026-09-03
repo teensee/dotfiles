@@ -150,6 +150,12 @@
     "dock": "right",
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13.0,
+    "detect_venv": {
+      "on": {
+        "directories": [".venv", "venv", ".env", "env"],
+        "activate_script": "default",
+      },
+    },
   },
   "git": {
     "inline_blame": {
