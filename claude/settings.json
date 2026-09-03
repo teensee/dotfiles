@@ -1,15 +1,4 @@
 {
-  "model": "sonnet",
-  "statusLine": {
-    "type": "command",
-    "command": "/bin/bash /Users/vladislav/.claude/statusline-command.sh"
-  },
-  "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true,
-    "php-lsp@claude-plugins-official": true
-  },
-  "effortLevel": "medium",
-  "tui": "fullscreen",
   "permissions": {
     "allow": [
       "Bash(git status:*)",
@@ -47,6 +36,7 @@
       "Bash(git rm:*)"
     ]
   },
+  "model": "opus",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -58,5 +48,15 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/bin/bash /Users/vladislav/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "php-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "tui": "fullscreen"
 }
