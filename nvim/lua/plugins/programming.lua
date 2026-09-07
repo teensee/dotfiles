@@ -139,7 +139,9 @@ return {
                 go = { "golangcilint" },
                 php = { "phpstan" },
             }
-            vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+            -- без InsertLeave: phpstan/golangci-lint слишком тяжёлые для запуска
+            -- на каждый выход из insert-режима
+            vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
                 callback = function()
                     lint.try_lint()
                 end,
