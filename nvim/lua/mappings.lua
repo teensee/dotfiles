@@ -54,8 +54,6 @@ map("v", "<leader>dq", ":'<,'>DB<CR>", { desc = "Execute selected query" })
 -- LSP
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code action" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-map("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
-map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 map("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type definition" })
 
 -- Diagnostics (Trouble)
