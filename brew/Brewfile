@@ -98,6 +98,8 @@ brew "tmuxinator"
 brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Internet file retriever
 brew "wget"
 # Command-line XML and HTML beautifier and content extractor
