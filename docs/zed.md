@@ -46,7 +46,7 @@ Zed editor config — symlinked as `~/.config/zed`.
   - **Copy: PHP FQCN** — PhpStorm-style "Copy Reference": copies the fully qualified class name of the symbol under the caret (via `$ZED_FILE` + `$ZED_SYMBOL`) to the clipboard, bound to ⌥⌘C
 - `tasks/scratch/scratch.sh` — helper script: `scratch.sh <ext> [template]` — numbering, copies template (or empty file), opens in Zed. For `go` creates an isolated module `go/scratch_N/{go.mod, main.go}` instead of a flat file
 - `tasks/scratch/scratch-dir.sh` — opens `~/Programming/scratches`
-- `tasks/scratch/_templates/*.tpl` — file templates for scratch presets
+- `tasks/scratch/_templates/*.tpl` — file templates for scratch presets (also used by the nvim `:Scratch` command, see `docs/nvim.md`)
 - `tasks/create/php/lib.php` — `ZedCreate\Php\Generator` class: guards (must be a `.php` file, must be empty), resolves the namespace from the nearest `composer.json` (longest-match over `autoload.psr-4` + `autoload-dev.psr-4`), renders the skeleton via heredoc (`class` → `final readonly` + empty constructor, `enum`/`interface` → plain declaration) and returns a caret position (`line:col`) for the constructor
 - `tasks/create/php/class.php` / `enum.php` / `interface.php` — thin wrappers calling `Generator::run(<kind>, $argv)` on `$ZED_FILE`; refuse to touch a non-empty file. `class.php` moves the caret into the constructor via `zed --existing "$ZED_FILE:line:col"`. Adding a new kind = a wrapper script + a `tasks.json` entry
 - `tasks/copy-reference/php.php` — `ZedCopyReference\Php\ReferenceCopier`: derives the short symbol name from `$ZED_SYMBOL`'s breadcrumb (first segment, keyword stripped; falls back to the filename), reads the `namespace` statement directly from the file, and pipes the resulting FQCN to `pbcopy`

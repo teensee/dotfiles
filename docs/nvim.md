@@ -28,6 +28,7 @@ Other plugins: `trouble.lua`, `nvim-tree.lua`, `nvim-treesitter.lua`, `telescope
 ## Scripts
 
 - `lua/scripts/go-constructor.lua` — Go constructor generator for structs
+- `lua/scripts/scratch.lua` — `:Scratch [ext]` creates scratch files in `~/Programming/scratches`, sharing the directory and templates (`zed/tasks/scratch/_templates/`) with the Zed scratch tasks; `go` gets an isolated module `go/scratch_N/`
 
 ## Maintenance
 

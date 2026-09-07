@@ -38,3 +38,4 @@ end)
 
 -- custom scripts
 require "scripts.go-constructor"
+require "scripts.scratch"
