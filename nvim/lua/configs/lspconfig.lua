@@ -3,7 +3,20 @@ require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
     html = {},
-    pyright = {},
+
+    -- линт-диагностики и code actions от ruff (форматирование — через conform)
+    ruff = {},
+
+    basedpyright = {
+        before_init = function(_, config)
+            local venv_python = (config.root_dir or "") .. "/.venv/bin/python"
+            if vim.uv.fs_stat(venv_python) then
+                config.settings = vim.tbl_deep_extend("force", config.settings or {}, {
+                    python = { pythonPath = venv_python },
+                })
+            end
+        end,
+    },
 
     gopls = {
         cmd = { "gopls" },
@@ -40,6 +53,7 @@ local servers = {
             intelephense = {
                 files = { maxSize = 5000000 },
                 format = { enable = false },
+                throwDepth = 3,
                 completion = {
                     propertyCase = "camel",
                 },

@@ -9,7 +9,7 @@ NvChad v2.5 framework (`init.lua:21`). Theme: `everblush`.
 | `lua/chadrc.lua`            | Theme and UI overrides                                 |
 | `lua/mappings.lua`          | Custom keymaps                                         |
 | `lua/options.lua`           | Editor settings                                        |
-| `lua/configs/lspconfig.lua` | LSP servers: gopls, intelephense, pyright, templ, html |
+| `lua/configs/lspconfig.lua` | LSP servers: gopls, intelephense, basedpyright (auto-detects project `.venv`, e.g. from uv), ruff, templ, html. Intelephense settings (stubs, throwDepth) deliberately duplicate `zed/settings.json` — keep the two in sync when editing either |
 | `lua/configs/conform.lua`   | Formatters (sourced by `lua/plugins/conform.lua`)      |
 
 ## Plugins (`lua/plugins/`)
