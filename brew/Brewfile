@@ -1,7 +1,8 @@
 tap "anomalyco/tap"
-tap "shivammathur/php"
-tap "symfony-cli/tap"
-tap "teamookla/speedtest"
+tap "erickochen/purple"
+tap "shivammathur/php", trusted: true
+tap "symfony-cli/tap", trusted: true
+tap "teamookla/speedtest", trusted: true
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -66,6 +67,8 @@ brew "ncdu"
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
 # Shell command parallelization utility
 brew "parallel"
 # Package compiler and linker metadata toolkit
@@ -112,6 +115,10 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode", trusted: true
+# Open-source terminal SSH manager and SSH config editor
+brew "erickochen/purple/purple", trusted: true
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest"
 # App for managing battery charging. (Also installs a CLI on first use.)
 cask "battery"
 # Terminal-based AI coding assistant
