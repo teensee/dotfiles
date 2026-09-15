@@ -84,22 +84,22 @@
         ],
       },
       "default_config_options": {
-        "model": "opencode-go/deepseek-v4-flash",
-        "mode": "build",
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "mode": "plan",
         "effort": "high",
       },
       "type": "registry",
     },
   },
   "project_panel": {
+    "folder_indicator": "icon",
     "auto_fold_dirs": false,
     "hide_root": false,
     "bold_folder_labels": false,
-    "folder_icons": true,
     "dock": "left",
   },
   "outline_panel": {
-    "folder_icons": true,
+    "folder_indicator": "icon",
     "dock": "left",
   },
   "collaboration_panel": {
@@ -114,7 +114,7 @@
     "model_parameters": [],
   },
   "git_panel": {
-    "folder_icons": true,
+    "folder_indicator": "icon",
     "sort_by": "path",
     "group_by": "status",
     "tree_view": false,
@@ -265,7 +265,7 @@
       "soft_wrap": "prefer_line",
     },
     "PHP": {
-      "language_servers": ["intelephense", "!phpactor"],
+      "language_servers": ["phpantom", "!intelephense", "!phpactor"],
       "format_on_save": "off",
       "use_on_type_format": false,
       "prettier": { "allowed": false },
