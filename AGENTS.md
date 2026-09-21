@@ -34,7 +34,8 @@ make help         # show all available commands
 - [`.opencode/docs/ai/architecture.md`](.opencode/docs/ai/architecture.md) — read this when the repo
   layout or dotbot wiring matters (symlinks, submodule, scripts, brew)
 - [`.opencode/docs/ai/tools.md`](.opencode/docs/ai/tools.md) — read this before reaching for a
-  standard Unix tool (`ls`, `find`, `cd`, `git diff`, `du`, `df`, `man`)
+  standard Unix tool (`ls`, `find`, `cd`, `git diff`, `du`, `df`, `man`) or hand-parsing JSON/YAML
+  (`jq` / `yq`)
 - [`.opencode/docs/ai/workflow.md`](.opencode/docs/ai/workflow.md) — read this when implementing a
   task via the opencode pipeline or looking up per-tool docs
 - [`.opencode/docs/ai/git.md`](.opencode/docs/ai/git.md) — read this when setting up or modifying

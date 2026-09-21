@@ -2,8 +2,8 @@
 
 `shared/instructions-core.md` is the single source of truth for the rules that are identical in
 both tools: read-only git policy, the codegraph → Grep/Glob → `rg`/`fd` → `grep`/`find`
-tool-priority ladder, conditional Postgres MCP usage, and style (respond in Russian, no unsolicited
-comments). It's wired into both configs, not copy-pasted:
+tool-priority ladder, `jq`/`yq` for JSON/YAML (never hand-parse), conditional Postgres MCP usage,
+and style (respond in Russian, no unsolicited comments). It's wired into both configs, not copy-pasted:
 
 - opencode: listed first in `opencode.jsonc`'s `instructions` array, followed by
   `opencode/instructions.md` (opencode-specific residual: branch-scoped task workflow)

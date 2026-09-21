@@ -29,18 +29,23 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 | `test-writer`      | Тесты: Codeception, PHPUnit, Go table-driven                               |
 | `zig-dev`          | Zig: systems, C interop, comptime                                          |
 
-Модели: reasoning-агенты (`research`, `architect`, `code-reviewer`, `debugger`, `security-auditor`)
-— `deepseek-v4-pro`; `dba` — `glm-5`; имплементеры и `test-writer` — `deepseek-v4-flash`.
+Модели (в `opencode.jsonc`, секция `agent`): reasoning-агенты (`research`, `architect`,
+`code-reviewer`, `debugger`, `security-auditor`) — `deepseek-v4-pro`; `dba` — `glm-5`; имплементеры
+и `test-writer` — `deepseek-v4.1-flash`. Модели slash-команд — в frontmatter `commands/*.md` (`/go`,
+`/clean` — pro; `/task`, `/pg-ro`, `/beautify-agents` — flash).
 
 Права (read-only, разрешения на запись) объявляются только в `agent/*.md` — команды наследуют их
 через `agent: X`.
 
-Приоритет инструментов (в `instructions.md`, для всех агентов, включая субагентов):
+Приоритет инструментов (в `shared/instructions-core.md` — общий с Claude Code, см.
+`.opencode/docs/ai/instructions.md`; для всех агентов, включая субагентов):
 
 1. Codegraph — если у проекта есть `.codegraph/` (в `~/.dotfiles` его нет — это «солянка» конфигов);
-2. `rg`/`fd` вместо `grep`/`find`;
-3. `grep`/`find` — только если нет `rg`/`fd`. Postgres MCP используется, только если сервер включён
-   в проекте (например, `hub`; в `elk` — выключен).
+2. `rg`/`fd` вместо `grep`/`find`; `grep`/`find` — только если нет `rg`/`fd`;
+3. JSON/YAML — `jq`/`yq`, без ручного парсинга.
+
+Postgres MCP используется, только если сервер включён в проекте (например, `hub`; в `elk` —
+выключен).
 
 ## Slash commands (`commands/`)
 

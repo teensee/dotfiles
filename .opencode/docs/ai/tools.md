@@ -11,3 +11,10 @@ Modern replacements for standard Unix tools.
 | `du`       | `dust`                     | `dust` (sorted tree), `dust -d 1` (one level)                     |
 | `df`       | `duf`                      | Pretty table, no args needed                                      |
 | `man`      | `tldr`                     | `tldr COMMAND` — usage examples, not full docs                    |
+
+## Structured data
+
+Never hand-parse JSON/YAML with `grep`/`sed`/`awk`/`python -c`:
+
+- **JSON** — `jq` (`jq '.a.b' file.json`, `-r` for raw strings)
+- **YAML** — `yq`, mikefarah v4 with `jq`-like syntax (`yq '.a.b' file.yaml`, `yq -i` edits in place)
