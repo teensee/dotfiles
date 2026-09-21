@@ -3,7 +3,6 @@ description: Code Reviewer — ревью кода на качество, без
 TRIGGER: нужно провести ревью кода, проверить качество, найти уязвимости.
 SKIP: написание кода, реализация фич.
 mode: subagent
-model: opencode-go/deepseek-v4-pro
 permission:
   read: allow
   edit: deny

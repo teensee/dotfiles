@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode-go/deepseek-v4-flash",
+  "model": "opencode-go/deepseek-v4.1-flash",
   "provider": {
     "vesna": {
       "name": "vesna",
@@ -8,6 +8,10 @@
       "models": {
         "VesnaCode": {
           "name": "VesnaCode",
+          "limit": {
+            "context": 262144,
+            "output": 32768,
+          },
         },
       },
       "options": {
@@ -18,6 +22,21 @@
         },
       },
     },
+  },
+  "agent": {
+    "architect": { "model": "opencode-go/deepseek-v4-pro" },
+    "code-reviewer": { "model": "opencode-go/deepseek-v4-pro" },
+    "dba": { "model": "opencode-go/glm-5" },
+    "debugger": { "model": "opencode-go/deepseek-v4-pro" },
+    "devops": { "model": "opencode-go/deepseek-v4.1-flash" },
+    "go-dev": { "model": "opencode-go/deepseek-v4.1-flash" },
+    "python-pro": { "model": "opencode-go/deepseek-v4.1-flash" },
+    "research": { "model": "opencode-go/deepseek-v4-pro" },
+    "rust-engineer": { "model": "opencode-go/deepseek-v4.1-flash" },
+    "security-auditor": { "model": "opencode-go/deepseek-v4-pro" },
+    "symfony-dev": { "model": "opencode-go/deepseek-v4.1-flash" },
+    "test-writer": { "model": "opencode-go/deepseek-v4.1-flash" },
+    "zig-dev": { "model": "opencode-go/deepseek-v4.1-flash" },
   },
   "lsp": true,
   "formatter": true,

@@ -5,7 +5,6 @@ TRIGGER:
   Celery.
 SKIP: Go, PHP, SQL без Python-контекста.
 mode: subagent
-model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

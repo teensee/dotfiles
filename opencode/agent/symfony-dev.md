@@ -5,7 +5,6 @@ TRIGGER:
   миграции, DI, события.
 SKIP: Go-код, чистый SQL без PHP-контекста, тесты (→ test-writer).
 mode: subagent
-model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

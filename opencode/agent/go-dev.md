@@ -5,7 +5,6 @@ TRIGGER:
   goroutines.
 SKIP: PHP, SQL без Go-контекста, DevOps.
 mode: subagent
-model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

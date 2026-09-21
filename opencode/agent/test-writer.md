@@ -5,7 +5,6 @@ TRIGGER:
   testify.
 SKIP: реализация фич, рефакторинг без тестов.
 mode: subagent
-model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

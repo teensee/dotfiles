@@ -2,7 +2,7 @@
 description: Напоминалка — рецепт read-only пользователя Postgres для opencode MCP
 agent: build
 subtask: true
-model: opencode-go/deepseek-v4-flash
+model: opencode-go/deepseek-v4.1-flash
 ---
 
 Напомни рецепт создания read-only пользователя Postgres для opencode MCP (`postgres`).

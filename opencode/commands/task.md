@@ -2,7 +2,7 @@
 description: Создание задачи — создаёт .opencode/work/<branch>/task.md для текущего бранча
 agent: build
 subtask: true
-model: opencode-go/deepseek-v4-flash
+model: opencode-go/deepseek-v4.1-flash
 ---
 
 Определи текущий бранч: `git branch --show-current`; если пусто — `git rev-parse --abbrev-ref HEAD`.

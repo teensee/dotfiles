@@ -2,7 +2,7 @@
 description: Refactor AGENTS.md into progressive-disclosure topic files
 agent: build
 subtask: true
-model: opencode-go/deepseek-v4-flash
+model: opencode-go/deepseek-v4.1-flash
 ---
 
 Refactor this project's root AGENTS.md to follow progressive disclosure: the root file holds only

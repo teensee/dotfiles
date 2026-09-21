@@ -25,7 +25,7 @@ Zed editor config — symlinked as `~/.config/zed`.
 
 | Server | Type | Notes |
 |---|---|---|
-| `opencode` | registry | default model: `deepseek-v4-flash`, mode: build, effort: max |
+| `opencode` | registry | default model: `deepseek-v4.1-flash`, mode: build, effort: max |
 | `github-copilot-cli` | registry | |
 | `claude-acp` | registry | |
 

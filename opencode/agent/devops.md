@@ -5,7 +5,6 @@ TRIGGER:
   мониторинг, инфраструктура.
 SKIP: бизнес-логика, код приложения.
 mode: subagent
-model: opencode-go/deepseek-v4-flash
 permission:
   read: allow
   edit: allow

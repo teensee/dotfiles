@@ -3,7 +3,6 @@ description: Security Auditor — аудит безопасности кода �
 TRIGGER: проверка безопасности, поиск уязвимостей, секреты, зависимости, compliance.
 SKIP: реализация фич, обычное ревью (→ code-reviewer).
 mode: subagent
-model: opencode-go/deepseek-v4-pro
 permission:
   read: allow
   edit: deny

@@ -3,7 +3,6 @@ description: Debugger — системная отладка, поиск root cau
 TRIGGER: баги, падения, нестабильное поведение, race conditions, утечки памяти.
 SKIP: реализация фич, написание нового кода.
 mode: subagent
-model: opencode-go/deepseek-v4-pro
 permission:
   read: allow
   edit: allow

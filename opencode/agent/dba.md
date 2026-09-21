@@ -5,7 +5,6 @@ TRIGGER:
   upsert, batch-операции, блокировки, pg_stat.
 SKIP: ORM-код без SQL, бизнес-логика.
 mode: subagent
-model: opencode-go/glm-5
 permission:
   read: allow
   edit: allow
