@@ -51,15 +51,16 @@ Postgres MCP используется, только если сервер вкл
 
 Таск-флоу по бранчам: рабочие файлы в `.opencode/work/<branch>/`, бранч определяется автоматически.
 
-| Command   | Agent         | Purpose                                                     |
-| --------- | ------------- | ----------------------------------------------------------- |
-| `/task`   | build         | Создание `.opencode/work/<branch>/task.md`                  |
-| `/res`    | research      | Ресёрч: task.md → task-research.md                          |
-| `/plan`   | architect     | План: task-research.md → task-plan.md                       |
-| `/go`     | build         | Реализация: план → делегирование спецагентам, task-log.md   |
-| `/review` | code-reviewer | Ревью: git diff + план → отчёт                              |
-| `/clean`  | build         | Удаление `.opencode/work/<branch>/`                         |
-| `/pg-ro`  | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
+| Command    | Agent         | Purpose                                                     |
+| ---------- | ------------- | ----------------------------------------------------------- |
+| `/task`    | build         | Создание `.opencode/work/<branch>/task.md`                  |
+| `/res`     | research      | Ресёрч: task.md → task-research.md                          |
+| `/plan`    | architect     | План: task-research.md → task-plan.md                       |
+| `/go`      | build         | Реализация: план → делегирование спецагентам, task-log.md   |
+| `/review`  | code-reviewer | Ревью: git diff + план → отчёт                              |
+| `/clean`   | build         | Удаление `.opencode/work/<branch>/`                         |
+| `/pg-ro`   | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
+| `/yt-comm` | build         | Комментарий к задаче YouTrack: MR по текущей ветке          |
 
 ## Structure
 
