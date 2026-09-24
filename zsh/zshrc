@@ -57,8 +57,6 @@ plugins=(
     history
     zsh-autosuggestions
     dotenv
-    gpg-agent
-    keychain
     # zsh-vi-mode
 )
 
