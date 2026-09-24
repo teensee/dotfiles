@@ -54,9 +54,18 @@
     "command": "/bin/bash /Users/vladislav/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
+    "gitkraken-hooks@gitkraken": true,
     "gopls-lsp@claude-plugins-official": true,
     "php-lsp@claude-plugins-official": true
   },
   "effortLevel": "medium",
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "extraKnownMarketplaces": {
+    "gitkraken": {
+      "source": {
+        "path": "/Users/vladislav/.claude/plugins/marketplaces/gitkraken",
+        "source": "directory"
+      }
+    }
+  }
 }

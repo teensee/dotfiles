@@ -23,11 +23,16 @@ tracked config file — see `/pg-ro` for the postgres recipe.
 
 ## Known drift risk
 
-Some MCP servers' Claude Code auto-integration (confirmed for `codegraph`) rewrites
-`~/.claude/CLAUDE.md` / `~/.claude/settings.json` **as plain files**, silently replacing the dotbot
-symlink with a real file. `make check` will flag this as `FILE (not a symlink)` for the affected
-`.claude/*` entry (all six are listed in `scripts/_lib.sh`'s `TARGETS`). If it happens: diff the
-live file against `.dotfiles/claude/...`, merge the new content into the tracked copy by hand
-(the CodeGraph block itself lives in `shared/instructions-core.md` — if codegraph re-injects a copy
-into `CLAUDE.md`, delete the copy), delete the live plain file, then re-run `./install` to restore
-the symlink.
+Two triggers rewrite `~/.claude/CLAUDE.md` / `~/.claude/settings.json` **as plain files**, silently
+replacing the dotbot symlink with a real file:
+
+- some MCP servers' Claude Code auto-integration (confirmed for `codegraph`)
+- the Claude UI itself, when plugins/marketplaces are enabled or changed (confirmed 24.09.2026:
+  `settings.json` came back tab-indented with `600` permissions, carrying
+  `gitkraken-hooks@gitkraken` + `extraKnownMarketplaces` that existed only in the live file)
+
+`make check` will flag this as `FILE (not a symlink)` for the affected `.claude/*` entry (all six
+are listed in `scripts/_lib.sh`'s `TARGETS`). If it happens: diff the live file against
+`.dotfiles/claude/...`, merge the new content into the tracked copy by hand (the CodeGraph block
+itself lives in `shared/instructions-core.md` — if codegraph re-injects a copy into `CLAUDE.md`,
+delete the copy), delete the live plain file, then re-run `./install` to restore the symlink.
