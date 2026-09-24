@@ -7,9 +7,19 @@ installed by `install.conf.yaml`. Install plugins: `Prefix + I`.
 
 TPM plugin path: `~/.config/tmux/plugins/` (set via `TMUX_PLUGIN_MANAGER_PATH` in `tmux.conf`).
 
-## Ghostty (`ghostty/config`)
+## Ghostty (`ghostty/config.ghostty`)
 
-Terminal emulator config.
+Terminal emulator config. Dotbot links the same file to both paths Ghostty reads:
+
+- `~/.config/ghostty/config.ghostty` (XDG) — loaded first
+- `~/Library/Application Support/com.mitchellh.ghostty/config.ghostty` (macOS) — loaded second,
+  overrides XDG
+
+`config.ghostty` is the current file name (since Ghostty 1.2.3); the legacy `config` name is still
+read but unused here. Reload at runtime: `cmd+shift+,`.
+
+Key settings: SF Mono 15, theme `light:Dracula+,dark:Dracula` (auto light/dark), padding 12×8 with
+`balance`/`extend`, `copy-on-select`.
 
 ## LazyGit (`lazygit/`)
 

@@ -18,7 +18,8 @@ TARGETS=(
 	Brewfile
 	.config/btop/btop.conf
 	.config/fish
-	.config/ghostty/config
+	.config/ghostty/config.ghostty
+	"Library/Application Support/com.mitchellh.ghostty/config.ghostty"
 	.config/lazygit
 	.config/nvim
 	.config/opencode
