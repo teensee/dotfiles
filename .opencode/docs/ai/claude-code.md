@@ -15,8 +15,8 @@ into `~/.claude/`:
   (task, res, plan, go, review, clean, pg-ro, beautify-agents), using root-level `task.md` /
   `task-research.md` / `task-plan.md` / `task-log.md` (not branch-scoped like opencode's
   `.opencode/work/<branch>/`)
-- `claude/skills/` → `~/.claude/skills/` — the "superpowers" skill pack copied verbatim from
-  `opencode/skills/` (SKILL.md format is compatible between the two tools)
+- `claude/skills/` — не существует как отдельный набор: dotbot линкует `~/.claude/skills` прямо на
+  `opencode/skills/` (единый источник для обоих тулзов, SKILL.md-формат совместим)
 
 MCP servers (codegraph, postgres) are registered directly via `claude mcp add`, not through a
 tracked config file — see `/pg-ro` for the postgres recipe.
@@ -28,5 +28,6 @@ Some MCP servers' Claude Code auto-integration (confirmed for `codegraph`) rewri
 symlink with a real file. `make check` will flag this as `FILE (not a symlink)` for the affected
 `.claude/*` entry (all six are listed in `scripts/_lib.sh`'s `TARGETS`). If it happens: diff the
 live file against `.dotfiles/claude/...`, merge the new content into the tracked copy by hand
-(codegraph's own additions are marked with `<!-- CODEGRAPH_START/END -->` in `CLAUDE.md`), delete
-the live plain file, then re-run `./install` to restore the symlink.
+(the CodeGraph block itself lives in `shared/instructions-core.md` — if codegraph re-injects a copy
+into `CLAUDE.md`, delete the copy), delete the live plain file, then re-run `./install` to restore
+the symlink.

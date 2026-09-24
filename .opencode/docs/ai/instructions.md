@@ -17,4 +17,11 @@ uses the project root).
 
 Agents and commands are **not** unified this way: `opencode/agent/<name>.md` is the source of truth
 for an agent's prompt body; when it changes, mirror the body into `claude/agents/<name>.md` by hand
-(frontmatter stays tool-specific). Same for `opencode/commands/` ↔ `claude/commands/`.
+(frontmatter stays tool-specific). Same for `opencode/commands/` ↔ `claude/commands/`. On the
+codegraph side, `claude/agents/*` and `opencode/agent/*` have drifted (Claude copies are frozen at
+`eaaa193`) — unification in EN is a separate planned task.
+
+The CodeGraph instruction block (`<!-- CODEGRAPH_START/END -->`) exists in exactly one place —
+the end of `shared/instructions-core.md`; both tools receive it through the wiring above. Never
+add copies to `CLAUDE.md`, `instructions.md`, or `AGENTS.md`: if codegraph re-injects one, delete
+it and keep the core copy.

@@ -66,6 +66,6 @@ Postgres MCP используется, только если сервер вкл
 
 - `skills/` — vendored [superpowers](https://github.com/obra/superpowers) skills (markdown +
   scripts), no plugin dependency; snapshot, updates manual. MIT © 2025 Jesse Vincent —
-  `skills/LICENSE`
+  `skills/LICENSE`. Single source for both tools: `~/.claude/skills` links here too
 - `plugin/` — reserved for local plugins
 - Dependencies: `package.json` + `node_modules` (ignored, not tracked)

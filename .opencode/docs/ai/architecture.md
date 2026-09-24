@@ -8,6 +8,8 @@
   `install-omz.sh` bootstraps oh-my-zsh + custom plugins on `make install` / `make update`
 - `brew/Brewfile` — Homebrew packages, verified on `make install`/`make update`
 - TPM plugin path is `~/.config/tmux/plugins/`
+- `opencode/skills/` is the single source for agent skills — dotbot links it to `~/.claude/skills`
+  as well (SDD/superpowers pack shared by both tools)
 - `zed/conversations/`, `zed/prompts/`, and `zed/themes/*` are runtime data (gitignored; `.gitkeep` preserves the dir)
 
 ## Adding new configs

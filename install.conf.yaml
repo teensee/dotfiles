@@ -45,7 +45,7 @@
     ~/.claude/statusline-command.sh: claude/statusline-command.sh
     ~/.claude/agents: claude/agents
     ~/.claude/commands: claude/commands
-    ~/.claude/skills: claude/skills
+    ~/.claude/skills: opencode/skills
 
     # Package managers
     ~/Brewfile: brew/Brewfile
