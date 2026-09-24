@@ -31,7 +31,7 @@ Restart terminal to apply shell changes.
 ## What's included
 
 - **Neovim** — NvChad v2.5, LSP (Go, PHP, Python), DAP, neotest, blink.cmp
-- **Zsh** — Oh-My-Zsh + bureau theme, fzf, thefuck, asdf shims
+- **Zsh** — Oh-My-Zsh (bootstrapped by `make install`) + bureau theme, fzf, asdf shims
 - **Tmux** — Dracula theme, vim navigation, TPM
 - **Git** — global config, conditional includes for work/personal projects
 - **Ghostty** — terminal emulator config

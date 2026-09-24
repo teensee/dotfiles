@@ -2,7 +2,17 @@
 
 ## Zsh (`zsh/`)
 
-Oh-My-Zsh + bureau theme (`ZSH_THEME="bureau"`). Auto-update every 7 days.
+Oh-My-Zsh + bureau theme (`ZSH_THEME="bureau"`, built-in OMZ theme). Auto-update every 7 days.
+
+### Bootstrap
+
+`make install` / `make update` call `scripts/install-omz.sh`, which:
+
+- clones oh-my-zsh into `~/.oh-my-zsh` if missing (idempotent)
+- clones custom plugins into `~/.oh-my-zsh/custom/plugins/` if missing (currently
+  `zsh-autosuggestions` — the only non-bundled plugin referenced in `.zshrc`)
+
+The bureau theme file is not tracked in this repo — it ships with oh-my-zsh.
 
 ### PATH
 
@@ -10,7 +20,7 @@ homebrew (`/opt/homebrew/bin` + `sbin`), bison, go, `~/.local/bin` (codegraph), 
 
 ### OMZ plugins
 
-`git`, `docker`, `docker-compose`, `macos`, `composer`, `kubectl`, `history`, `zsh-autosuggestions`, `dotenv`, `gpg-agent`, `keychain`.
+`git`, `docker`, `docker-compose`, `macos`, `composer`, `kubectl`, `history`, `zsh-autosuggestions`, `dotenv`.
 
 `compinit` cached — rebuilds once per day (compares day-of-year of `~/.zcompdump`).
 
