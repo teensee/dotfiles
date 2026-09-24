@@ -1,4 +1,6 @@
 {
+  "agent_ui_font_family": "JetBrainsMono Nerd Font",
+  "agent_ui_font_size": 16.0,
   "ssh_connections": [
     {
       "host": "keenetic",
@@ -73,7 +75,7 @@
     "bookmarks": false,
   },
   "proxy": "",
-  "diff_view_style": "split",
+  "diff_view_style": "unified",
   "agent_servers": {
     "opencode": {
       "favorite_config_option_values": {
@@ -144,7 +146,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato - No Italics",
+    "dark": "Catppuccin Mocha - No Italics",
   },
   "terminal": {
     "dock": "right",
@@ -261,6 +263,13 @@
     },
   },
   "languages": {
+    "JSON": {
+      "tab_size": 2,
+      "indent_guides": {
+        "active_line_width": 1,
+        "line_width": 1
+      }
+    },
     "Markdown": {
       "soft_wrap": "prefer_line",
     },
