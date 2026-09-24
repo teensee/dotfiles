@@ -29,6 +29,24 @@ make help         # show all available commands
   `opencode/opencode.jsonc`'s `permission.bash` table and in `claude/settings.json`'s
   `permissions.deny`. All git write operations are performed by the user.
 
+## Commit messages
+
+Applies to this repository only. The agent never commits (see Hard rules) — it proposes the message
+and the command; the user runs them. Messages follow Conventional Commits, in English:
+`type(scope): summary`.
+
+- Types: `feat`, `fix`, `refactor`, `perf`, `style`, `docs`, `chore` (+ `test`, `build`, `ci`,
+  `revert` when needed)
+- Pick the type by effect, not diff size:
+  - new behavior/feature → `feat`; fixing wrong behavior → `fix`
+  - restructuring/cleanup without behavior change → `refactor` (deletions count here)
+  - deps, versions, tooling config, routine → `chore`; docs only → `docs`; formatting only →
+    `style`; speed → `perf`
+- `scope` is the tool/dir in lowercase (`zsh`, `zed`, `nvim`, `opencode`, `claude`, `brew`, `docs`);
+  multiple scopes are allowed comma-separated: `refactor(claude,opencode): ...`
+- Summary: imperative, lowercase, no trailing period, ≤ 72 chars. Body: `-` bullets, wrapped ~100
+- Pre-convention commits are not rewritten; new messages always follow this convention
+
 ## Topic files
 
 - [`.opencode/docs/ai/architecture.md`](.opencode/docs/ai/architecture.md) — read this when the repo
