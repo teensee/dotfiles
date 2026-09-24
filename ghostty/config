@@ -3,11 +3,13 @@ font-family = "SF Mono"
 font-size = 15
 
 # Тема
-theme = "dracula"
+theme = "light:Dracula+,dark:Dracula"
 
 # Отступы
-window-padding-x = 1
-window-padding-y = 1
+window-padding-x = 12
+window-padding-y = 8
+window-padding-balance = true
+window-padding-color = extend
 
 # Копирование при выделении
 copy-on-select = true
