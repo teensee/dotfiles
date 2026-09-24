@@ -6,7 +6,7 @@ Zed editor config — symlinked as `~/.config/zed`.
 
 - **Font**: JetBrainsMono Nerd Font (13px buffer/terminal, 16px UI)
 - **Keymap**: JetBrains base + vim_mode enabled
-- **Theme**: One Dark Pro (dark), One Light (light)
+- **Theme**: Catppuccin Mocha - No Italics (dark), One Light (light)
 - **Icon theme**: Colored Zed Icons Theme Dark
 - **Autosave**: 1s delay
 - **Edit predictions**: subtle mode, zed provider, data collection off
@@ -15,6 +15,8 @@ Zed editor config — symlinked as `~/.config/zed`.
 - **Panel layout**: project/outline/collaboration/git on left, agent/terminal on right
 - **Venv detection**: `terminal.detect_venv` on, search order `.venv`, `venv`, `.env`, `env`
 - **Soft wrap**: none (global), `prefer_line` for Markdown
+- **Diff view**: unified
+- **JSON**: `tab_size` 2, indent guides (1px)
 - **Wrap guides**: enabled
 - **Gutter**: folds on, bookmarks off
 - **Restore on startup**: launchpad
