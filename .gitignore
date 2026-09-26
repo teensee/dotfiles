@@ -15,3 +15,6 @@ zed/themes/*
 
 # OpenCode task files
 .opencode/work/
+
+# OpenCode synced skills cache (auto-managed by opencode)
+opencode/skills/synced/

@@ -4,13 +4,13 @@ NvChad v2.5 framework (`init.lua:21`). Theme: `everblush`.
 
 ## Key files
 
-| File                        | Purpose                                                |
-| --------------------------- | ------------------------------------------------------ |
-| `lua/chadrc.lua`            | Theme and UI overrides                                 |
-| `lua/mappings.lua`          | Custom keymaps                                         |
-| `lua/options.lua`           | Editor settings                                        |
+| File                        | Purpose                                                                                                                                                                                                                                         |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `lua/chadrc.lua`            | Theme and UI overrides                                                                                                                                                                                                                          |
+| `lua/mappings.lua`          | Custom keymaps                                                                                                                                                                                                                                  |
+| `lua/options.lua`           | Editor settings                                                                                                                                                                                                                                 |
 | `lua/configs/lspconfig.lua` | LSP servers: gopls, intelephense, basedpyright (auto-detects project `.venv`, e.g. from uv), ruff, templ, html. Intelephense settings (stubs, throwDepth) deliberately duplicate `zed/settings.json` — keep the two in sync when editing either |
-| `lua/configs/conform.lua`   | Formatters (sourced by `lua/plugins/conform.lua`)      |
+| `lua/configs/conform.lua`   | Formatters (sourced by `lua/plugins/conform.lua`)                                                                                                                                                                                               |
 
 ## Plugins (`lua/plugins/`)
 
@@ -23,12 +23,15 @@ NvChad v2.5 framework (`init.lua:21`). Theme: `everblush`.
 | `conform.lua`        | Plugin spec — delegates to `configs.conform`                                                                |
 | `nvim-lspconfig.lua` | Plugin spec — delegates to `configs.lspconfig`                                                              |
 
-Other plugins: `trouble.lua`, `nvim-tree.lua`, `nvim-treesitter.lua`, `telescope.lua`, `obsidian-plugin.lua`, `trainings.lua`, `lazy-git.lua`.
+Other plugins: `trouble.lua`, `nvim-tree.lua`, `nvim-treesitter.lua`, `telescope.lua`,
+`obsidian-plugin.lua`, `trainings.lua`, `lazy-git.lua`.
 
 ## Scripts
 
 - `lua/scripts/go-constructor.lua` — Go constructor generator for structs
-- `lua/scripts/scratch.lua` — `:Scratch [ext]` creates scratch files in `~/Programming/scratches`, sharing the directory and templates (`zed/tasks/scratch/_templates/`) with the Zed scratch tasks; `go` gets an isolated module `go/scratch_N/`
+- `lua/scripts/scratch.lua` — `:Scratch [ext]` creates scratch files in `~/Programming/scratches`,
+  sharing the directory and templates (`zed/tasks/scratch/_templates/`) with the Zed scratch tasks;
+  `go` gets an isolated module `go/scratch_N/`
 
 ## Maintenance
 

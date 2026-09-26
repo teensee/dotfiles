@@ -211,7 +211,7 @@ Write code before test? Delete it. Start over.
 - Don't look at it
 - Delete means delete
 
-````
+````text
 </After>
 
 ### 2. Entry in Rationalization Table

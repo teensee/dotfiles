@@ -1,0 +1,11 @@
+# Vendored superpowers skills — upstream files, not ours to reformat
+opencode/skills/
+
+# Dotbot submodule
+dotbot/
+
+# Dependencies (markdownlint does not read .gitignore)
+node_modules/
+
+# OpenCode task files
+.opencode/work/

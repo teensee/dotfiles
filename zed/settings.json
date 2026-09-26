@@ -54,6 +54,7 @@
   },
   "use_system_window_tabs": true,
   "tabs": {
+    "close_position": "left",
     "show_diagnostics": "off",
     "file_icons": true,
     "git_status": false,
@@ -87,8 +88,8 @@
       },
       "default_config_options": {
         "model": "opencode-go/deepseek-v4.1-flash",
-        "mode": "plan",
-        "effort": "high",
+        "mode": "build",
+        "effort": "max",
       },
       "type": "registry",
     },

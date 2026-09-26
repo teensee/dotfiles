@@ -1,0 +1,15 @@
+{
+	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
+	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+	"files": { "includes": ["**", "!opencode/skills", "!dotbot", "!**/node_modules"] },
+	"overrides": [
+		{
+			"includes": ["zed/settings.json"],
+			"json": {
+				"parser": {
+					"allowTrailingCommas": true
+				}
+			}
+		}
+	]
+}

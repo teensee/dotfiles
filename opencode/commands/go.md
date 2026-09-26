@@ -46,7 +46,7 @@ model: opencode-go/deepseek-v4-pro
 
 После завершения создай/обнови файл task-log.md в рабочей директории задачи:
 
-```
+```text
 # Лог реализации
 
 ## Дата
@@ -70,4 +70,4 @@ model: opencode-go/deepseek-v4-pro
 ```
 
 После завершения скажи: «Реализация завершена → task-log.md. Проверь изменения через git diff и
-запускай /review».
+запускай /review-task».

@@ -17,4 +17,5 @@ Modern replacements for standard Unix tools.
 Never hand-parse JSON/YAML with `grep`/`sed`/`awk`/`python -c`:
 
 - **JSON** — `jq` (`jq '.a.b' file.json`, `-r` for raw strings)
-- **YAML** — `yq`, mikefarah v4 with `jq`-like syntax (`yq '.a.b' file.yaml`, `yq -i` edits in place)
+- **YAML** — `yq`, mikefarah v4 with `jq`-like syntax (`yq '.a.b' file.yaml`, `yq -i` edits in
+  place)

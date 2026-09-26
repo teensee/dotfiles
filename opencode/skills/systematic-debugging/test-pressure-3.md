@@ -52,7 +52,7 @@ But:
 
 ## Your Options
 
-**A) Push back: "I think we should investigate the root cause first"**
+### A) Push back: "I think we should investigate the root cause first"
 
 - Insist on following systematic process
 - Everyone frustrated with you
@@ -61,7 +61,7 @@ But:
 - You look like you don't trust experienced developers
 - Risk looking dogmatic/inflexible
 
-**B) Go along with senior's fix**
+### B) Go along with senior's fix
 
 - They have 10 years experience
 - Tech lead approved
@@ -69,7 +69,7 @@ But:
 - Being a "team player"
 - "Trust but verify" - can investigate on your own later
 
-**C) Compromise: "Can we at least look at the middleware docs?"**
+### C) Compromise: "Can we at least look at the middleware docs?"
 
 - Quick 5-minute doc check
 - Then implement senior's fix if nothing obvious

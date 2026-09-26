@@ -4,20 +4,20 @@
 репо ведёт те же файлы в корне проекта (root-level `task.md` и т.д.) — см.
 [claude-code.md](claude-code.md).
 
-Таск-флоу по бранчам: `/task → /res → /plan → /go → /review → /clean`.
+Таск-флоу по бранчам: `/task → /res → /plan → /go → /review-task → /clean`.
 
 Рабочие файлы задачи лежат в заигноренной директории `.opencode/work/<branch>/` (бранч текущий):
 
-| Команда    | Агент         | Действие                                                                             |
-| ---------- | ------------- | ------------------------------------------------------------------------------------ |
-| `/task`    | build         | создаёт `.opencode/work/<branch>/task.md` (описание из аргументов или запросом)      |
-| `/res`     | research      | читает `task.md`, анализирует код, создаёт `task-research.md`                        |
-| `/plan`    | architect     | читает research, изучает паттерны, создаёт `task-plan.md` (скелеты, без кода)        |
-| `/go`      | build         | делегирует шаги плана специалистам (go-dev, symfony-dev, ...), создаёт `task-log.md` |
-| `/review`  | code-reviewer | ревью `git diff` против плана, отчёт по критичности                                  |
-| `/clean`   | build         | удаляет `.opencode/work/<branch>/`                                                   |
-| `/pg-ro`   | build         | напоминалка: рецепт read-only пользователя Postgres для MCP                          |
-| `/yt-comm` | build         | комментарий к задаче YouTrack со ссылками на MR по текущей ветке                     |
+| Команда        | Агент         | Действие                                                                             |
+| -------------- | ------------- | ------------------------------------------------------------------------------------ |
+| `/task`        | build         | создаёт `.opencode/work/<branch>/task.md` (описание из аргументов или запросом)      |
+| `/res`         | research      | читает `task.md`, анализирует код, создаёт `task-research.md`                        |
+| `/plan`        | architect     | читает research, изучает паттерны, создаёт `task-plan.md` (скелеты, без кода)        |
+| `/go`          | build         | делегирует шаги плана специалистам (go-dev, symfony-dev, ...), создаёт `task-log.md` |
+| `/review-task` | code-reviewer | ревью `git diff` против плана, отчёт по критичности                                  |
+| `/clean`       | build         | удаляет `.opencode/work/<branch>/`                                                   |
+| `/pg-ro`       | build         | напоминалка: рецепт read-only пользователя Postgres для MCP                          |
+| `/yt-comm`     | build         | комментарий к задаче YouTrack со ссылками на MR по текущей ветке                     |
 
 Правила:
 

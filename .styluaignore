@@ -1,0 +1,5 @@
+# Vendored superpowers skills
+opencode/skills/
+
+# Dotbot submodule
+dotbot/

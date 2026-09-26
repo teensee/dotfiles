@@ -1,0 +1,19 @@
+# Vendored superpowers skills + opencode synced skills cache
+opencode/skills/
+
+# Dotbot submodule
+dotbot/
+
+# OpenCode task files
+.opencode/work/
+
+# JSON/JSONC/JS/TS/HTML — зона biome; prettier вырезал бы намеренные висящие
+# запятые в zed/settings.json
+*.json
+*.jsonc
+*.js
+*.ts
+*.html
+
+# Локальные MCP-обёртки (gitignored в .opencode/.gitignore, prettier его не читает)
+.opencode/mcp/

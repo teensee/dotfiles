@@ -4,13 +4,19 @@
 
 - `install.conf.yaml` — single source of truth for symlinks; `relink: true` means re-running is safe
 - Dotbot is a git submodule (`.gitmodules` → `dotbot/`)
-- `scripts/` — shell scripts called by Makefile; shared helpers in `_lib.sh`;
-  `install-omz.sh` bootstraps oh-my-zsh + custom plugins on `make install` / `make update`
+- `scripts/` — shell scripts called by Makefile; shared helpers in `_lib.sh`; `install-omz.sh`
+  bootstraps oh-my-zsh + custom plugins on `make install` / `make update`; `scripts/lint/` holds one
+  script per lint target plus `_common.sh`
 - `brew/Brewfile` — Homebrew packages, verified on `make install`/`make update`
+- `Makefile` lint targets (`lint`, `lint-sh/md/json/lua/yaml`, `lint-deps`) only call
+  `scripts/lint/*.sh`; what each linter covers is defined in its own config
+  (`.markdownlintignore`, `.prettierignore`, `biome.json`, `.styluaignore`, `.shellcheckrc`,
+  `.markdownlint.jsonc`) — see [linting.md](linting.md)
 - TPM plugin path is `~/.config/tmux/plugins/`
 - `opencode/skills/` is the single source for agent skills — dotbot links it to `~/.claude/skills`
   as well (SDD/superpowers pack shared by both tools)
-- `zed/conversations/`, `zed/prompts/`, and `zed/themes/*` are runtime data (gitignored; `.gitkeep` preserves the dir)
+- `zed/conversations/`, `zed/prompts/`, and `zed/themes/*` are runtime data (gitignored; `.gitkeep`
+  preserves the dir)
 
 ## Adding new configs
 

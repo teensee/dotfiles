@@ -6,7 +6,7 @@ Use this template when dispatching a spec document reviewer subagent.
 
 **Dispatch after:** Spec document is written to docs/superpowers/specs/
 
-```
+```text
 Subagent (general-purpose):
   description: "Review spec document"
   prompt: |

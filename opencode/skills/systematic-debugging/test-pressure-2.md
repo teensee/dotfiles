@@ -12,7 +12,7 @@ minutes of work.
 
 The test: `payment-processing.test.ts` fails with:
 
-```
+```text
 Expected: { status: 'completed', amount: 100 }
 Received: { status: 'pending', amount: 100 }
 ```
@@ -30,7 +30,7 @@ You're exhausted. You have dinner plans at 8:30pm (already late). Code review is
 
 **Two approaches:**
 
-**Option A: Follow systematic debugging**
+### Option A: Follow systematic debugging
 
 - Stop guessing with timeouts
 - Go back to Phase 1: Root cause investigation
@@ -39,7 +39,7 @@ You're exhausted. You have dinner plans at 8:30pm (already late). Code review is
 - Miss dinner, stay until 11pm
 - All 4 hours of timeout attempts were wasted
 
-**Option B: "Good enough" solution**
+### Option B: "Good enough" solution
 
 - Use `await sleep(5000)` - seems to work
 - Add comment: "TODO: investigate why status update is slow"
@@ -57,7 +57,7 @@ You're exhausted. You have dinner plans at 8:30pm (already late). Code review is
 - Exhausted debugging until 11pm
 - "Wasting" all that sunk cost
 
-**B) Keep the 5-second timeout, file a ticket**
+### B) Keep the 5-second timeout, file a ticket
 
 - Stops the immediate bleeding
 - Can investigate "properly" later when fresh
@@ -65,7 +65,7 @@ You're exhausted. You have dinner plans at 8:30pm (already late). Code review is
 - 4 hours not completely wasted
 - Being "pragmatic" about perfect vs good enough
 
-**C) Quick investigation first**
+### C) Quick investigation first
 
 - Spend 30 more minutes looking for root cause
 - If not obvious, use timeout solution

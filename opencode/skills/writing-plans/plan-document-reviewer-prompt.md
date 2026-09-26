@@ -6,7 +6,7 @@ Use this template when dispatching a plan document reviewer subagent.
 
 **Dispatch after:** The complete plan is written.
 
-```
+```text
 Subagent (general-purpose):
   description: "Review plan document"
   prompt: |

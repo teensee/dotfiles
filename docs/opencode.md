@@ -7,7 +7,7 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 | File              | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `opencode.jsonc`  | Model `opencode-go/deepseek-v4.1-flash`, custom `vesna` provider (`@ai-sdk/openai-compatible`, VesnaCode, key via `VESNA_API_KEY` env), LSP enabled, global `instructions.md`, MCP `codegraph` (on) + `postgres` (read-only, off by default; URI из `DATABASE_OPENCODE_RO_URI`), git permission rules — только read-only для агента (все записи git denied); корневой поиск по файловой системе (`find`/`fd`/`rg`/`grep`/`locate`/`mdfind` от `/`) — denied; модели субагентов задаются в секции `agent` этого файла, модели команд — в их frontmatter |
-| `instructions.md` | Глобальные инструкции для каждой сессии: git read-only, task workflow по бранчам, стиль ответов                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `instructions.md` | opencode-специфичный остаток глобальных инструкций: task workflow по бранчам; общая часть (git read-only, приоритет инструментов, Postgres MCP, стиль) — в `shared/instructions-core.md`, подключённом первым в `instructions`                                                                                                                                                                                                                                                                                                                         |
 | `tui.jsonc`       | Mouse disabled, vim-like Ctrl+U/D scroll                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## Subagents (`agent/`)
@@ -51,21 +51,24 @@ Postgres MCP используется, только если сервер вкл
 
 Таск-флоу по бранчам: рабочие файлы в `.opencode/work/<branch>/`, бранч определяется автоматически.
 
-| Command    | Agent         | Purpose                                                     |
-| ---------- | ------------- | ----------------------------------------------------------- |
-| `/task`    | build         | Создание `.opencode/work/<branch>/task.md`                  |
-| `/res`     | research      | Ресёрч: task.md → task-research.md                          |
-| `/plan`    | architect     | План: task-research.md → task-plan.md                       |
-| `/go`      | build         | Реализация: план → делегирование спецагентам, task-log.md   |
-| `/review`  | code-reviewer | Ревью: git diff + план → отчёт                              |
-| `/clean`   | build         | Удаление `.opencode/work/<branch>/`                         |
-| `/pg-ro`   | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
-| `/yt-comm` | build         | Комментарий к задаче YouTrack: MR по текущей ветке          |
+| Command        | Agent         | Purpose                                                     |
+| -------------- | ------------- | ----------------------------------------------------------- |
+| `/task`        | build         | Создание `.opencode/work/<branch>/task.md`                  |
+| `/res`         | research      | Ресёрч: task.md → task-research.md                          |
+| `/plan`        | architect     | План: task-research.md → task-plan.md                       |
+| `/go`          | build         | Реализация: план → делегирование спецагентам, task-log.md   |
+| `/review-task` | code-reviewer | Ревью: git diff + план → отчёт                              |
+| `/clean`       | build         | Удаление `.opencode/work/<branch>/`                         |
+| `/pg-ro`       | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
+| `/yt-comm`     | build         | Комментарий к задаче YouTrack: MR по текущей ветке          |
 
 ## Structure
 
 - `skills/` — vendored [superpowers](https://github.com/obra/superpowers) skills (markdown +
   scripts), no plugin dependency; snapshot, updates manual. MIT © 2025 Jesse Vincent —
   `skills/LICENSE`. Single source for both tools: `~/.claude/skills` links here too
-- `plugin/` — reserved for local plugins
-- Dependencies: `package.json` + `node_modules` (ignored, not tracked)
+- `plugins/` — `gk-hooks.js`, GitKraken CLI-managed хук (forward'ит события сессии в
+  `gk ai hook run`; автогенерируемый, содержит машинный путь к `gk`). Пустая локальная `plugin/`
+  (singular) — легаси, opencode её не грузит
+- Dependencies: `package.json` (`@ai-sdk/openai-compatible`, `@opencode-ai/plugin`) + `node_modules`
+  — существуют локально, но игнорируются через `opencode/.gitignore` (не трекаются)

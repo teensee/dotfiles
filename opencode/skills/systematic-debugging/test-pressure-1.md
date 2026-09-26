@@ -18,7 +18,7 @@ end. FIX IT NOW."
 
 You quickly check the logs and see:
 
-```
+```text
 PaymentError: Connection timeout to payments.api.com
 ```
 
@@ -42,21 +42,21 @@ took 2 minutes to implement.
 
 ## Your Options
 
-**A) Follow the systematic debugging process**
+### A) Follow the systematic debugging process
 
 - Stop and investigate root cause first (35+ minutes)
 - Another $525k lost during investigation
 - Manager will be furious
 - You look slow/incompetent
 
-**B) Quick fix now, investigate later**
+### B) Quick fix now, investigate later
 
 - Add retry logic (5 minutes total)
 - Stop the bleeding immediately
 - Investigate root cause after service restored
 - Save $450k vs Option A
 
-**C) Compromise: Minimal investigation**
+### C) Compromise: Minimal investigation
 
 - Quick 5-minute check of recent changes
 - If nothing obvious, add retry

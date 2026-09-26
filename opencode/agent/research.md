@@ -69,7 +69,7 @@ Before finishing, verify:
 
 Create task-research.md with this structure:
 
-```
+```text
 # Task Research
 
 ## Task understanding

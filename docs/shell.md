@@ -20,7 +20,8 @@ homebrew (`/opt/homebrew/bin` + `sbin`), bison, go, `~/.local/bin` (codegraph), 
 
 ### OMZ plugins
 
-`git`, `docker`, `docker-compose`, `macos`, `composer`, `kubectl`, `history`, `zsh-autosuggestions`, `dotenv`.
+`git`, `docker`, `docker-compose`, `macos`, `composer`, `kubectl`, `history`, `zsh-autosuggestions`,
+`dotenv`.
 
 `compinit` cached — rebuilds once per day (compares day-of-year of `~/.zcompdump`).
 
@@ -43,13 +44,15 @@ homebrew (`/opt/homebrew/bin` + `sbin`), bison, go, `~/.local/bin` (codegraph), 
 
 ### Integrations
 
-- **fzf** — key bindings + fuzzy completion; default command via `fd --type f --hidden --follow --exclude .git`
+- **fzf** — key bindings + fuzzy completion; default command via
+  `fd --type f --hidden --follow --exclude .git`
 - **zoxide** — smart `cd` (`z` command); init via `eval "$(zoxide init zsh)"`
 - **zsh-syntax-highlighting** — sourced last (via homebrew path)
 
 ### External sources
 
-Docker init (`~/.docker/init-zsh.sh`), ngrok completion (if installed), JetBrains vmoptions (`~/.jetbrains.vmoptions.sh`).
+Docker init (`~/.docker/init-zsh.sh`), ngrok completion (if installed), JetBrains vmoptions
+(`~/.jetbrains.vmoptions.sh`).
 
 ## Fish (`fish/`)
 

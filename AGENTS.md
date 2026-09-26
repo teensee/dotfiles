@@ -14,6 +14,12 @@ make install      # backup + dotbot install + brew check
 make update       # backup + git pull + submodule update + dotbot install + brew check
 make backup       # snapshot configs to ~/.dotfiles-backup-TIMESTAMP
 make check        # check symlink status
+make lint         # run all linters (shell, markdown, json, lua, yaml)
+make lint-sh      # shellcheck + shfmt -d on tracked *.sh and ./install
+make lint-md      # markdownlint + prettier --check on *.md
+make lint-json    # biome on json/jsonc/js (parsing catches invalid JSON)
+make lint-lua     # stylua --check on *.lua
+make lint-yaml    # prettier --check on *.yaml/*.yml
 make clean        # nvim cache + zcompdump
 make clean-tmux   # wipe tmux-resurrect snapshots
 make restore      # restore from latest backup (interactive confirmation)
@@ -21,6 +27,11 @@ make help         # show all available commands
 ```
 
 `./install` is the raw dotbot runner; `make install` wraps it with a backup step and brew check.
+Lint targets only call `scripts/lint/*.sh` (one script per target, shared helpers in
+`scripts/lint/_common.sh`); what each linter covers lives in that linter's own config, not in the
+`Makefile`, so running the tools directly from the shell behaves identically. They need
+`shellcheck`, `shfmt`, `markdownlint-cli`, `prettier`, `biome`, `stylua` (all in the Brewfile); each
+target checks only its own tools, and `lint-deps` verifies the whole set.
 
 ## Hard rules
 
@@ -62,3 +73,5 @@ and the command; the user runs them. Messages follow Conventional Commits, in En
   agent/command/instruction config shared between opencode and Claude Code
 - [`.opencode/docs/ai/claude-code.md`](.opencode/docs/ai/claude-code.md) — read this when
   maintaining the Claude Code config (mirror, symlinks, MCP, drift risk)
+- [`.opencode/docs/ai/linting.md`](.opencode/docs/ai/linting.md) — read this when adding files or
+  types to lint, or changing lint tooling/configs

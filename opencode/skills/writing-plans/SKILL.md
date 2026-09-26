@@ -188,6 +188,7 @@ fast iteration
 **2. Inline Execution** - Execute tasks in this session using executing-plans, batch execution with
 checkpoints
 
+<!-- markdownlint-disable-next-line MD036 -->
 **Which approach?"**
 
 **If Subagent-Driven chosen:**

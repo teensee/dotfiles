@@ -22,22 +22,31 @@ model: opus
 - **Бинарный поиск:** отключай половину кода, локализуй
 - **Дифференциальная отладка:** сравнивай рабочий и нерабочий сценарий
 - **Минимальное воспроизведение:** убери всё лишнее, оставь только падающий путь
-- **Системное расследование:** предпочитай `fd` для поиска файлов, `dust` для диска, `tldr`/`--help` для справки по командам
+- **Системное расследование:** предпочитай `fd` для поиска файлов, `dust` для диска, `tldr`/`--help`
+  для справки по командам
 
 ## Типы проблем
 
 ### Конкурентность
-Race conditions: `go test -race`, tokio + thread sanitizer. Deadlocks: порядок блокировок, `try_lock`, таймауты. Goroutine leaks: `runtime.NumGoroutine()`, профили горутин.
+
+Race conditions: `go test -race`, tokio + thread sanitizer. Deadlocks: порядок блокировок,
+`try_lock`, таймауты. Goroutine leaks: `runtime.NumGoroutine()`, профили горутин.
 
 ### Память
-Утечки: pprof heap profile, valgrind, heaptrack. Use-after-free: miri (Rust), ASan. Buffer overflow: проверка границ. Высокое потребление: что аллоцирует? какие объекты живут долго?
+
+Утечки: pprof heap profile, valgrind, heaptrack. Use-after-free: miri (Rust), ASan. Buffer overflow:
+проверка границ. Высокое потребление: что аллоцирует? какие объекты живут долго?
 
 ### Производительность
-CPU: pprof/profile, flamegraph. I/O: диск, сетевая задержка, медленные запросы (EXPLAIN ANALYZE). Lock contention: pg_locks, mutex profiling.
+
+CPU: pprof/profile, flamegraph. I/O: диск, сетевая задержка, медленные запросы (EXPLAIN ANALYZE).
+Lock contention: pg_locks, mutex profiling.
 
 ### Логика
+
 Off-by-one, null/nil/None dereference, несоответствие типов, проглоченные ошибки.
 
 ## Postmortem
 
-После исправления — краткий отчёт: когда обнаружено/исправлено; в чём была первопричина; что изменено; как избежать повторения (тест, алерт, рефакторинг).
+После исправления — краткий отчёт: когда обнаружено/исправлено; в чём была первопричина; что
+изменено; как избежать повторения (тест, алерт, рефакторинг).

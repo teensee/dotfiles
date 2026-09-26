@@ -5,7 +5,7 @@ Use this template when dispatching a code reviewer subagent.
 **Purpose:** Review completed work against requirements and code quality standards before it
 cascades into more work.
 
-````
+````text
 Subagent (general-purpose):
   description: "Review code changes"
   prompt: |
@@ -137,7 +137,7 @@ Subagent (general-purpose):
 
 ## Example Output
 
-```
+```text
 ### Strengths
 - Clean database schema with proper migrations (db.ts:15-42)
 - Comprehensive test coverage (18 tests, all edge cases)

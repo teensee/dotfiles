@@ -14,7 +14,8 @@ PHP тесты:
 - Моки через Prophecy или PHPUnit mocks
 - Data providers для параметризованных тестов
 - Фикстуры через Alice или нативные Codeception fixtures
-- В проектах с Codeceptiom отдавай приоритет Api, Functional, Unit (в порядке приоритета. Юнит почти не пиши, только по запросу)
+- В проектах с Codeceptiom отдавай приоритет Api, Functional, Unit (в порядке приоритета. Юнит почти
+  не пиши, только по запросу)
 
 Go тесты:
 

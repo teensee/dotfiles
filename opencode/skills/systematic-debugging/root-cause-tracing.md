@@ -37,7 +37,7 @@ digraph when_to_use {
 
 ### 1. Observe the Symptom
 
-```
+```text
 Error: git init failed in ~/project/packages/core
 ```
 

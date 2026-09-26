@@ -90,7 +90,7 @@ API docs, syntax guides, tool documentation (office docs)
 
 ## Directory Structure
 
-```
+```text
 skills/
   skill-name/
     SKILL.md              # Main reference (required)
@@ -174,7 +174,7 @@ it answer: "Should I read this skill right now?"
 
 **Format:** Start with "Use when..." to focus on triggering conditions
 
-**CRITICAL: Description = When to Use, NOT What the Skill Does**
+#### CRITICAL: Description = When to Use, NOT What the Skill Does
 
 The description should ONLY describe triggering conditions. Do NOT summarize the skill's process or
 workflow in the description.
@@ -378,7 +378,7 @@ flowcharts to SVG:
 
 ## Code Examples
 
-**One excellent example beats many mediocre ones**
+### One excellent example beats many mediocre ones
 
 Choose most relevant language:
 
@@ -406,7 +406,7 @@ You're good at porting - one great example is enough.
 
 ### Self-Contained Skill
 
-```
+```text
 defense-in-depth/
   SKILL.md    # Everything inline
 ```
@@ -415,7 +415,7 @@ When: All content fits, no heavy reference needed
 
 ### Skill with Reusable Tool
 
-```
+```text
 condition-based-waiting/
   SKILL.md    # Overview + patterns
   example.ts  # Working helpers to adapt
@@ -425,7 +425,7 @@ When: Tool is reusable code, not just narrative
 
 ### Skill with Heavy Reference
 
-```
+```text
 pptx/
   SKILL.md       # Overview + workflows
   pptxgenjs.md   # 600 lines API reference
@@ -437,7 +437,7 @@ When: Reference material too large for inline
 
 ## The Iron Law (Same as TDD)
 
-```
+```text
 NO SKILL WITHOUT A FAILING TEST FIRST
 ```
 
@@ -586,7 +586,7 @@ Write code before test? Delete it. Start over.
 - Don't look at it
 - Delete means delete
 
-````
+````text
 </Good>
 
 ### Address "Spirit vs Letter" Arguments

@@ -17,7 +17,7 @@ social comfort.
 
 ## The Response Pattern
 
-```
+```text
 WHEN receiving code review feedback:
 
 1. READ: Complete feedback without reacting
@@ -45,7 +45,7 @@ WHEN receiving code review feedback:
 
 ## Handling Unclear Feedback
 
-```
+```text
 IF any item is unclear:
   STOP - do not implement anything yet
   ASK for clarification on unclear items
@@ -55,7 +55,7 @@ WHY: Items may be related. Partial understanding = wrong implementation.
 
 **Example:**
 
-```
+```text
 your human partner: "Fix 1-6"
 You understand 1,2,3,6. Unclear on 4,5.
 
@@ -74,7 +74,7 @@ You understand 1,2,3,6. Unclear on 4,5.
 
 ### From External Reviewers
 
-```
+```text
 BEFORE implementing:
   1. Check: Technically correct for THIS codebase?
   2. Check: Breaks existing functionality?
@@ -96,7 +96,7 @@ IF conflicts with your human partner's prior decisions:
 
 ## YAGNI Check for "Professional" Features
 
-```
+```text
 IF reviewer suggests "implementing properly":
   grep codebase for actual usage
 
@@ -109,7 +109,7 @@ don't add it."
 
 ## Implementation Order
 
-```
+```text
 FOR multi-item feedback:
   1. Clarify anything unclear FIRST
   2. Then implement in this order:
@@ -145,7 +145,7 @@ the issue you've seen. They'll appreciate your honesty.
 
 When feedback IS correct:
 
-```
+```text
 ✅ "Fixed. [Brief description of what changed]"
 ✅ "Good catch - [specific issue]. Fixed in [location]."
 ✅ [Just fix it and show in the code]
@@ -165,7 +165,7 @@ When feedback IS correct:
 
 If you pushed back and were wrong:
 
-```
+```text
 ✅ "You were right - I checked [X] and it does [Y]. Implementing now."
 ✅ "Verified this and you're correct. My initial understanding was wrong because [reason]. Fixing."
 
@@ -192,28 +192,28 @@ State the correction factually and move on.
 
 **Performative Agreement (Bad):**
 
-```
+```text
 Reviewer: "Remove legacy code"
 ❌ "You're absolutely right! Let me remove that..."
 ```
 
 **Technical Verification (Good):**
 
-```
+```text
 Reviewer: "Remove legacy code"
 ✅ "Checking... build target is 10.15+, this API needs 13+. Need legacy for backward compat. Current impl has wrong bundle ID - fix it or drop pre-13 support?"
 ```
 
 **YAGNI (Good):**
 
-```
+```text
 Reviewer: "Implement proper metrics tracking with database, date filters, CSV export"
 ✅ "Grepped codebase - nothing calls this endpoint. Remove it (YAGNI)? Or is there usage I'm missing?"
 ```
 
 **Unclear Item (Good):**
 
-```
+```text
 your human partner: "Fix items 1-6"
 You understand 1,2,3,6. Unclear on 4,5.
 ✅ "Understand 1,2,3,6. Need clarification on 4 and 5 before implementing."

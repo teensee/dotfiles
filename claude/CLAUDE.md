@@ -1,9 +1,9 @@
 # Глобальные инструкции Claude Code
 
 Правила для всех сессий Claude Code во всех проектах. Общая часть (git-policy, приоритет
-инструментов, Postgres MCP, стиль) вынесена в `shared/instructions-core.md` и подключена ниже —
-тот же файл используется в opencode (`opencode/instructions.md`). Правь общую часть только там,
-здесь — только то, что специфично для Claude Code.
+инструментов, Postgres MCP, стиль) вынесена в `shared/instructions-core.md` и подключена ниже — тот
+же файл используется в opencode (`opencode/instructions.md`). Правь общую часть только там, здесь —
+только то, что специфично для Claude Code.
 
 @/Users/vladislav/.dotfiles/shared/instructions-core.md
 
@@ -25,4 +25,5 @@
 ## Claude Code specifics
 
 - Права (`permissions.allow`/`permissions.deny` для git) заданы в `~/.claude/settings.json`
-- Список агентов — `~/.claude/agents/`, команд — `~/.claude/commands/`, скиллов — `~/.claude/skills/`
+- Список агентов — `~/.claude/agents/`, команд — `~/.claude/commands/`, скиллов —
+  `~/.claude/skills/`

@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 SCRIPTS := $(shell pwd)/scripts
 
-.PHONY: help install update backup restore clean clean-tmux check
+.PHONY: help install update backup restore clean clean-tmux check \
+	lint lint-deps lint-sh lint-md lint-json lint-lua lint-yaml
 
 # Default target
 .DEFAULT_GOAL := help
@@ -44,3 +45,29 @@ clean:
 
 clean-tmux:
 	@$(SCRIPTS)/clean-tmux.sh
+
+# Linting
+#
+# Вся механика — в scripts/lint/*.sh; область каждого линтера задана его собственным
+# конфигом (.prettierignore, .markdownlintignore, biome.json, .styluaignore), поэтому
+# прямой запуск инструмента из консоли даёт тот же результат, что make.
+lint:
+	@$(SCRIPTS)/lint/all.sh
+
+lint-deps:
+	@$(SCRIPTS)/lint/deps.sh
+
+lint-sh:
+	@$(SCRIPTS)/lint/sh.sh
+
+lint-md:
+	@$(SCRIPTS)/lint/md.sh
+
+lint-json:
+	@$(SCRIPTS)/lint/json.sh
+
+lint-lua:
+	@$(SCRIPTS)/lint/lua.sh
+
+lint-yaml:
+	@$(SCRIPTS)/lint/yaml.sh

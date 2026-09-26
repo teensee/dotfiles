@@ -1,5 +1,6 @@
 ---
-description: План реализации — читает task.md и task-research.md текущего бранча, составляет task-plan.md
+description:
+  План реализации — читает task.md и task-research.md текущего бранча, составляет task-plan.md
 agent: architect
 subtask: true
 model: opencode-go/deepseek-v4-pro
@@ -15,4 +16,5 @@ model: opencode-go/deepseek-v4-pro
 
 НЕ пиши код реализации. В плане — только скелет: интерфейсы, сигнатуры, SQL-схемы.
 
-После создания файла скажи: «План готов → .opencode/work/<branch>/task-plan.md. Проверь, поправь если нужно, и запускай /go».
+После создания файла скажи: «План готов → .opencode/work/<branch>/task-plan.md. Проверь, поправь
+если нужно, и запускай /go».

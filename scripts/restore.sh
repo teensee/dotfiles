@@ -4,7 +4,7 @@ set -euo pipefail
 source "$(dirname "$0")/_lib.sh"
 
 log_info "Looking for latest backup..."
-latest="$(ls -d "$HOME/.dotfiles-backup-"* 2>/dev/null | tail -1)"
+latest="$(find "$HOME" -maxdepth 1 -type d -name ".dotfiles-backup-*" 2>/dev/null | sort | tail -1)"
 
 if [ -z "$latest" ]; then
 	log_err "No backups found"

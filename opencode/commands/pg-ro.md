@@ -7,7 +7,8 @@ model: opencode-go/deepseek-v4.1-flash
 
 Напомни рецепт создания read-only пользователя Postgres для opencode MCP (`postgres`).
 
-$ARGUMENTS — если пользователь передал значения (например `appdb`, `opencode_ro`, `change-me`), подставь их в шаблон; если нет — выведи шаблон с плейсхолдерами `<db>`, `<role>`, `<password>`.
+$ARGUMENTS — если пользователь передал значения (например `appdb`, `opencode_ro`, `change-me`),
+подставь их в шаблон; если нет — выведи шаблон с плейсхолдерами `<db>`, `<role>`, `<password>`.
 
 ## 1. SQL — создать роль с правами только на чтение
 

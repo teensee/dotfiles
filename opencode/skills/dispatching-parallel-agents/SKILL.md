@@ -161,7 +161,7 @@ conditions
 
 **Dispatch:**
 
-```
+```text
 Agent 1 → Fix agent-tool-abort.test.ts
 Agent 2 → Fix batch-completion-behavior.test.ts
 Agent 3 → Fix tool-approval-race-conditions.test.ts

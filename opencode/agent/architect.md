@@ -82,7 +82,7 @@ Before finishing, verify:
 
 Create task-plan.md with this structure:
 
-````
+````text
 # Implementation Plan
 
 ## Approach
@@ -121,6 +121,6 @@ Create task-plan.md with this structure:
 
 (What could go wrong, what to watch for during implementation)
 
-```
+```text
 When done say: "Plan ready → task-plan.md."
 ```

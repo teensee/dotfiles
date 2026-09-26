@@ -1,0 +1,3 @@
+# Скрипты подключают _lib.sh через $(dirname "$0") — резолвим относительно каталога скрипта
+external-sources=true
+source-path=SCRIPTDIR

@@ -13,3 +13,5 @@ window-padding-color = extend
 
 # Копирование при выделении
 copy-on-select = true
+
+shell-integration-features = ssh-terminfo,ssh-env
