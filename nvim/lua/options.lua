@@ -15,7 +15,17 @@ o.scrolloff = 10
 
 o.backspace = "indent,eol,start" -- возвращение к предыдущим элементам при нажатии Backspace
 
-o.conceallevel = 1 -- добавлено из-за obsidian.vim — скрывает специальные символы (например, для markdown)
+-- conceal: по умолчанию выключен (в JSON/коде он прячет кавычки), включается
+-- только для markdown ради obsidian.nvim. conceallevel window-local, поэтому
+-- ветка else обязательна: иначе значение утечёт в новый буфер того же окна
+o.conceallevel = 0
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("conceal_per_ft", { clear = true }),
+    callback = function(ev)
+        vim.opt_local.conceallevel = vim.bo[ev.buf].filetype == "markdown" and 2 or 0
+    end,
+})
 
 -- Относительные и абсолютные номера строк
 o.relativenumber = true -- включение относительных номеров строк
