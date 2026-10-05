@@ -1,4 +1,5 @@
 {
+  "cli_default_open_behavior": "new_window",
   "agent_ui_font_family": "JetBrainsMono Nerd Font",
   "agent_ui_font_size": 16.0,
   "ssh_connections": [
@@ -77,6 +78,13 @@
   "proxy": "",
   "diff_view_style": "unified",
   "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "default",
+        "fast": false
+      },
+      "type": "registry"
+    },
     "opencode": {
       "favorite_config_option_values": {
         "effort": ["max"],
@@ -88,7 +96,7 @@
       "default_config_options": {
         "model": "opencode-go/deepseek-v4.1-flash",
         "mode": "plan",
-        "effort": "high",
+        "effort": "max",
       },
       "type": "registry",
     },
@@ -108,8 +116,10 @@
     "dock": "left",
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
     "show_turn_stats": true,
-    "sidebar_side": "right",
     "enable_feedback": false,
     "dock": "right",
     "favorite_models": [],
