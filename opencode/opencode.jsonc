@@ -26,7 +26,7 @@
   "agent": {
     "architect": { "model": "opencode-go/deepseek-v4-pro" },
     "code-reviewer": { "model": "opencode-go/deepseek-v4-pro" },
-    "dba": { "model": "opencode-go/glm-5" },
+    "dba": { "model": "opencode-go/glm-5.2" },
     "debugger": { "model": "opencode-go/deepseek-v4-pro" },
     "devops": { "model": "opencode-go/deepseek-v4.1-flash" },
     "go-dev": { "model": "opencode-go/deepseek-v4.1-flash" },
@@ -53,6 +53,7 @@
       "head*": "allow",
       "tail*": "allow",
       "echo*": "allow",
+      "basename *": "allow",
       "cat*": "allow",
       "rg*": "allow",
       "grep*": "allow",
