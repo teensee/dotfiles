@@ -35,7 +35,7 @@ Zed editor config — symlinked as `~/.config/zed`.
 
 | Language | LSP | Formatter |
 |---|---|---|
-| PHP | intelephense (not phpactor) | `php-cs-fixer` via external command |
+| PHP | phpantom (not intelephense/phpactor) | `php-cs-fixer` via external command |
 | Go | gopls (default) | format_on_save, hard_tabs, tab_size 4 |
 
 ## Structure

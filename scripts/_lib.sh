@@ -23,6 +23,7 @@ TARGETS=(
 	.config/lazygit
 	.config/nvim
 	.config/opencode
+	.config/phpantom_lsp/.phpantom.toml
 	.config/tmux/tmux.conf
 	.config/tmuxinator
 	.config/zed

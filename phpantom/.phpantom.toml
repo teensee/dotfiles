@@ -1,0 +1,13 @@
+#:schema https://github.com/PHPantom-dev/phpantom_lsp/raw/main/config-schema.json
+
+# Глобальные настройки phpantom_lsp. Per-project .phpantom.toml мержится поверх
+# этого файла по ключам, так что проект переопределяет только то, что отличается.
+
+[phpstan]
+# Диагностики PHPStan даёт nvim-lint (nvim/lua/plugins/programming.lua),
+# чтобы не было двух наборов одних и тех же ошибок
+command = ""
+
+[formatting]
+# Форматирование PHP — conform + php-cs-fixer (nvim/lua/configs/conform.lua)
+php-cs-fixer = ""

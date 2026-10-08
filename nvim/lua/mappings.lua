@@ -38,6 +38,7 @@ map("n", "<leader>gb", ":Gitsigns blame_line<CR>", { desc = "Blame line" })
 local wk_ok, wk = pcall(require, "which-key")
 if wk_ok then
     wk.add {
+        { "<leader>c", group = "Code" },
         { "<leader>d", group = "Debug/Database" },
         { "<leader>g", group = "Git" },
         { "<leader>q", group = "Diagnostics" },
@@ -55,6 +56,10 @@ map("v", "<leader>dq", ":'<,'>DB<CR>", { desc = "Execute selected query" })
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code action" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type definition" })
+map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run code lens" })
+map("n", "<leader>ch", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
+end, { desc = "Toggle inlay hints" })
 
 -- Diagnostics (Trouble)
 map("n", "<leader>qx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Diagnostics (Trouble)" })

@@ -38,6 +38,7 @@
     ~/.config/lazygit: lazygit
     ~/.config/opencode: opencode
     ~/.config/btop/btop.conf: btop/btop.conf
+    ~/.config/phpantom_lsp/.phpantom.toml: phpantom/.phpantom.toml
 
     # Claude Code
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
@@ -56,6 +57,7 @@
     - ~/.config/tmux
     - ~/.config/zed
     - ~/.config/btop
+    - ~/.config/phpantom_lsp
     - ~/.local/bin
 
 - shell:
