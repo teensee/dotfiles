@@ -53,6 +53,7 @@
       "head*": "allow",
       "tail*": "allow",
       "echo*": "allow",
+      "jq*": "allow",
       "basename *": "allow",
       "cat*": "allow",
       "rg*": "allow",
