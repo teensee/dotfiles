@@ -23,9 +23,25 @@
 
 [merge]
 	conflictstyle = diff3
+	tool = vscode
+
+[mergetool "vscode"]
+	cmd = \"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\" --wait --merge \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+	trustExitCode = false
+
+[mergetool]
+	keepBackup = false
+	prompt = false
 
 [diff]
 	colorMoved = default
+	tool = vscode
+
+[difftool "vscode"]
+	cmd = \"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\" --wait --diff \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
 
 [interactive]
 	diffFilter = delta --color-only
