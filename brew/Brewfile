@@ -3,6 +3,10 @@ tap "erickochen/purple"
 tap "shivammathur/php", trusted: true
 tap "symfony-cli/tap", trusted: true
 tap "teamookla/speedtest", trusted: true
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -111,8 +115,6 @@ brew "tealdeer"
 brew "tmux"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
-# Display directories as trees (with optional color/HTML output)
-brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
 # Extremely fast Python package installer and resolver, written in Rust
@@ -174,6 +176,7 @@ go "github.com/tmc/json-to-struct"
 go "github.com/golang-migrate/migrate/v4/cmd/migrate"
 go "go.uber.org/mock/mockgen"
 go "github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen"
+go "github.com/kyoh86/richgo"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/swaggo/swag/cmd/swag"
 go "github.com/a-h/templ/cmd/templ"
