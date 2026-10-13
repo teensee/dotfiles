@@ -21,6 +21,10 @@ for an agent's prompt body; when it changes, mirror the body into `claude/agents
 codegraph side, `claude/agents/*` and `opencode/agent/*` have drifted (Claude copies are frozen at
 `eaaa193`) — unification in EN is a separate planned task.
 
+Planned: the manual agent/command mirroring described above is replaced by a generated
+harness-independent build (opencode sources -> Claude Code / pi) — see
+[harness-build.md](harness-build.md).
+
 The CodeGraph instruction block (`<!-- CODEGRAPH_START/END -->`) exists in exactly one place —
 the end of `shared/instructions-core.md`; both tools receive it through the wiring above. Never
 add copies to `CLAUDE.md`, `instructions.md`, or `AGENTS.md`: if codegraph re-injects one, delete

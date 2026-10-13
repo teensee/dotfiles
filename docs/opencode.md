@@ -32,7 +32,7 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 Модели (в `opencode.jsonc`, секция `agent`): reasoning-агенты (`research`, `architect`,
 `code-reviewer`, `debugger`, `security-auditor`) — `deepseek-v4-pro`; `dba` — `glm-5`; имплементеры
 и `test-writer` — `deepseek-v4.1-flash`. Модели slash-команд — в frontmatter `commands/*.md` (`/go`,
-`/clean` — pro; `/task`, `/pg-ro`, `/beautify-agents` — flash).
+`/clean`, `/ai-guides` — pro; `/task`, `/pg-ro`, `/beautify-agents` — flash).
 
 Права (read-only, разрешения на запись) объявляются только в `agent/*.md` — команды наследуют их
 через `agent: X`.
@@ -61,6 +61,7 @@ Postgres MCP используется, только если сервер вкл
 | `/clean`   | build         | Удаление `.opencode/work/<branch>/`                         |
 | `/pg-ro`   | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
 | `/yt-comm` | build         | Комментарий к задаче YouTrack: MR по текущей ветке          |
+| `/ai-guides` | build       | Аудит/сборка AI-гайдов проекта (общих для Claude Code и opencode): `audit` \| `build` \| `refresh` |
 
 ## Structure
 

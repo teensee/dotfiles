@@ -62,3 +62,8 @@ and the command; the user runs them. Messages follow Conventional Commits, in En
   agent/command/instruction config shared between opencode and Claude Code
 - [`.opencode/docs/ai/claude-code.md`](.opencode/docs/ai/claude-code.md) — read this when
   maintaining the Claude Code config (mirror, symlinks, MCP, drift risk)
+- [`.opencode/docs/ai/harness-build.md`](.opencode/docs/ai/harness-build.md) — read this when
+  implementing or reviewing the harness-independent AI config build (opencode sources -> Claude Code
+  / pi; generator, phases, verification)
+- [`.opencode/docs/ai/pi.md`](.opencode/docs/ai/pi.md) — read this when maintaining the pi
+  integration (local package, extensions, generated agents, corporate-file drift)
