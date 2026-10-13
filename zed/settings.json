@@ -1,4 +1,5 @@
 {
+  "close_panel_on_toggle": false,
   "semantic_tokens": "combined",
   "cli_default_open_behavior": "new_window",
   "agent_ui_font_family": "JetBrainsMono Nerd Font",
@@ -56,6 +57,8 @@
   },
   "use_system_window_tabs": true,
   "tabs": {
+    "show_close_button": "always",
+    "close_position": "right",
     "show_diagnostics": "off",
     "file_icons": true,
     "git_status": false,
@@ -81,7 +84,7 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "mode": "default",
+        "mode": "plan",
         "fast": false
       },
       "type": "registry"
@@ -95,7 +98,7 @@
         ],
       },
       "default_config_options": {
-        "model": "opencode-go/deepseek-v4.1-flash",
+        "model": "opencode-go/deepseek-v4-pro",
         "mode": "plan",
         "effort": "max",
       },
@@ -294,6 +297,7 @@
       "format_on_save": "on",
       "tab_size": 4,
       "hard_tabs": true,
+      "prettier": { "allowed": false },
     },
   },
 }
