@@ -58,6 +58,8 @@
       "cat*": "allow",
       "rg*": "allow",
       "grep*": "allow",
+      "find *":"allow",
+      "wc *": "allow",
       "sed*": "allow",
       "sort*": "allow",
       "uniq*": "allow",

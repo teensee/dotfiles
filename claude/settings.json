@@ -34,7 +34,8 @@
       "Bash(git stash drop:*)",
       "Bash(git clean:*)",
       "Bash(git rm:*)"
-    ]
+    ],
+    "blockReadsOutsideWorkingDirectories": true
   },
   "model": "opus",
   "hooks": {
@@ -58,14 +59,14 @@
     "gopls-lsp@claude-plugins-official": true,
     "php-lsp@claude-plugins-official": true
   },
-  "effortLevel": "medium",
-  "tui": "fullscreen",
   "extraKnownMarketplaces": {
     "gitkraken": {
       "source": {
-        "path": "/Users/vladislav/.claude/plugins/marketplaces/gitkraken",
-        "source": "directory"
+        "source": "directory",
+        "path": "/Users/vladislav/.claude/plugins/marketplaces/gitkraken"
       }
     }
-  }
+  },
+  "effortLevel": "medium",
+  "tui": "fullscreen"
 }
