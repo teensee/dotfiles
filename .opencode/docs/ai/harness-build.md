@@ -2,7 +2,8 @@
 
 Status: **plan, approved 2026-10-04, not implemented.** Canonical plan (supersedes the root-level
 `harness-independent-build.md` draft until it is deleted). Read this before implementing or
-reviewing the generator, and [pi.md](pi.md) for the pi half.
+reviewing the generator, and [pi.md](pi.md) for the pi half. The generator must target the OpenCode
+v2 layout from the start — see [opencode-v2-migration.md](opencode-v2-migration.md).
 
 ## Idea
 

@@ -67,3 +67,6 @@ and the command; the user runs them. Messages follow Conventional Commits, in En
   / pi; generator, phases, verification)
 - [`.opencode/docs/ai/pi.md`](.opencode/docs/ai/pi.md) — read this when maintaining the pi
   integration (local package, extensions, generated agents, corporate-file drift)
+- [`.opencode/docs/ai/opencode-v2-migration.md`](.opencode/docs/ai/opencode-v2-migration.md) — read
+  this when migrating the opencode config of this repo to OpenCode v2 (breaking changes, stages,
+  verification)
