@@ -1,3 +1,9 @@
+# Глобальные инструкции агентов
+
+Правила для всех сессий opencode, Claude Code и pi во всех проектах. Единый источник —
+`opencode/AGENTS.md` в dotfiles (= `~/.config/opencode/AGENTS.md`): Claude Code импортирует его из
+`CLAUDE.md`, pi добавляет в системный промпт. Правь общую часть только здесь.
+
 ## Git — строго read-only
 
 Агент работает с git **исключительно read-only**, без исключений и без права манипулировать деревом
@@ -41,6 +47,21 @@ YAML — `yq` (mikefarah v4, `jq`-подобный синтаксис; прав�
 - Недоступны → не выдумывай схему: опирайся на `migrations/`, Doctrine-сущности, `.sql`-файлы.
 
 Рецепт read-only Postgres-роли для MCP — команда `/pg-ro`.
+
+## Task workflow
+
+Пайплайн задач (одинаковый во всех харнессах): `/task → /res → /plan → /go → /review → /clean`.
+
+Рабочие файлы задачи лежат в `.opencode/work/<текущий-бранч>/`:
+
+- `task.md` — описание задачи (`/task`)
+- `task-research.md` — ресёрч (`/res`, агент `research`)
+- `task-plan.md` — план реализации (`/plan`, агент `architect`)
+- `task-log.md` — лог реализации (`/go`)
+
+Текущий бранч определяй через `git branch --show-current` (если пусто —
+`git rev-parse --abbrev-ref HEAD`). Добавь `.opencode/` в `.gitignore` проекта, если его там ещё нет —
+рабочие файлы не коммитятся.
 
 ## Стиль
 

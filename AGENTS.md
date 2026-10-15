@@ -25,8 +25,8 @@ make help         # show all available commands
 ## Hard rules
 
 - **Git — read-only**: the agent works with git **exclusively read-only** — see
-  `shared/instructions-core.md` for the full allow/deny list. Enforced in
-  `opencode/opencode.jsonc`'s `permission.bash` table and in `claude/settings.json`'s
+  `opencode/AGENTS.md` for the full allow/deny list. Enforced in `opencode/opencode.jsonc`'s
+  `permissions` rules and in `claude/settings.json`'s
   `permissions.deny`. All git write operations are performed by the user.
 
 ## Commit messages
