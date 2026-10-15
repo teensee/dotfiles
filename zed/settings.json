@@ -89,21 +89,6 @@
       },
       "type": "registry"
     },
-    "opencode": {
-      "favorite_config_option_values": {
-        "effort": ["max"],
-        "model": [
-          "opencode-go/deepseek-v4-flash",
-          "opencode-go/deepseek-v4-pro",
-        ],
-      },
-      "default_config_options": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "mode": "plan",
-        "effort": "max",
-      },
-      "type": "registry",
-    },
   },
   "project_panel": {
     "folder_indicator": "icon",
