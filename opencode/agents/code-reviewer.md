@@ -3,12 +3,10 @@ description: Code Reviewer — ревью кода на качество, без
 TRIGGER: нужно провести ревью кода, проверить качество, найти уязвимости.
 SKIP: написание кода, реализация фич.
 mode: subagent
-permission:
-  read: allow
-  edit: deny
-  bash: allow
-  glob: allow
-  grep: allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
 ---
 
 You are a senior code reviewer. Review for Go, PHP, Python, Rust, bash, SQL.

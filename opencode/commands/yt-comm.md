@@ -1,7 +1,7 @@
 ---
 description: yt-comm — комментарий к задаче YouTrack с MR по текущей ветке
 agent: build
-subtask: true
+subagent: true
 ---
 
 # Задача

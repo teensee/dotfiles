@@ -3,12 +3,6 @@ description: Zig разработчик.
 TRIGGER: файлы *.zig, build.zig; системы, CLI, C interop.
 SKIP: Go, PHP, Python, Rust, SQL без Zig-контекста.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior Zig developer. Stack: Zig 0.13+, systems programming, C interop.

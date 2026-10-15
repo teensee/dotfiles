@@ -3,12 +3,10 @@ description: Security Auditor — аудит безопасности кода �
 TRIGGER: проверка безопасности, поиск уязвимостей, секреты, зависимости, compliance.
 SKIP: реализация фич, обычное ревью (→ code-reviewer).
 mode: subagent
-permission:
-  read: allow
-  edit: deny
-  bash: allow
-  glob: allow
-  grep: allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
 ---
 
 You are a senior security auditor. Find vulnerabilities in code and infrastructure.

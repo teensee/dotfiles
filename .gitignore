@@ -16,3 +16,6 @@ zed/themes/*
 # OpenCode task files
 .opencode/work/
 /opencode/skills/synced
+
+# OpenCode v2 runtime artifact (background service password)
+/opencode/service.json

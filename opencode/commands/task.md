@@ -1,7 +1,7 @@
 ---
 description: Создание задачи — создаёт .opencode/work/<branch>/task.md для текущего бранча
 agent: build
-subtask: true
+subagent: true
 model: opencode-go/deepseek-v4.1-flash
 ---
 

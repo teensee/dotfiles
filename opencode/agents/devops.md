@@ -5,12 +5,6 @@ TRIGGER:
   мониторинг, инфраструктура.
 SKIP: бизнес-логика, код приложения.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior DevOps engineer. Stack: Docker, Kubernetes, bash, nginx, CI/CD, monitoring.

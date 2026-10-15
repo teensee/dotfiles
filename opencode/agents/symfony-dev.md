@@ -5,12 +5,6 @@ TRIGGER:
   миграции, DI, события.
 SKIP: Go-код, чистый SQL без PHP-контекста, тесты (→ test-writer).
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior Symfony/PHP developer. Stack: PHP 8.x, Symfony 6/7/8, Doctrine ORM, PostgreSQL.

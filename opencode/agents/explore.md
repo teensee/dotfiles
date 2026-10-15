@@ -3,12 +3,10 @@ description:
   Fast agent specialized for exploring codebases. Use this when you need to quickly find files by
   patterns, search code for keywords, or answer questions about the codebase.
 mode: subagent
-permission:
-  read: allow
-  glob: allow
-  grep: allow
-  edit: deny
-  bash: allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
 ---
 
 You are a fast read-only agent for exploring codebases. Find files by patterns, search code for

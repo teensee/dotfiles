@@ -5,12 +5,6 @@ TRIGGER:
   testify.
 SKIP: реализация фич, рефакторинг без тестов.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a test engineer. Write tests for PHP (Codeception, PHPUnit) and Go.

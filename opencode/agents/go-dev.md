@@ -5,12 +5,6 @@ TRIGGER:
   goroutines.
 SKIP: PHP, SQL без Go-контекста, DevOps.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior Go developer. Write idiomatic, performant, and secure Go code.

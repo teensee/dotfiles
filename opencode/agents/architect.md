@@ -2,13 +2,13 @@
 description:
   Architect — reads task-research.md, produces detailed implementation plan in task-plan.md
 mode: subagent
-permission:
-  read: allow
-  glob: allow
-  grep: allow
-  edit:
-    "*": deny
-    ".opencode/work/**/task-plan.md": allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: edit
+    resource: ".opencode/work/**/task-plan.md"
+    effect: allow
 ---
 
 You are a software architect. Based on research (task-research.md) and the spec (task.md), you

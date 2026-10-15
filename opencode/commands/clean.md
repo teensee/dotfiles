@@ -1,7 +1,7 @@
 ---
 description: Очистка рабочих файлов задачи — удаляет .opencode/work/<branch>/
 agent: build
-subtask: true
+subagent: true
 model: opencode-go/deepseek-v4-pro
 ---
 

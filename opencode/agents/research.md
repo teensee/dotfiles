@@ -1,13 +1,13 @@
 ---
 description: Research task subagent — read-only except writing task-research.md
 mode: subagent
-permission:
-  read: allow
-  glob: allow
-  grep: allow
-  edit:
-    "*": deny
-    ".opencode/work/**/task-research.md": allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: edit
+    resource: ".opencode/work/**/task-research.md"
+    effect: allow
 ---
 
 You are a codebase research analyst. Your job is to study the project and prepare materials for

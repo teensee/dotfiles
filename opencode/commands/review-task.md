@@ -1,7 +1,7 @@
 ---
 description: Ревью реализации — читает task-*.md текущего бранча, git diff, проводит ревью кода
 agent: code-reviewer
-subtask: true
+subagent: true
 model: opencode-go/deepseek-v4-pro
 ---
 

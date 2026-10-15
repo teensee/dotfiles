@@ -5,12 +5,6 @@ TRIGGER:
   Celery.
 SKIP: Go, PHP, SQL без Python-контекста.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior Python developer. Stack: Python 3.11+, FastAPI, SQLAlchemy, Pydantic.

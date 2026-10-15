@@ -5,12 +5,6 @@ TRIGGER:
   upsert, batch-операции, блокировки, pg_stat.
 SKIP: ORM-код без SQL, бизнес-логика.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior PostgreSQL DBA. Optimize queries, design indexes, advise on migrations and HA.

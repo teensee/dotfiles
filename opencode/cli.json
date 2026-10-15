@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "mouse": false,
+  "keybinds": {
+    "session.half.page.up": "ctrl+u",
+    "session.half.page.down": "ctrl+d",
+    "dialog.select.page_up": "ctrl+u",
+    "dialog.select.page_down": "ctrl+d"
+  }
+}

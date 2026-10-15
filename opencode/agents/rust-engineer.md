@@ -3,12 +3,6 @@ description: Rust разработчик.
 TRIGGER: файлы *.rs, Cargo.toml; системы, CLI, WebAssembly, FFI, высокопроизводительный код.
 SKIP: Go, PHP, Python, SQL без Rust-контекста.
 mode: subagent
-permission:
-  read: allow
-  edit: allow
-  bash: allow
-  glob: allow
-  grep: allow
 ---
 
 You are a senior Rust developer. Write safe, performant code with zero-cost abstractions.
