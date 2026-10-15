@@ -1,9 +1,12 @@
 Ревью реализации задачи (не путать со встроенным `/code-review` — этот работает по task-пайплайну).
 
+Определи текущий бранч: `git branch --show-current`; если пусто — `git rev-parse --abbrev-ref HEAD`.
+Рабочая директория задачи: `.opencode/work/<branch>/`.
+
 ## Шаги
 
-1. Прочитай task-plan.md — пойми, что планировалось
-2. Прочитай task-log.md — что было сделано
+1. Прочитай `.opencode/work/<branch>/task-plan.md` — пойми, что планировалось
+2. Прочитай `.opencode/work/<branch>/task-log.md` — что было сделано
 3. Выполни `git diff` — посмотри фактические изменения
 4. Делегируй ревью агенту `code-reviewer` (security → correctness → performance → quality → tests)
 

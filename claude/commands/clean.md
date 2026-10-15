@@ -1,21 +1,14 @@
-Удали файлы текущей задачи:
+Определи текущий бранч: `git branch --show-current`; если пусто — `git rev-parse --abbrev-ref HEAD`.
+Рабочая директория задачи: `.opencode/work/<branch>/`.
 
-- task-research.md
-- task-plan.md
-- task-log.md
-
-Очисти:
-- task.md
+Удали директорию задачи целиком (в ней task.md, task-research.md, task-plan.md, task-log.md).
 
 ## .gitignore
 
-Добавь в `.gitignore`, чтобы рабочие файлы не попадали в коммиты:
+Убедись, что `.opencode/` в `.gitignore` проекта — рабочие файлы не попадают в коммиты:
 
 ```
-task.md
-task-research.md
-task-plan.md
-task-log.md
+.opencode/
 ```
 
 А вот команды и агентов — наоборот, коммить:
