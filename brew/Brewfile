@@ -132,7 +132,7 @@ brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Open-source terminal SSH manager and SSH config editor
 brew "erickochen/purple/purple", trusted: true
 # Ookla Speedtest
