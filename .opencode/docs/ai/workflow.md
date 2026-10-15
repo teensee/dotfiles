@@ -1,8 +1,7 @@
 # OpenCode workflow
 
-Это флоу **opencode** — файлы задач branch-scoped (`.opencode/work/<branch>/`). Claude Code в этом
-репо ведёт те же файлы в корне проекта (root-level `task.md` и т.д.) — см.
-[claude-code.md](claude-code.md).
+Это флоу **opencode**. С OpenCode v2 файлы задач branch-scoped (`.opencode/work/<branch>/`) — эта
+же схема теперь общая для Claude Code (см. `opencode/AGENTS.md` и [claude-code.md](claude-code.md)).
 
 Таск-флоу по бранчам: `/task → /res → /plan → /go → /review → /clean`.
 
@@ -26,14 +25,15 @@
   `.opencode/work/` в `.gitignore`
 - Git — только чтение для агента: `status/diff/log/show/branch -l/remote/rev-parse/...`; все
   операции записи (add/commit/push/checkout/...) выполняет пользователь
-- Права (read-only агенты и т.п.) объявляются ТОЛЬКО в `agent/*.md`, команды наследуют их через
-  `agent: X` — не дублировать
-- MCP `postgres` (read-only, `enabled: false` глобально) включается в проектном `opencode.jsonc`;
+- Права (read-only агенты и т.п.) объявляются ТОЛЬКО в `agents/*.md` (frontmatter `permissions`),
+  команды наследуют их через `agent: X` — не дублировать
+- MCP `postgres` (read-only, `disabled: true` глобально в `mcp.servers`) включается в проектном
+  `opencode.jsonc`;
   подключение берётся из env `DATABASE_OPENCODE_RO_URI` (read-only роль БД, `GRANT SELECT` +
   `default_transaction_read_only`); инструменты `postgres_query`/`postgres_schema` используются
   агентами ТОЛЬКО если сервер включён в текущем проекте
 - Приоритет инструментов — 4 ступени (codegraph → встроенные Grep/Glob → `rg`/`fd` → `grep`/`find`);
-  определён в `shared/instructions-core.md`, действует на всех агентов, включая субагентов
+  определён в `opencode/AGENTS.md`, действует на всех агентов, включая субагентов
 
 ## Per-tool reference
 

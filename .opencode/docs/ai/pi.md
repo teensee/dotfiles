@@ -32,7 +32,7 @@ file becomes the reference for the pi side of the dotfiles config.
 pi/
 ├── package.json            # local package manifest (pi key)
 ├── extensions/
-│   ├── core.ts             # shared/instructions-core.md -> system prompt
+│   ├── core.ts             # opencode/AGENTS.md -> system prompt
 │   └── git-guard.ts        # blocks git write verbs from shared/git-deny.txt
 ├── agents/                 # GENERATED (dotbot: ~/.pi/agent/agents -> pi/agents)
 ├── prompts/                # GENERATED (loaded via the package)
@@ -67,7 +67,7 @@ import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
-const CORE = join(homedir(), ".dotfiles/shared/instructions-core.md");
+const CORE = join(homedir(), ".dotfiles/opencode/AGENTS.md");
 
 export default function (pi: ExtensionAPI) {
   pi.on("before_agent_start", async (event) => {
@@ -114,7 +114,7 @@ core.
 
 ## Generated pi agents
 
-Rendered by `ai-build` from `opencode/agent/*.md` (see harness-build.md), with extra frontmatter
+Rendered by `ai-build` from `opencode/agents/*.md` (see harness-build.md), with extra frontmatter
 that pi needs and opencode/Claude do not have:
 
 ```yaml

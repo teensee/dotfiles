@@ -1,8 +1,8 @@
 # OpenCode v2 migration
 
-Status: **plan, approved 2026-10-14, not implemented.** Read this before migrating the opencode half
-of the repo to OpenCode 2. Companion plan: [harness-build.md](harness-build.md) — its generator must
-target the v2 layout from the start, do not migrate to v2 and to the generator separately.
+Status: **implemented 2026-10-14** (verified against the official v2.0.29 binary — see
+implementation notes below). Companion plan: [harness-build.md](harness-build.md) — its generator
+must target the v2 layout from the start.
 
 ## Decisions
 
@@ -17,6 +17,42 @@ target the v2 layout from the start, do not migrate to v2 and to the generator s
 - **Scope**: the global config in this repo plus its docs. Project-level `opencode.jsonc` files
   (e.g. postgres MCP enablement) migrate separately, as projects are visited.
 - Prerequisite: commit all pending work first.
+
+## Implementation notes (2026-10-14)
+
+All stages were executed and verified against the official v2 binary (v2.0.29, downloaded to a temp
+dir — the brew v1 install was left untouched):
+
+- v2 auto-normalizes legacy v1 config (permission map -> ordered `permissions`; `provider` ->
+  `providers`; `agent` -> `agents`; `mcp.<name>`/`enabled` -> `mcp.servers`/`disabled`); the repo was
+  rewritten to native v2 forms anyway.
+- vesna provider: kept `package: "aisdk:@ai-sdk/openai-compatible"` (v2's own normalization of the
+  v1 `npm` field), credential via provider-level `env: ["VESNA_API_KEY"]`, `queryParams` sits in
+  `settings` — confirmed via `opencode debug config`.
+- codegraph and postgres MCP servers use `codemode: false` to keep the direct `codegraph_explore` /
+  `postgres_query` tool names referenced in the instructions.
+- Agent frontmatter: all-allow legacy blocks were dropped (v2's base policy allows everything and
+  the global rules still apply to every agent); only restrictions remain as `permissions` lists
+  (edit deny; plus the task-file exception for architect/research). Blanket agent-level shell allows
+  were deliberately NOT carried over — appended after global rules they would have overridden the
+  global `git *` deny.
+- Claude Code commands were unified to `.opencode/work/<branch>/` (see the Task workflow section of
+  `opencode/AGENTS.md`).
+- `opencode/tui.jsonc` -> `opencode/cli.json` (v2 command IDs), `opencode/plugins/gk-hooks.js`
+  deleted (restorable from git at `225ee56`), empty `plugin/` removed.
+- v2 creates `service.json` (background-service password) in the config dir at first run — ignored
+  via `/opencode/service.json` in the root `.gitignore`.
+- `opencode/package.json` / `node_modules` left in place (locally ignored) for the `aisdk:` provider
+  package; revisit after a real provider smoke test.
+- v2 keeps a background service that caches config at startup — restart it
+  (`opencode service restart`) to pick up config edits made while it runs.
+
+## Pending verification (user)
+
+- Provider smoke test in v2 with a real request (`VESNA_API_KEY` — требует рабочего VPN),
+  затем TUI-прогон на v2.
+- Local install switch: `opencode upgrade --major` or
+  `brew install anomalyco/tap/opencode-v2`.
 
 ## Breaking changes that touch this repo
 

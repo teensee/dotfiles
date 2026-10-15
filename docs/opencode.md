@@ -6,11 +6,11 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 
 | File              | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `opencode.jsonc`  | Model `opencode-go/deepseek-v4.1-flash`, custom `vesna` provider (`@ai-sdk/openai-compatible`, VesnaCode, key via `VESNA_API_KEY` env), LSP enabled, global `instructions.md`, MCP `codegraph` (on) + `postgres` (read-only, off by default; URI из `DATABASE_OPENCODE_RO_URI`), git permission rules — только read-only для агента (все записи git denied); корневой поиск по файловой системе (`find`/`fd`/`rg`/`grep`/`locate`/`mdfind` от `/`) — denied; модели субагентов задаются в секции `agent` этого файла, модели команд — в их frontmatter |
-| `instructions.md` | Глобальные инструкции для каждой сессии: git read-only, task workflow по бранчам, стиль ответов                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `tui.jsonc`       | Mouse disabled, vim-like Ctrl+U/D scroll                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `opencode.jsonc`  | Model `opencode-go/deepseek-v4.1-flash`, custom `vesna` provider (`aisdk:@ai-sdk/openai-compatible`, VesnaCode, key via `VESNA_API_KEY` env), LSP enabled, MCP `codegraph` (on, `codemode: false`) + `postgres` (read-only, `disabled: true`; URI из `DATABASE_OPENCODE_RO_URI`) в `mcp.servers`, git permission rules — только read-only для агента (все записи git denied); корневой поиск по файловой системе (`find`/`fd`/`rg`/`grep`/`locate`/`mdfind` от `/`) — denied; модели субагентов задаются в секции `agents` этого файла, модели команд — в их frontmatter |
+| `AGENTS.md`       | Глобальные инструкции v2 (единый источник для opencode/Claude Code/pi): git read-only, task workflow по бранчам, приоритет инструментов, стиль                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `cli.json`        | CLI-настройки v2: mouse disabled, vim-like Ctrl+U/D scroll                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-## Subagents (`agent/`)
+## Subagents (`agents/`)
 
 | Agent              | Purpose                                                                    |
 | ------------------ | -------------------------------------------------------------------------- |
@@ -29,15 +29,15 @@ AI coding agent configuration — symlinked to `~/.config/opencode`.
 | `test-writer`      | Тесты: Codeception, PHPUnit, Go table-driven                               |
 | `zig-dev`          | Zig: systems, C interop, comptime                                          |
 
-Модели (в `opencode.jsonc`, секция `agent`): reasoning-агенты (`research`, `architect`,
-`code-reviewer`, `debugger`, `security-auditor`) — `deepseek-v4-pro`; `dba` — `glm-5`; имплементеры
+Модели (в `opencode.jsonc`, секция `agents`): reasoning-агенты (`research`, `architect`,
+`code-reviewer`, `debugger`, `security-auditor`) — `deepseek-v4-pro`; `dba` — `glm-5.2`; имплементеры
 и `test-writer` — `deepseek-v4.1-flash`. Модели slash-команд — в frontmatter `commands/*.md` (`/go`,
 `/clean`, `/ai-guides` — pro; `/task`, `/pg-ro`, `/beautify-agents` — flash).
 
-Права (read-only, разрешения на запись) объявляются только в `agent/*.md` — команды наследуют их
-через `agent: X`.
+Права (read-only, разрешения на запись) объявляются только в `agents/*.md` (v2-frontmatter
+`permissions`) — команды наследуют их через `agent: X`.
 
-Приоритет инструментов (в `shared/instructions-core.md` — общий с Claude Code, см.
+Приоритет инструментов (в `opencode/AGENTS.md` — общий с Claude Code и pi, см.
 `.opencode/docs/ai/instructions.md`; для всех агентов, включая субагентов):
 
 1. Codegraph — если у проекта есть `.codegraph/` (в `~/.dotfiles` его нет — это «солянка» конфигов);
@@ -51,22 +51,23 @@ Postgres MCP используется, только если сервер вкл
 
 Таск-флоу по бранчам: рабочие файлы в `.opencode/work/<branch>/`, бранч определяется автоматически.
 
-| Command    | Agent         | Purpose                                                     |
-| ---------- | ------------- | ----------------------------------------------------------- |
-| `/task`    | build         | Создание `.opencode/work/<branch>/task.md`                  |
-| `/res`     | research      | Ресёрч: task.md → task-research.md                          |
-| `/plan`    | architect     | План: task-research.md → task-plan.md                       |
-| `/go`      | build         | Реализация: план → делегирование спецагентам, task-log.md   |
-| `/review`  | code-reviewer | Ревью: git diff + план → отчёт                              |
-| `/clean`   | build         | Удаление `.opencode/work/<branch>/`                         |
-| `/pg-ro`   | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP |
-| `/yt-comm` | build         | Комментарий к задаче YouTrack: MR по текущей ветке          |
-| `/ai-guides` | build       | Аудит/сборка AI-гайдов проекта (общих для Claude Code и opencode): `audit` \| `build` \| `refresh` |
+| Command      | Agent         | Purpose                                                                                            |
+| ------------ | ------------- | -------------------------------------------------------------------------------------------------- |
+| `/task`      | build         | Создание `.opencode/work/<branch>/task.md`                                                         |
+| `/res`       | research      | Ресёрч: task.md → task-research.md                                                                 |
+| `/plan`      | architect     | План: task-research.md → task-plan.md                                                              |
+| `/go`        | build         | Реализация: план → делегирование спецагентам, task-log.md                                          |
+| `/review`    | code-reviewer | Ревью: git diff + план → отчёт                                                                     |
+| `/clean`     | build         | Удаление `.opencode/work/<branch>/`                                                                |
+| `/pg-ro`     | build         | Напоминалка: рецепт read-only пользователя Postgres для MCP                                        |
+| `/yt-comm`   | build         | Комментарий к задаче YouTrack: MR по текущей ветке                                                 |
+| `/ai-guides` | build         | Аудит/сборка AI-гайдов проекта (общих для Claude Code и opencode): `audit` \| `build` \| `refresh` |
 
 ## Structure
 
 - `skills/` — vendored [superpowers](https://github.com/obra/superpowers) skills (markdown +
   scripts), no plugin dependency; snapshot, updates manual. MIT © 2025 Jesse Vincent —
   `skills/LICENSE`. Single source for both tools: `~/.claude/skills` links here too
-- `plugin/` — reserved for local plugins
-- Dependencies: `package.json` + `node_modules` (ignored, not tracked)
+- `plugins/` — локальные плагины (v2); gk-managed хуки GitKraken временно убраны (v1 API не
+  работает в v2) — см. `.opencode/docs/ai/opencode-v2-migration.md`
+- Dependencies: `package.json` + `node_modules` (ignored, not tracked; used by the vesna `aisdk:` provider package)
