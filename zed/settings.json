@@ -80,14 +80,14 @@
     "bookmarks": false,
   },
   "proxy": "",
-  "diff_view_style": "split",
+  "diff_view_style": "unified",
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
         "mode": "plan",
-        "fast": false
+        "fast": false,
       },
-      "type": "registry"
+      "type": "registry",
     },
   },
   "project_panel": {
@@ -106,7 +106,7 @@
   },
   "agent": {
     "threads_sidebar": {
-      "position": "right"
+      "position": "right",
     },
     "show_turn_stats": true,
     "enable_feedback": false,
@@ -159,6 +159,12 @@
     },
   },
   "git": {
+    "branch_picker": {
+      "show_author_name": false,
+    },
+    "blame": {
+      "show_avatar": false,
+    },
     "inline_blame": {
       "delay_ms": 500,
       "show_commit_summary": true,
@@ -266,8 +272,8 @@
       "tab_size": 2,
       "indent_guides": {
         "active_line_width": 1,
-        "line_width": 1
-      }
+        "line_width": 1,
+      },
     },
     "Markdown": {
       "soft_wrap": "prefer_line",

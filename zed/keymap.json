@@ -4,5 +4,12 @@
     "bindings": {
       "cmd-alt-c": ["task::Spawn", { "task_name": "Copy: PHP FQCN" }]
     }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "left": "project_panel::CollapseSelectedEntryAndChildren",
+      "shift-left": "project_panel::CollapseSelectedEntry"
+    }
   }
 ]
