@@ -169,7 +169,7 @@ pi install ~/.dotfiles/pi       # local package -> ~/.pi/agent/settings.json
 ## Open points
 
 - Child-extension strategy (above) — validate in the phase-0 spike.
-- `yt-comm` stays opencode-only for now; pi has YouTrack in corporate `mcp.json`, so it can be
+- `yt-comm` and `yt-done` stay opencode-only for now; pi has YouTrack in corporate `mcp.json`, so it can be
   enabled later.
 - Package agents via `pi.subagents.agents` manifest (no dotbot symlink) is a possible later
   simplification; current plan keeps the explicit symlink.

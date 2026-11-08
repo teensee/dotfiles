@@ -16,7 +16,8 @@
 | `/review`  | code-reviewer | ревью `git diff` против плана, отчёт по критичности                                  |
 | `/clean`   | build         | удаляет `.opencode/work/<branch>/`                                                   |
 | `/pg-ro`   | build         | напоминалка: рецепт read-only пользователя Postgres для MCP                          |
-| `/yt-comm` | build         | комментарий к задаче YouTrack со ссылками на MR по текущей ветке                     |
+| `/yt-comm` | build         | комментарий к задаче YouTrack со ссылками на MR по ветке + поле MR Gitlab            |
+| `/yt-done` | build         | комментарий к задаче YouTrack: что сделано + MR + поле MR Gitlab                     |
 
 Правила:
 

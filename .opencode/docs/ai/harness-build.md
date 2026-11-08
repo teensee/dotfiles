@@ -94,7 +94,7 @@ OUT="$ROOT"; CHECK=0
 
 RENAME_CMD=( [review-task]=review )
 RENAME_AGENT_CLAUDE=( [explore]=explore-ru )
-SKIP_CMDS=" yt-comm "
+SKIP_CMDS=" yt-comm yt-done "
 CLAUDE_MODEL_OVERRIDES=( [explore]=haiku [test-writer]=haiku )
 PI_EXTRAS="inheritProjectContext: true
 inheritSkills: true
@@ -262,7 +262,7 @@ check: ai-check   # + существующая проверка симлинко
 - **pi child-extension strategy** (per-agent `extensions` vs `subagents.defaultExtensions`) is
   phase-0 spike material; per-agent keeps it in tracked generated files, but disables ambient
   extensions (pi-mcp-adapter) inside children.
-- **`yt-comm` is opencode-only in v1** (opencode-specific YouTrack MCP flow); pi has YouTrack in its
+- **`yt-comm` and `yt-done` are opencode-only in v1** (opencode-specific YouTrack MCP flow); pi has YouTrack in its
   corporate `mcp.json`, so it can be enabled later.
 - **Generated files committed** means every source edit needs `make ai` + the diff is part of the
   commit; `ai-check` in `make check` is the guard.
