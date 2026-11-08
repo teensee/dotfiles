@@ -105,6 +105,8 @@ brew "rustup"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# SMART hard drive monitoring
+brew "smartmontools"
 # Opinionated Lua code formatter
 brew "stylua"
 # TOML toolkit written in Rust
@@ -131,7 +133,7 @@ brew "zoxide"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# The AI coding agent built for the terminal.
+# OpenCode V2 - the AI coding agent for the terminal
 brew "anomalyco/tap/opencode-v2", trusted: true
 # Open-source terminal SSH manager and SSH config editor
 brew "erickochen/purple/purple", trusted: true
@@ -139,8 +141,6 @@ brew "erickochen/purple/purple", trusted: true
 brew "teamookla/speedtest/speedtest"
 # App for managing battery charging. (Also installs a CLI on first use.)
 cask "battery"
-# Terminal-based AI coding assistant
-cask "claude-code"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Open Source Multimedia Framework
