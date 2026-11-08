@@ -1,7 +1,7 @@
 ---
 description: План реализации — читает task.md и task-research.md текущего бранча, составляет task-plan.md
 agent: architect
-subagent: true
+subagent: false
 model: opencode-go/deepseek-v4-pro
 ---
 

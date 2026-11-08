@@ -1,7 +1,7 @@
 ---
 description: Refactor AGENTS.md into progressive-disclosure topic files
 agent: build
-subagent: true
+subagent: false
 model: opencode-go/deepseek-v4.1-flash
 ---
 

@@ -1,7 +1,7 @@
 ---
 description: Реализация по плану — читает task-*.md текущего бранча и выполняет шаги
 agent: build
-subagent: true
+subagent: false
 model: opencode-go/deepseek-v4-pro
 ---
 
