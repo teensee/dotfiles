@@ -68,6 +68,7 @@ dir — the brew v1 install was left untouched):
 | v1 plugin API (`server()` object) | v2 API (`Plugin.define` + `setup(ctx)`); full port required |
 | `tui.jsonc` | `cli.json` (`https://opencode.ai/v2/cli.json`) |
 | `~/.config/opencode/skills` | unchanged (v2 also reads `~/.claude/skills` natively) |
+| built-in LSP (`lsp: true`) | accepted but **inert** — no language servers, LSP tools or diagnostics; key dropped from `opencode.jsonc` |
 
 Reference docs: permissions, agents, providers, mcp-servers, skills, cli/config, and
 `build/plugins/migrate-v1` under <https://opencode.ai/v2/docs/>.
